@@ -36,6 +36,8 @@ jobs:
         run: python scripts/fetch_live_fixtures.py
 
       - name: Generate daily report and static site files
+        env:
+          PYTHONPATH: ${{ github.workspace }}
         run: python scripts/generate_daily_report.py
 
       - name: Commit generated fixture and report files
