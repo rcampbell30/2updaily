@@ -1,0 +1,15 @@
+QUICK START
+===========
+
+1. Unzip this folder.
+2. Open team_stats.csv and add/update the teams.
+3. Open fixtures_today.csv and add today's fixtures.
+4. Run this in PowerShell from inside the folder:
+
+   python run_twoup_from_split_csv.py
+
+Fields you can leave blank:
+- first_half_goals_avg
+- conceded_after_leading_rate
+
+Keep team names identical between both CSV files.

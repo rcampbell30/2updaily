@@ -1,0 +1,3 @@
+team,goals_for_avg,goals_against_avg,first_half_goals_avg,clean_sheet_rate,conceded_after_leading_rate,over_25_rate,notes
+Kawasaki Frontale,1.75,2.13,0.33,0.13,0.50,0.75,"Real home goals/scored conceded clean sheets over25 from FootyStats. First-half and conceded-after-leading are rough proxies from recent Forebet scorelines, not official event data."
+Machida Zelvia,1.63,1.00,0.50,0.38,0.33,0.50,"Real away goals/scored conceded clean sheets over25 from FootyStats. First-half and conceded-after-leading are rough proxies from recent Forebet scorelines, not official event data."
