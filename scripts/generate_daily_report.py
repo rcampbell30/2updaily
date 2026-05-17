@@ -14,8 +14,8 @@ It writes:
 - docs/index.html
 - docs/data/today.json
 
-Important: this script does not fetch live fixtures yet. It generates the
-site/report from whatever data is currently in the CSV files.
+In the full GitHub Actions flow, scripts/fetch_live_fixtures.py runs first and
+refreshes fixtures_today.csv before this script generates the report.
 """
 
 from __future__ import annotations
@@ -39,6 +39,10 @@ DOCS_DIR = ROOT / "docs"
 DATA_DIR = DOCS_DIR / "data"
 
 
+def odds_display(odds: float | None) -> str:
+    return "Unknown" if odds is None else str(odds)
+
+
 def candidate_to_dict(candidate: TwoUpCandidate, rank: int) -> dict:
     fixture = candidate.fixture
     return {
@@ -49,6 +53,7 @@ def candidate_to_dict(candidate: TwoUpCandidate, rank: int) -> dict:
         "kickoff_uk": fixture.kickoff_uk,
         "favourite": fixture.favourite,
         "favourite_odds": fixture.favourite_odds,
+        "favourite_odds_display": odds_display(fixture.favourite_odds),
         "score": candidate.score,
         "confidence": candidate.confidence,
         "data_quality": candidate.data_quality,
@@ -93,7 +98,7 @@ def render_html(payload: dict) -> str:
                     <div><dt>League</dt><dd>{escape(candidate['league'])}</dd></div>
                     <div><dt>Kick-off</dt><dd>{escape(candidate['kickoff_uk'])}</dd></div>
                     <div><dt>Favourite</dt><dd>{escape(candidate['favourite'])}</dd></div>
-                    <div><dt>Odds</dt><dd>{candidate['favourite_odds']}</dd></div>
+                    <div><dt>Odds</dt><dd>{escape(candidate['favourite_odds_display'])}</dd></div>
                     <div><dt>Score</dt><dd>{candidate['score']}</dd></div>
                     <div><dt>Data quality</dt><dd>{data_quality_percent}%</dd></div>
                   </dl>
