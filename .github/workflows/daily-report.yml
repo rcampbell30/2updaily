@@ -1,0 +1,36 @@
+name: Generate daily 2up report
+
+on:
+  schedule:
+    # GitHub cron uses UTC. This runs at 07:47 UTC daily.
+    # In UK winter this is 07:47 London time; in UK summer this is 08:47 London time.
+    # Avoiding exactly 08:00 helps reduce scheduled workflow delays.
+    - cron: "47 7 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  generate-report:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Generate daily report and static site files
+        run: python scripts/generate_daily_report.py
+
+      - name: Commit generated report files
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add reports/daily_report.md reports/archive docs/index.html docs/data/today.json
+          git diff --cached --quiet && echo "No report changes to commit" || git commit -m "Generate daily 2up report"
+          git push
