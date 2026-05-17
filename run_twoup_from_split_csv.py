@@ -7,6 +7,7 @@ Expected files in this same folder:
 Blank values are allowed for harder-to-source fields such as:
 - first_half_goals_avg
 - conceded_after_leading_rate
+- favourite_odds
 """
 
 import csv
@@ -21,7 +22,7 @@ TEAM_STATS_PATH = BASE_DIR / "team_stats.csv"
 FIXTURES_PATH = BASE_DIR / "fixtures_today.csv"
 
 
-BLANK_VALUES = {"", "na", "n/a", "none", "null", "-"}
+BLANK_VALUES = {"", "na", "n/a", "none", "null", "-", "unknown"}
 
 
 def normalise_team_name(name: str) -> str:
@@ -92,7 +93,7 @@ def load_fixtures(path: Path, stats_by_team: Dict[str, TeamStats]) -> list[Fixtu
                 league=row["league"].strip(),
                 kickoff_uk=row["kickoff_uk"].strip(),
                 favourite=favourite,
-                favourite_odds=float(row["favourite_odds"]),
+                favourite_odds=parse_float(row.get("favourite_odds", "")),
                 home_stats=require_team_stats(stats_by_team, home_team),
                 away_stats=require_team_stats(stats_by_team, away_team),
             )
