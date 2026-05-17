@@ -12,11 +12,12 @@ quality notes.
 
 Update notes for this version
 -----------------------------
-- TeamStats fields are now optional.
+- TeamStats fields are optional.
 - Missing values are skipped rather than crashing the program.
 - Hard-to-source fields such as first_half_goals_avg and
   conceded_after_leading_rate can be left blank in CSV files.
-- Candidates now include data quality and missing-field notes.
+- Favourite odds can now be blank/unknown for live fixture feeds.
+- Candidates include data quality and missing-field notes.
 """
 
 from dataclasses import dataclass, field
@@ -49,7 +50,7 @@ class Fixture:
     league: str
     kickoff_uk: str
     favourite: str
-    favourite_odds: float
+    favourite_odds: Optional[float]
     home_stats: TeamStats
     away_stats: TeamStats
 
@@ -101,19 +102,37 @@ class LeagueFilterAgent:
 
 
 class OddsFilterAgent:
-    """Keeps fixtures with favourite odds in a sensible 2up range."""
+    """Keeps fixtures with favourite odds in a sensible 2up range.
 
-    def __init__(self, min_odds: Optional[float] = 1.40, max_odds: Optional[float] = 2.40) -> None:
+    If odds are missing, the fixture is allowed through. That keeps the live
+    fixture feed useful even before odds automation exists, while the report
+    clearly marks the odds as unknown and lowers confidence.
+    """
+
+    def __init__(
+        self,
+        min_odds: Optional[float] = 1.40,
+        max_odds: Optional[float] = 2.40,
+        allow_missing_odds: bool = True,
+    ) -> None:
         self.min_odds = min_odds
         self.max_odds = max_odds
+        self.allow_missing_odds = allow_missing_odds
 
     def run(self, fixtures: List[Fixture]) -> List[Fixture]:
-        return [
-            fixture
-            for fixture in fixtures
-            if (self.min_odds is None or fixture.favourite_odds >= self.min_odds)
-            and (self.max_odds is None or fixture.favourite_odds <= self.max_odds)
-        ]
+        filtered: List[Fixture] = []
+        for fixture in fixtures:
+            if fixture.favourite_odds is None:
+                if self.allow_missing_odds:
+                    filtered.append(fixture)
+                continue
+
+            if (self.min_odds is None or fixture.favourite_odds >= self.min_odds) and (
+                self.max_odds is None or fixture.favourite_odds <= self.max_odds
+            ):
+                filtered.append(fixture)
+
+        return filtered
 
 
 class StatsProfileAgent:
@@ -200,6 +219,9 @@ class VolatilityAgent:
 
         data_quality, missing_fields, data_notes = self.data_quality_agent.run(favourite, underdog)
 
+        if fixture.favourite_odds is None:
+            data_notes.append("Missing favourite odds; odds-range filter was skipped for this fixture.")
+
         # Favourite attacking strength
         if favourite.goals_for_avg is not None:
             if favourite.goals_for_avg >= 1.8:
@@ -264,7 +286,7 @@ class TwoUpScoringAgent:
         return "Low"
 
     @staticmethod
-    def _downgrade_confidence(confidence: str, data_quality: float) -> str:
+    def _downgrade_confidence(confidence: str, data_quality: float, odds_missing: bool) -> str:
         order = ["Low", "Medium", "High"]
         index = order.index(confidence)
 
@@ -273,12 +295,19 @@ class TwoUpScoringAgent:
         elif data_quality < 0.75:
             index = max(0, index - 1)
 
+        if odds_missing:
+            index = max(0, index - 1)
+
         return order[index]
 
     def score_fixture(self, fixture: Fixture) -> TwoUpCandidate:
         score, reasons, risks, data_notes, missing_fields, data_quality = self.volatility_agent.run(fixture)
         base_confidence = self._base_confidence(score)
-        confidence = self._downgrade_confidence(base_confidence, data_quality)
+        confidence = self._downgrade_confidence(
+            base_confidence,
+            data_quality,
+            odds_missing=fixture.favourite_odds is None,
+        )
 
         return TwoUpCandidate(
             fixture=fixture,
@@ -299,6 +328,10 @@ class TwoUpScoringAgent:
 class ReportAgent:
     """Formats candidates into a readable report."""
 
+    @staticmethod
+    def _odds_display(odds: Optional[float]) -> str:
+        return "Unknown" if odds is None else str(odds)
+
     def run(self, candidates: List[TwoUpCandidate], limit: int = 3) -> str:
         top_candidates = candidates[:limit]
 
@@ -315,7 +348,7 @@ class ReportAgent:
             lines.append(f"League: {fixture.league}")
             lines.append(f"Kick-off: {fixture.kickoff_uk}")
             lines.append(f"Favourite: {fixture.favourite}")
-            lines.append(f"Approx odds: {fixture.favourite_odds}")
+            lines.append(f"Approx odds: {self._odds_display(fixture.favourite_odds)}")
             lines.append(f"2up score: {candidate.score}")
             lines.append(f"Confidence: {candidate.confidence}")
             lines.append(f"Data quality: {data_quality_percent}%")
