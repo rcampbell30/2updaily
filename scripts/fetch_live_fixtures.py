@@ -2,7 +2,7 @@
 
 Provider: API-Football / API-Sports
 
-Required GitHub secret:
+Optional GitHub secret:
 - API_FOOTBALL_KEY
 
 Optional environment variables:
@@ -19,6 +19,9 @@ Notes:
 - favourite_odds is left blank until odds automation is added.
 - favourite is inferred from team_stats.csv when possible; otherwise the home
   team is used as a safe placeholder and confidence will be reduced downstream.
+- If no API key is present, the script exits successfully and leaves the
+  existing fixtures_today.csv alone. This lets the project run in free/manual
+  CSV mode without breaking the GitHub Action.
 """
 
 from __future__ import annotations
@@ -270,8 +273,9 @@ def ensure_team_stats_rows(existing_rows: list[dict[str, str]], fixture_rows: li
 def main() -> int:
     api_key = os.getenv("API_FOOTBALL_KEY") or os.getenv("API_SPORTS_KEY")
     if not api_key:
-        print("Missing API_FOOTBALL_KEY secret. Add it in GitHub repo Settings → Secrets and variables → Actions.")
-        return 1
+        print("No API_FOOTBALL_KEY secret found. Skipping live fixture fetch and using existing fixtures_today.csv.")
+        print("Add API_FOOTBALL_KEY later if you want paid/hosted live fixture automation.")
+        return 0
 
     target_date = os.getenv("LIVE_FIXTURE_DATE") or datetime.now(LONDON_TZ).date().isoformat()
     league_ids_raw = os.getenv("API_FOOTBALL_LEAGUE_IDS", "")
