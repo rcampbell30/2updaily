@@ -1,0 +1,294 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>2upDaily</title>
+  <meta name="description" content="Daily 2up football research shortlist generated from live fixtures and local scoring agents.">
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #07111f;
+      --bg-2: #0f172a;
+      --panel: rgba(15, 23, 42, 0.88);
+      --panel-2: rgba(30, 41, 59, 0.82);
+      --text: #e5e7eb;
+      --muted: #94a3b8;
+      --accent: #38bdf8;
+      --good: #22c55e;
+      --warn: #f59e0b;
+      --border: rgba(148, 163, 184, 0.22);
+      --shadow: rgba(0, 0, 0, 0.34);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(56, 189, 248, 0.18), transparent 34%),
+        radial-gradient(circle at top right, rgba(34, 197, 94, 0.10), transparent 30%),
+        linear-gradient(180deg, var(--bg-2), var(--bg));
+      color: var(--text);
+      line-height: 1.5;
+    }
+
+    main {
+      width: min(1120px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 44px 0 70px;
+    }
+
+    .hero {
+      display: grid;
+      gap: 18px;
+      margin-bottom: 28px;
+    }
+
+    .eyebrow {
+      width: fit-content;
+      padding: 7px 11px;
+      border: 1px solid rgba(56, 189, 248, 0.38);
+      border-radius: 999px;
+      color: #bae6fd;
+      background: rgba(56, 189, 248, 0.10);
+      font-size: 0.9rem;
+      font-weight: 700;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(2.5rem, 9vw, 6.8rem);
+      letter-spacing: -0.075em;
+      line-height: 0.92;
+    }
+
+    .subtitle {
+      margin: 0;
+      max-width: 780px;
+      color: var(--muted);
+      font-size: clamp(1rem, 2vw, 1.18rem);
+    }
+
+    .status-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 28px 0 26px;
+    }
+
+    .pill {
+      border: 1px solid var(--border);
+      background: rgba(15, 23, 42, 0.72);
+      padding: 8px 12px;
+      border-radius: 999px;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .grid {
+      display: grid;
+      gap: 18px;
+    }
+
+    .card, .notice, .loading {
+      border: 1px solid var(--border);
+      background: linear-gradient(180deg, var(--panel-2), var(--panel));
+      border-radius: 24px;
+      padding: 22px;
+      box-shadow: 0 24px 70px var(--shadow);
+    }
+
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      align-items: flex-start;
+      margin-bottom: 16px;
+    }
+
+    h2 {
+      margin: 0;
+      letter-spacing: -0.03em;
+      font-size: clamp(1.35rem, 3vw, 2rem);
+    }
+
+    h3 {
+      margin: 20px 0 8px;
+      color: #7dd3fc;
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .confidence {
+      white-space: nowrap;
+      border-radius: 999px;
+      padding: 7px 11px;
+      color: #dcfce7;
+      border: 1px solid rgba(34, 197, 94, 0.42);
+      background: rgba(34, 197, 94, 0.12);
+      font-weight: 800;
+    }
+
+    .meta-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(145px, 1fr));
+      gap: 10px;
+      margin: 0;
+    }
+
+    .meta-grid div {
+      border: 1px solid var(--border);
+      background: rgba(2, 6, 23, 0.34);
+      border-radius: 16px;
+      padding: 12px;
+    }
+
+    dt {
+      color: var(--muted);
+      font-size: 0.74rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+
+    dd {
+      margin: 4px 0 0;
+      font-weight: 800;
+    }
+
+    ul {
+      margin: 0;
+      padding-left: 1.2rem;
+    }
+
+    li { margin: 6px 0; }
+
+    .notice {
+      margin-top: 22px;
+      color: var(--muted);
+    }
+
+    .notice strong { color: var(--text); }
+
+    .small {
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    a { color: #7dd3fc; }
+  </style>
+</head>
+<body>
+  <main>
+    <section class="hero">
+      <span class="eyebrow">Automated football research shortlist</span>
+      <h1>2upDaily</h1>
+      <p class="subtitle">Today’s 2up research shortlist, generated from live fixture data and your local Python scoring agents. This is research only, not betting advice or a guarantee.</p>
+    </section>
+
+    <section class="status-bar" id="status">
+      <span class="pill">Loading latest report...</span>
+    </section>
+
+    <section class="grid" id="picks">
+      <div class="loading">Loading today’s shortlist from <code>docs/data/today.json</code>...</div>
+    </section>
+
+    <section class="notice">
+      <strong>Bankroll rule:</strong> confirm bookmaker offer terms, odds, exchange liquidity, and staking plan before doing anything with real money. The model is a filter, not a crystal ball.
+    </section>
+  </main>
+
+  <script>
+    const statusEl = document.getElementById("status");
+    const picksEl = document.getElementById("picks");
+
+    const escapeHtml = (value) => String(value ?? "")
+      .replaceAll("&", "&amp;")
+      .replaceAll("<", "&lt;")
+      .replaceAll(">", "&gt;")
+      .replaceAll('"', "&quot;")
+      .replaceAll("'", "&#039;");
+
+    const listItems = (items, fallback) => {
+      if (!items || items.length === 0) return `<li>${escapeHtml(fallback)}</li>`;
+      return items.map(item => `<li>${escapeHtml(item)}</li>`).join("");
+    };
+
+    const pct = (value) => `${Math.round((Number(value) || 0) * 100)}%`;
+
+    const renderStatus = (data) => {
+      statusEl.innerHTML = `
+        <span class="pill">Report date: ${escapeHtml(data.report_date_london || "Unknown")}</span>
+        <span class="pill">Generated: ${escapeHtml(data.generated_at_london || "Unknown")}</span>
+        <span class="pill">Fixtures loaded: ${escapeHtml(data.total_fixtures_loaded ?? 0)}</span>
+        <span class="pill">Candidates shown: ${escapeHtml((data.candidates || []).length)}</span>
+      `;
+    };
+
+    const renderPicks = (data) => {
+      const candidates = data.candidates || [];
+
+      if (candidates.length === 0) {
+        picksEl.innerHTML = `
+          <div class="card">
+            <h2>No candidates found</h2>
+            <p class="small">No fixtures passed the current league and odds filters, or the workflow has not generated today’s report yet.</p>
+          </div>
+        `;
+        return;
+      }
+
+      picksEl.innerHTML = candidates.map(candidate => `
+        <article class="card">
+          <div class="card-header">
+            <h2>${escapeHtml(candidate.rank)}. ${escapeHtml(candidate.home_team)} vs ${escapeHtml(candidate.away_team)}</h2>
+            <span class="confidence">${escapeHtml(candidate.confidence)}</span>
+          </div>
+
+          <dl class="meta-grid">
+            <div><dt>League</dt><dd>${escapeHtml(candidate.league)}</dd></div>
+            <div><dt>Kick-off</dt><dd>${escapeHtml(candidate.kickoff_uk)}</dd></div>
+            <div><dt>Favourite</dt><dd>${escapeHtml(candidate.favourite)}</dd></div>
+            <div><dt>Odds</dt><dd>${escapeHtml(candidate.favourite_odds_display || "Unknown")}</dd></div>
+            <div><dt>Score</dt><dd>${escapeHtml(candidate.score)}</dd></div>
+            <div><dt>Data quality</dt><dd>${pct(candidate.data_quality)}</dd></div>
+          </dl>
+
+          <h3>Why it fits</h3>
+          <ul>${listItems(candidate.reasons, "No strong positive scoring factors were triggered.")}</ul>
+
+          <h3>Risks</h3>
+          <ul>${listItems(candidate.risks, "No major statistical risk flagged from the available data.")}</ul>
+
+          <h3>Data notes</h3>
+          <ul>${listItems(candidate.data_notes, "No data quality notes.")}</ul>
+        </article>
+      `).join("");
+    };
+
+    fetch("docs/data/today.json", { cache: "no-store" })
+      .then(response => {
+        if (!response.ok) throw new Error(`Could not load report JSON: ${response.status}`);
+        return response.json();
+      })
+      .then(data => {
+        renderStatus(data);
+        renderPicks(data);
+      })
+      .catch(error => {
+        statusEl.innerHTML = `<span class="pill">No generated report loaded yet</span>`;
+        picksEl.innerHTML = `
+          <div class="card">
+            <h2>Report not ready yet</h2>
+            <p class="small">Run the GitHub Action once, then this page will load <code>docs/data/today.json</code>.</p>
+            <p class="small">Error: ${escapeHtml(error.message)}</p>
+          </div>
+        `;
+      });
+  </script>
+</body>
+</html>
