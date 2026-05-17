@@ -8,6 +8,10 @@ Blank values are allowed for harder-to-source fields such as:
 - first_half_goals_avg
 - conceded_after_leading_rate
 - favourite_odds
+
+If live fixtures contain teams not yet present in team_stats.csv, the runner
+creates empty TeamStats objects for them instead of crashing. That keeps the
+daily site generation alive while clearly reducing data quality in the report.
 """
 
 import csv
@@ -68,11 +72,7 @@ def load_team_stats(path: Path) -> Dict[str, TeamStats]:
 def require_team_stats(stats_by_team: Dict[str, TeamStats], team_name: str) -> TeamStats:
     key = normalise_team_name(team_name)
     if key not in stats_by_team:
-        available = ", ".join(sorted(stats.name for stats in stats_by_team.values()))
-        raise ValueError(
-            f"No stats found for '{team_name}'. "
-            f"Check spelling in fixtures_today.csv. Available teams: {available}"
-        )
+        return TeamStats(name=team_name)
     return stats_by_team[key]
 
 
