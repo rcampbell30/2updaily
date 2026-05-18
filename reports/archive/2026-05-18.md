@@ -1,4 +1,4 @@
-Generated: 2026-05-18T01:39:02+01:00
+Generated: 2026-05-18T01:48:23+01:00
 Report date: 2026-05-18
 Fixtures loaded: 3
 
@@ -6,7 +6,7 @@ Fixtures loaded: 3
 
 ## 1. Arsenal vs Burnley
 League: Premier League
-Kick-off: 20:00
+Kick-off: Monday 18 May 2026, 20:00 UK
 Favourite: Arsenal
 Approx odds: Unknown
 2up score: 0.0
@@ -41,7 +41,7 @@ Missing fields:
 
 ## 2. Bournemouth vs Manchester City
 League: Premier League
-Kick-off: 19:30
+Kick-off: Tuesday 19 May 2026, 19:30 UK
 Favourite: Manchester City
 Approx odds: Unknown
 2up score: 0.0
@@ -76,7 +76,7 @@ Missing fields:
 
 ## 3. Chelsea vs Tottenham Hotspur
 League: Premier League
-Kick-off: 20:15
+Kick-off: Tuesday 19 May 2026, 20:15 UK
 Favourite: Chelsea
 Approx odds: Unknown
 2up score: 0.0
