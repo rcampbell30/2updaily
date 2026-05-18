@@ -38,7 +38,8 @@ jobs:
           API_FOOTBALL_LEAGUE_IDS: ${{ vars.API_FOOTBALL_LEAGUE_IDS }}
         run: python scripts/fetch_live_fixtures.py
 
-      - name: Seed fixtures from bank when no live API is configured
+      - name: Seed fixtures from bank fallback
+        if: ${{ vars.USE_FIXTURE_BANK_FALLBACK == 'true' }}
         run: python scripts/seed_fixtures_today_from_bank.py
 
       - name: Generate daily report and static site files
