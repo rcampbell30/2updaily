@@ -1,0 +1,38 @@
+{
+  "generated_at_utc": "2026-05-18T00:04:12+00:00",
+  "generated_at_london": "2026-05-18T01:04:12+01:00",
+  "report_date_london": "2026-05-18",
+  "total_fixtures_loaded": 1,
+  "total_fixtures_after_filters": 1,
+  "candidates": [
+    {
+      "rank": 1,
+      "home_team": "Kawasaki Frontale",
+      "away_team": "Machida Zelvia",
+      "league": "J1 League",
+      "kickoff_uk": "11:00",
+      "favourite": "Machida Zelvia",
+      "favourite_odds": 2.2,
+      "favourite_odds_display": "2.2",
+      "score": 35.0,
+      "confidence": "Low",
+      "data_quality": 0.67,
+      "reasons": [
+        "Kawasaki Frontale concede regularly.",
+        "The match profile suggests goal volatility."
+      ],
+      "risks": [],
+      "data_notes": [
+        "Missing favourite first-half scoring data; early-start angle was skipped.",
+        "Missing favourite conceded-after-leading data; comeback-volatility angle was skipped.",
+        "Data quality is incomplete, so confidence has been reduced."
+      ],
+      "missing_fields": [
+        "favourite.first_half_goals_avg",
+        "favourite.conceded_after_leading_rate",
+        "underdog.first_half_goals_avg",
+        "underdog.conceded_after_leading_rate"
+      ]
+    }
+  ]
+}
