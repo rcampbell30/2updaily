@@ -1,4 +1,4 @@
-"""Inject a simple daily pick calendar into docs/index.html.
+"""Inject a featured daily pick and fixture-bank calendar into docs/index.html.
 
 The main report generator owns docs/index.html, so this script runs after it in
 GitHub Actions and adds a fixture-bank section from data/fixture_bank_may_2026.csv.
@@ -34,36 +34,72 @@ def load_daily_picks() -> list[dict[str, str]]:
             if not match_date or match_date < today:
                 continue
 
-            # One visible pick per day. The bank is already ordered by our rough
-            # manual priority, so the first fixture for each date wins.
+            # One visible pick per matchday. The fixture bank is ordered by
+            # rough manual priority, so the first fixture for each date wins.
             if match_date not in picks_by_date:
                 picks_by_date[match_date] = row
 
     return list(picks_by_date.values())
 
 
-def render_pick(row: dict[str, str]) -> str:
-    home = escape(row.get("home_team", ""))
-    away = escape(row.get("away_team", ""))
+def pick_title(row: dict[str, str]) -> str:
+    return f"{escape(row.get('home_team', ''))} vs {escape(row.get('away_team', ''))}"
+
+
+def render_meta(row: dict[str, str]) -> str:
     league = escape(row.get("league", ""))
     kickoff = escape(row.get("kickoff_uk", ""))
     favourite = escape(row.get("provisional_favourite", ""))
     odds = escape(row.get("favourite_odds", "").strip() or "Check odds")
-    notes = escape(row.get("source_notes", ""))
-    match_date = escape(row.get("date", ""))
 
     return f"""
-    <article class="pick-card">
-      <div class="card-header">
-        <h3>{match_date}: {home} vs {away}</h3>
-        <span class="confidence">Fixture bank</span>
-      </div>
       <dl class="meta-grid">
         <div><dt>League</dt><dd>{league}</dd></div>
         <div><dt>Kick-off</dt><dd>{kickoff}</dd></div>
         <div><dt>Provisional favourite</dt><dd>{favourite}</dd></div>
         <div><dt>Odds</dt><dd>{odds}</dd></div>
       </dl>
+    """
+
+
+def render_featured_pick(row: dict[str, str]) -> str:
+    today = date.today().isoformat()
+    match_date = escape(row.get("date", ""))
+    label = "Today’s fixture-bank pick" if row.get("date", "") == today else "Next fixture-bank pick"
+    notes = escape(row.get("source_notes", ""))
+
+    return f"""
+    <section>
+      <h2>{label}</h2>
+      <article class="pick-card">
+        <div class="card-header">
+          <h3>{match_date}: {pick_title(row)}</h3>
+          <span class="confidence">Fixture bank</span>
+        </div>
+        {render_meta(row)}
+        <h3>What to do today</h3>
+        <ul>
+          <li>Check live odds before using this as a 2UP research angle.</li>
+          <li>Confirm the bookmaker early-payout terms still apply.</li>
+          <li>Only treat this as a shortlist candidate, not a guaranteed pick.</li>
+        </ul>
+        <p class="subtitle">{notes}</p>
+      </article>
+    </section>
+    """
+
+
+def render_calendar_pick(row: dict[str, str]) -> str:
+    match_date = escape(row.get("date", ""))
+    notes = escape(row.get("source_notes", ""))
+
+    return f"""
+    <article class="pick-card">
+      <div class="card-header">
+        <h3>{match_date}: {pick_title(row)}</h3>
+        <span class="confidence">Fixture bank</span>
+      </div>
+      {render_meta(row)}
       <p class="subtitle">{notes}</p>
     </article>
     """
@@ -75,16 +111,18 @@ def render_section() -> str:
     if not picks:
         body = """
         <section class="empty-card">
-          <h2>Daily pick calendar</h2>
+          <h2>Today’s fixture-bank pick</h2>
           <p>No upcoming fixture-bank picks found. Add rows to data/fixture_bank_may_2026.csv.</p>
         </section>
         """
     else:
-        cards = "\n".join(render_pick(row) for row in picks)
+        featured = render_featured_pick(picks[0])
+        cards = "\n".join(render_calendar_pick(row) for row in picks)
         body = f"""
+        {featured}
         <section>
-          <h2>Daily pick calendar</h2>
-          <p class="subtitle">One provisional 2UP research fixture per available May matchday. Odds and bookmaker terms still need checking on the day.</p>
+          <h2>Upcoming pick calendar</h2>
+          <p class="subtitle">One provisional 2UP research fixture per available May matchday. If there is no fixture today, the featured card rolls forward to the next banked fixture.</p>
           {cards}
         </section>
         """
@@ -114,7 +152,7 @@ def main() -> None:
 
     html = html[:insertion_point] + section + "\n" + html[insertion_point:]
     INDEX_PATH.write_text(html, encoding="utf-8")
-    print("Injected daily pick calendar into docs/index.html")
+    print("Injected featured daily pick and calendar into docs/index.html")
 
 
 if __name__ == "__main__":
