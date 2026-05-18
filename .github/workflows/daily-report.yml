@@ -43,10 +43,13 @@ jobs:
           PYTHONPATH: ${{ github.workspace }}
         run: python scripts/generate_daily_report.py
 
+      - name: Add daily pick calendar to index page
+        run: python scripts/inject_daily_pick_calendar.py
+
       - name: Commit generated fixture and report files
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add fixtures_today.csv team_stats.csv reports/daily_report.md reports/archive docs/index.html docs/data/today.json
+          git add fixtures_today.csv team_stats.csv reports/daily_report.md reports/archive docs/index.html docs/data/today.json data/fixture_bank_may_2026.csv
           git diff --cached --quiet && echo "No report changes to commit" || git commit -m "Update live fixtures and daily 2up report"
           git push
