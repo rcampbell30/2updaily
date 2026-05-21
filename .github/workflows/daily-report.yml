@@ -17,6 +17,10 @@ permissions:
 jobs:
   generate-report:
     runs-on: ubuntu-latest
+    env:
+      # GitHub does not allow secrets directly in step-level if conditions.
+      # This env flag lets the workflow choose the fixture-bank fallback when no live API key exists.
+      API_FOOTBALL_KEY_PRESENT: ${{ secrets.API_FOOTBALL_KEY != '' }}
 
     steps:
       - name: Check out repository
@@ -39,7 +43,7 @@ jobs:
         run: python scripts/fetch_live_fixtures.py
 
       - name: Seed fixtures from bank fallback
-        if: ${{ vars.USE_FIXTURE_BANK_FALLBACK == 'true' }}
+        if: ${{ env.API_FOOTBALL_KEY_PRESENT != 'true' || vars.USE_FIXTURE_BANK_FALLBACK == 'true' }}
         run: python scripts/seed_fixtures_today_from_bank.py
 
       - name: Generate daily report and static site files
