@@ -1,23 +1,30 @@
 """Seed fixtures_today.csv from the May fixture bank.
 
-This keeps the homepage populated with a rolling shortlist even when no paid
-live-fixtures API key is configured. It selects the next three upcoming banked
-fixtures from data/fixture_bank_may_2026.csv and writes them in the format used
-by the report generator.
+This keeps the homepage populated with a rolling shortlist when the live
+fixtures API is unavailable. It selects the next three upcoming banked fixtures
+from data/fixture_bank_may_2026.csv and writes them in the format used by the
+report generator.
 
-The report generator currently displays the `kickoff_uk` field directly, so we
+Important behaviour:
+- Uses Europe/London for "today" so GitHub's UTC runner does not drift against UK dates.
+- Always rewrites fixtures_today.csv. If no upcoming bank rows exist, it writes
+  only the CSV header instead of leaving stale fixtures in place.
+
+The report generator currently displays the kickoff_uk field directly, so we
 include the day and date in that field to make the main dashboard readable.
 """
 
 from __future__ import annotations
 
 import csv
-from datetime import date, datetime
+from datetime import datetime
 from pathlib import Path
+from zoneinfo import ZoneInfo
 
 ROOT = Path(__file__).resolve().parents[1]
 FIXTURE_BANK_PATH = ROOT / "data" / "fixture_bank_may_2026.csv"
 FIXTURES_TODAY_PATH = ROOT / "fixtures_today.csv"
+LONDON_TZ = ZoneInfo("Europe/London")
 MAX_FIXTURES = 3
 
 OUTPUT_FIELDS = [
@@ -28,6 +35,10 @@ OUTPUT_FIELDS = [
     "favourite",
     "favourite_odds",
 ]
+
+
+def london_today_iso() -> str:
+    return datetime.now(LONDON_TZ).date().isoformat()
 
 
 def human_date(iso_date: str) -> str:
@@ -53,7 +64,7 @@ def load_upcoming_bank_rows() -> list[dict[str, str]]:
     if not FIXTURE_BANK_PATH.exists():
         return []
 
-    today = date.today().isoformat()
+    today = london_today_iso()
     rows: list[dict[str, str]] = []
 
     with FIXTURE_BANK_PATH.open(newline="", encoding="utf-8") as handle:
@@ -78,19 +89,21 @@ def to_report_row(row: dict[str, str]) -> dict[str, str]:
     }
 
 
-def main() -> None:
-    rows = [to_report_row(row) for row in load_upcoming_bank_rows()]
-
-    if not rows:
-        print("No upcoming fixture-bank rows found; fixtures_today.csv was not changed.")
-        return
-
+def write_fixtures(rows: list[dict[str, str]]) -> None:
     with FIXTURES_TODAY_PATH.open("w", newline="", encoding="utf-8") as handle:
         writer = csv.DictWriter(handle, fieldnames=OUTPUT_FIELDS)
         writer.writeheader()
         writer.writerows(rows)
 
-    print(f"Seeded fixtures_today.csv with {len(rows)} upcoming fixture-bank rows including day/date in kickoff_uk.")
+
+def main() -> None:
+    rows = [to_report_row(row) for row in load_upcoming_bank_rows()]
+    write_fixtures(rows)
+
+    if rows:
+        print(f"Seeded fixtures_today.csv with {len(rows)} upcoming fixture-bank rows including day/date in kickoff_uk.")
+    else:
+        print("No upcoming fixture-bank rows found; wrote an empty fixtures_today.csv header to prevent stale fixtures.")
 
 
 if __name__ == "__main__":
