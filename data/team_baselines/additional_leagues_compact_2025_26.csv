@@ -1,0 +1,95 @@
+team,league,season,matches_played,goals_for_avg,goals_against_avg,clean_sheet_rate,failed_to_score_rate,btts_rate,over_25_rate,over_35_rate,two_up_trigger_profile,comeback_vulnerability,ideal_2up_role,data_quality,last_updated
+Birmingham City,Championship,2025-26,46,1.24,1.22,0.22,0.24,0.57,0.46,0.17,Low,Medium,Avoid: not enough scoring threat,Medium,2026-05-22
+Blackburn,Championship,2025-26,46,0.91,1.22,0.26,0.35,0.48,0.39,0.13,Low,Medium,Avoid: not enough scoring threat,Medium,2026-05-22
+Bristol City,Championship,2025-26,46,1.28,1.28,0.3,0.33,0.46,0.46,0.26,Medium,Medium,Context-only,Medium,2026-05-22
+Charlton,Championship,2025-26,46,0.96,1.26,0.28,0.22,0.54,0.39,0.15,Low,Medium,Avoid: not enough scoring threat,Medium,2026-05-22
+Coventry City,Championship,2025-26,46,2.11,0.98,0.37,0.15,0.59,0.63,0.37,High,Medium,Back candidate,Medium,2026-05-22
+Derby County,Championship,2025-26,46,1.46,1.28,0.26,0.09,0.65,0.52,0.24,Medium,High,Back candidate,Medium,2026-05-22
+Hull City,Championship,2025-26,46,1.52,1.43,0.24,0.17,0.65,0.65,0.37,High,High,Back candidate,Medium,2026-05-22
+Ipswich Town,Championship,2025-26,46,1.74,1.02,0.37,0.13,0.57,0.52,0.26,Medium,Medium,Context-only,Medium,2026-05-22
+Leicester City,Championship,2025-26,46,1.26,1.48,0.13,0.2,0.72,0.54,0.28,Medium,High,Back candidate,Medium,2026-05-22
+Middlesbrough,Championship,2025-26,46,1.57,1.02,0.28,0.24,0.57,0.54,0.3,Medium,Medium,Context-only,Medium,2026-05-22
+Millwall,Championship,2025-26,46,1.39,1.07,0.39,0.17,0.5,0.48,0.22,Medium,Medium,Context-only,Medium,2026-05-22
+Norwich City,Championship,2025-26,46,1.37,1.22,0.2,0.2,0.61,0.48,0.15,Medium,High,Back candidate,Medium,2026-05-22
+Oxford Utd,Championship,2025-26,46,0.98,1.28,0.17,0.41,0.52,0.46,0.2,Low,Medium,Avoid: not enough scoring threat,Medium,2026-05-22
+Portsmouth,Championship,2025-26,46,1.07,1.39,0.22,0.28,0.54,0.43,0.24,Low,Medium,Avoid: not enough scoring threat,Medium,2026-05-22
+Preston,Championship,2025-26,46,1.2,1.35,0.2,0.26,0.59,0.48,0.24,Low,Medium,Avoid: not enough scoring threat,Medium,2026-05-22
+QP Rangers,Championship,2025-26,46,1.33,1.59,0.22,0.28,0.63,0.63,0.37,Medium,High,Back candidate,Medium,2026-05-22
+Sheffield Utd,Championship,2025-26,46,1.43,1.43,0.22,0.24,0.57,0.59,0.33,Medium,Medium,Context-only,Medium,2026-05-22
+Sheffield Wed,Championship,2025-26,46,0.63,1.93,0.09,0.5,0.48,0.52,0.24,Low,High,Lay-side comeback candidate,Medium,2026-05-22
+Southampton,Championship,2025-26,46,1.78,1.22,0.24,0.11,0.72,0.63,0.35,High,High,Back candidate,Medium,2026-05-22
+Stoke City,Championship,2025-26,46,1.11,1.22,0.28,0.37,0.43,0.43,0.2,Low,Medium,Avoid: not enough scoring threat,Medium,2026-05-22
+Swansea City,Championship,2025-26,46,1.24,1.28,0.26,0.22,0.54,0.5,0.2,Low,Medium,Avoid: not enough scoring threat,Medium,2026-05-22
+Watford,Championship,2025-26,46,1.15,1.41,0.15,0.3,0.59,0.48,0.24,Low,Medium,Avoid: not enough scoring threat,Medium,2026-05-22
+West Brom,Championship,2025-26,46,1.04,1.26,0.3,0.33,0.5,0.46,0.17,Low,Medium,Avoid: not enough scoring threat,Medium,2026-05-22
+Wrexham,Championship,2025-26,46,1.5,1.41,0.26,0.13,0.65,0.5,0.33,Medium,High,Back candidate,Medium,2026-05-22
+Alaves,LaLiga,2025-26,37,1.16,1.46,0.14,0.27,0.62,0.49,0.24,Low,High,Lay-side comeback candidate,Medium,2026-05-22
+Athletic Bilbao,LaLiga,2025-26,37,1.11,1.46,0.16,0.35,0.51,0.46,0.19,Low,High,Lay-side comeback candidate,Medium,2026-05-22
+Atletico Madrid,LaLiga,2025-26,37,1.65,1.05,0.38,0.14,0.51,0.49,0.24,Medium,Medium,Context-only,Medium,2026-05-22
+Celta Vigo,LaLiga,2025-26,37,1.41,1.3,0.24,0.16,0.65,0.46,0.24,Medium,High,Back candidate,Medium,2026-05-22
+Elche,LaLiga,2025-26,37,1.3,1.51,0.22,0.14,0.7,0.59,0.41,Medium,High,Back candidate,Medium,2026-05-22
+Espanyol,LaLiga,2025-26,37,1.14,1.46,0.27,0.24,0.57,0.51,0.24,Low,High,Lay-side comeback candidate,Medium,2026-05-22
+FC Barcelona,LaLiga,2025-26,37,2.54,0.89,0.41,0.03,0.57,0.73,0.41,High,Medium,Back candidate,Medium,2026-05-22
+Getafe,LaLiga,2025-26,37,0.84,1.03,0.3,0.46,0.3,0.27,0.05,Low,Low,Avoid: not enough scoring threat,Medium,2026-05-22
+Girona,LaLiga,2025-26,37,1.03,1.46,0.16,0.27,0.59,0.46,0.16,Low,High,Lay-side comeback candidate,Medium,2026-05-22
+Levante,LaLiga,2025-26,37,1.24,1.59,0.24,0.32,0.49,0.43,0.3,Low,High,Lay-side comeback candidate,Medium,2026-05-22
+Mallorca,LaLiga,2025-26,37,1.19,1.54,0.14,0.24,0.65,0.62,0.22,Medium,High,Back candidate,Medium,2026-05-22
+Osasuna,LaLiga,2025-26,37,1.19,1.32,0.19,0.3,0.57,0.51,0.27,Low,Medium,Avoid: not enough scoring threat,Medium,2026-05-22
+Rayo Vallecano,LaLiga,2025-26,37,1.05,1.16,0.32,0.32,0.43,0.35,0.16,Low,Medium,Avoid: not enough scoring threat,Medium,2026-05-22
+Real Betis,LaLiga,2025-26,37,1.54,1.27,0.27,0.11,0.68,0.51,0.27,Medium,High,Back candidate,Medium,2026-05-22
+Real Madrid,LaLiga,2025-26,37,1.97,0.89,0.38,0.11,0.54,0.54,0.24,High,Medium,Back candidate,Medium,2026-05-22
+Real Oviedo,LaLiga,2025-26,37,0.7,1.54,0.27,0.54,0.32,0.38,0.16,Low,High,Lay-side comeback candidate,Medium,2026-05-22
+Real Sociedad,LaLiga,2025-26,37,1.57,1.62,0.08,0.14,0.78,0.59,0.43,High,High,Back candidate,Medium,2026-05-22
+Sevilla FC,LaLiga,2025-26,37,1.24,1.59,0.16,0.24,0.59,0.57,0.27,Medium,High,Back candidate,Medium,2026-05-22
+Valencia,LaLiga,2025-26,37,1.16,1.46,0.24,0.24,0.54,0.41,0.22,Low,High,Lay-side comeback candidate,Medium,2026-05-22
+Villarreal,LaLiga,2025-26,37,1.81,1.22,0.22,0.16,0.62,0.57,0.35,High,High,Back candidate,Medium,2026-05-22
+AC Milan,Serie A,2025-26,37,1.41,0.89,0.41,0.19,0.46,0.43,0.19,Medium,Low,Context-only,Medium,2026-05-22
+AS Roma,Serie A,2025-26,37,1.54,0.84,0.46,0.19,0.35,0.38,0.19,Medium,Low,Context-only,Medium,2026-05-22
+Atalanta,Serie A,2025-26,37,1.34,0.95,0.35,0.22,0.51,0.38,0.19,Medium,Medium,Context-only,Medium,2026-05-22
+Bologna,Serie A,2025-26,37,1.24,1.16,0.32,0.3,0.43,0.43,0.24,Low,Medium,Avoid: not enough scoring threat,Medium,2026-05-22
+Cagliari,Serie A,2025-26,37,1.03,1.41,0.22,0.38,0.49,0.49,0.19,Low,Medium,Avoid: not enough scoring threat,Medium,2026-05-22
+Como,Serie A,2025-26,37,1.65,0.76,0.51,0.24,0.41,0.43,0.22,Medium,Low,Context-only,Medium,2026-05-22
+Cremonese,Serie A,2025-26,37,0.84,1.43,0.3,0.46,0.41,0.43,0.22,Low,Medium,Avoid: not enough scoring threat,Medium,2026-05-22
+Fiorentina,Serie A,2025-26,37,1.08,1.32,0.27,0.3,0.57,0.51,0.24,Low,Medium,Avoid: not enough scoring threat,Medium,2026-05-22
+Genoa,Serie A,2025-26,37,1.11,1.35,0.24,0.38,0.54,0.54,0.16,Low,Medium,Avoid: not enough scoring threat,Medium,2026-05-22
+Hellas Verona,Serie A,2025-26,37,0.68,1.59,0.16,0.51,0.49,0.51,0.22,Low,High,Lay-side comeback candidate,Medium,2026-05-22
+Inter Milan,Serie A,2025-26,37,2.32,0.86,0.49,0.05,0.46,0.54,0.35,High,Low,Avoid: too safe,Medium,2026-05-22
+Juventus,Serie A,2025-26,37,1.59,0.86,0.43,0.22,0.43,0.38,0.22,Medium,Low,Context-only,Medium,2026-05-22
+Lazio,Serie A,2025-26,37,1.05,1.05,0.41,0.46,0.27,0.3,0.16,Low,Low,Avoid: not enough scoring threat,Medium,2026-05-22
+Lecce,Serie A,2025-26,37,0.73,1.35,0.24,0.51,0.38,0.38,0.14,Low,Medium,Avoid: not enough scoring threat,Medium,2026-05-22
+Napoli,Serie A,2025-26,37,1.54,0.97,0.38,0.22,0.49,0.54,0.27,Medium,Low,Context-only,Medium,2026-05-22
+Parma,Serie A,2025-26,37,0.73,1.24,0.32,0.43,0.41,0.3,0.16,Low,Medium,Avoid: not enough scoring threat,Medium,2026-05-22
+Pisa,Serie A,2025-26,37,0.68,1.86,0.14,0.57,0.41,0.51,0.32,Low,High,Lay-side comeback candidate,Medium,2026-05-22
+Sassuolo,Serie A,2025-26,37,1.24,1.32,0.22,0.3,0.54,0.57,0.22,Medium,Medium,Context-only,Medium,2026-05-22
+Torino,Serie A,2025-26,37,1.14,1.65,0.32,0.3,0.49,0.62,0.27,Medium,High,Back candidate,Medium,2026-05-22
+Udinese,Serie A,2025-26,37,1.22,1.27,0.3,0.27,0.46,0.46,0.22,Low,Medium,Avoid: not enough scoring threat,Medium,2026-05-22
+Aberdeen,Scottish Premiership,2025-26,38,1.03,1.41,0.26,0.42,0.37,0.34,0.24,Low,Medium,Avoid: not enough scoring threat,Medium,2026-05-22
+Celtic,Scottish Premiership,2025-26,38,1.92,1.08,0.34,0.13,0.58,0.68,0.42,High,Medium,Back candidate,Medium,2026-05-22
+Dundee FC,Scottish Premiership,2025-26,38,1.05,1.59,0.18,0.39,0.47,0.58,0.34,Medium,High,Back candidate,Medium,2026-05-22
+Dundee Utd,Scottish Premiership,2025-26,38,1.3,1.59,0.18,0.34,0.55,0.5,0.34,Medium,High,Back candidate,Medium,2026-05-22
+Falkirk,Scottish Premiership,2025-26,38,1.32,1.63,0.24,0.29,0.53,0.58,0.34,Medium,High,Back candidate,Medium,2026-05-22
+Hearts,Scottish Premiership,2025-26,38,1.76,0.89,0.45,0.11,0.47,0.53,0.29,High,Low,Avoid: too safe,Medium,2026-05-22
+Hibernian,Scottish Premiership,2025-26,38,1.53,1.16,0.29,0.29,0.53,0.55,0.29,High,Medium,Back candidate,Medium,2026-05-22
+Kilmarnock,Scottish Premiership,2025-26,38,1.24,1.81,0.24,0.26,0.55,0.66,0.42,Medium,High,Back candidate,Medium,2026-05-22
+Livingston,Scottish Premiership,2025-26,38,1.05,1.92,0.11,0.32,0.66,0.63,0.39,Medium,High,Back candidate,Medium,2026-05-22
+Motherwell,Scottish Premiership,2025-26,38,1.55,0.95,0.47,0.18,0.47,0.39,0.29,Medium,Low,Context-only,Medium,2026-05-22
+Rangers,Scottish Premiership,2025-26,38,2.0,1.13,0.32,0.11,0.66,0.61,0.37,High,High,Back candidate,Medium,2026-05-22
+St. Mirren,Scottish Premiership,2025-26,38,0.78,1.46,0.24,0.47,0.37,0.32,0.16,Low,High,Lay-side comeback candidate,Medium,2026-05-22
+Ajax Amsterdam,Eredivisie,2025-26,34,1.82,1.21,0.29,0.09,0.68,0.59,0.41,High,High,Back candidate,Medium,2026-05-22
+AZ Alkmaar,Eredivisie,2025-26,34,1.71,1.5,0.26,0.12,0.65,0.65,0.44,High,High,Back candidate,Medium,2026-05-22
+Excelsior,Eredivisie,2025-26,34,1.26,1.65,0.18,0.21,0.65,0.62,0.29,Medium,High,Back candidate,Medium,2026-05-22
+FC Groningen,Eredivisie,2025-26,34,1.44,1.32,0.29,0.21,0.56,0.56,0.24,Medium,Medium,Context-only,Medium,2026-05-22
+FC Twente,Eredivisie,2025-26,34,1.74,1.18,0.24,0.18,0.65,0.5,0.32,Medium,High,Back candidate,Medium,2026-05-22
+FC Utrecht,Eredivisie,2025-26,34,1.62,1.24,0.26,0.18,0.59,0.5,0.32,Medium,Medium,Context-only,Medium,2026-05-22
+FC Volendam,Eredivisie,2025-26,34,1.03,1.62,0.09,0.35,0.59,0.59,0.18,Medium,High,Back candidate,Medium,2026-05-22
+Feyenoord,Eredivisie,2025-26,34,2.06,1.29,0.29,0.12,0.62,0.59,0.38,High,High,Back candidate,Medium,2026-05-22
+Fortuna Sittard,Eredivisie,2025-26,34,1.44,1.85,0.09,0.15,0.76,0.68,0.38,Medium,High,Back candidate,Medium,2026-05-22
+Go Ahead Eagles,Eredivisie,2025-26,34,1.59,1.56,0.26,0.21,0.59,0.62,0.47,High,High,Back candidate,Medium,2026-05-22
+Heerenveen,Eredivisie,2025-26,33,1.73,1.55,0.15,0.21,0.67,0.73,0.39,High,High,Back candidate,Medium,2026-05-22
+Heracles Almelo,Eredivisie,2025-26,34,1.03,2.5,0.06,0.47,0.5,0.71,0.38,Medium,High,Back candidate,Medium,2026-05-22
+NAC Breda,Eredivisie,2025-26,33,1.0,1.76,0.15,0.42,0.48,0.52,0.27,Low,High,Lay-side comeback candidate,Medium,2026-05-22
+NEC Nijmegen,Eredivisie,2025-26,34,2.26,1.56,0.15,0.03,0.82,0.74,0.56,High,High,Back candidate,Medium,2026-05-22
+PEC Zwolle,Eredivisie,2025-26,34,1.29,2.09,0.18,0.18,0.68,0.62,0.44,Medium,High,Back candidate,Medium,2026-05-22
+PSV Eindhoven,Eredivisie,2025-26,34,2.97,1.32,0.21,0.03,0.76,0.85,0.59,High,High,Back candidate,Medium,2026-05-22
+Sparta,Eredivisie,2025-26,34,1.18,1.82,0.32,0.26,0.44,0.53,0.38,Low,High,Lay-side comeback candidate,Medium,2026-05-22
+Telstar,Eredivisie,2025-26,34,1.44,1.62,0.15,0.24,0.65,0.59,0.38,Medium,High,Back candidate,Medium,2026-05-22
