@@ -1,10 +1,41 @@
-Generated: 2026-05-22T23:24:09+01:00
+Generated: 2026-05-22T23:27:41+01:00
 Report date: 2026-05-22
 Fixtures loaded: 3
 
 # Daily 2up Shortlist
 
-## 1. Auckland FC vs Sydney FC
+## 1. Bayern Munich vs VfB Stuttgart
+League: DFB-Pokal Final
+Kick-off: Saturday 23 May 2026, 19:00 UK
+Favourite: Bayern Munich
+Approx odds: 1.33
+2up score: 20.0
+Confidence: Low
+Data quality: 67%
+
+Source notes / human layer:
+- Tier 1 cup final. User confirmed 2UP offered. User confirmed back/lay 1.33/1.38; approximate QL per £10 back stake about £0.36 before commission, about £0.42 at 2% commission, and about £0.50 at 5% commission. Baseline data gap: no Bundesliga baseline file has been added yet, so this relies on fixture-bank public research and user-confirmed pricing rather than the semi-static baseline layer. Bayern won the Bundesliga and Reuters reports they set a new league goals record; Stuttgart are defending cup champions, so 2UP trigger potential exists with some final volatility. Lower QL than Auckland, but also more risk of a two-goal lead becoming a routine win. Human layer: recheck exact bookie price, exchange lay price, liquidity, commission and any 2UP restrictions before staking.
+
+Reasons:
+- Bayern Munich have strong scoring output.
+- The match profile suggests goal volatility.
+
+Risks:
+- Short favourite price; avoid over-ranking unless the 2UP trigger and comeback angle are both strong.
+
+Data notes:
+- Missing favourite first-half scoring data; early-start angle was skipped.
+- Missing favourite conceded-after-leading data; comeback-volatility angle was skipped.
+- Data quality is incomplete, so confidence has been reduced.
+- Low favourite odds; only useful if back/lay closeness keeps qualifying loss low.
+
+Missing fields:
+- favourite.first_half_goals_avg
+- favourite.conceded_after_leading_rate
+- underdog.first_half_goals_avg
+- underdog.conceded_after_leading_rate
+
+## 2. Auckland FC vs Sydney FC
 League: A-League Men Grand Final
 Kick-off: Saturday 23 May 2026, 09:10 UK
 Favourite: Auckland FC
@@ -30,7 +61,7 @@ Missing fields:
 - favourite.conceded_after_leading_rate
 - underdog.conceded_after_leading_rate
 
-## 2. Celtic vs Dunfermline Athletic
+## 3. Celtic vs Dunfermline Athletic
 League: Scottish Cup Final
 Kick-off: Saturday 23 May 2026, 15:00 UK
 Favourite: Celtic
@@ -58,44 +89,6 @@ Data notes:
 Missing fields:
 - favourite.first_half_goals_avg
 - favourite.conceded_after_leading_rate
-- underdog.goals_for_avg
-- underdog.goals_against_avg
-- underdog.first_half_goals_avg
-- underdog.clean_sheet_rate
-- underdog.conceded_after_leading_rate
-- underdog.over_25_rate
-
-## 3. Bayern Munich vs VfB Stuttgart
-League: DFB-Pokal Final
-Kick-off: Saturday 23 May 2026, 19:00 UK
-Favourite: Bayern Munich
-Approx odds: 1.33
-2up score: -15.0
-Confidence: Low
-Data quality: 0%
-
-Source notes / human layer:
-- Tier 1 cup final. User confirmed 2UP offered. User confirmed back/lay 1.33/1.38; approximate QL per £10 back stake about £0.36 before commission, about £0.42 at 2% commission, and about £0.50 at 5% commission. Baseline data gap: no Bundesliga baseline file has been added yet, so this relies on fixture-bank public research and user-confirmed pricing rather than the semi-static baseline layer. Bayern won the Bundesliga and Reuters reports they set a new league goals record; Stuttgart are defending cup champions, so 2UP trigger potential exists with some final volatility. Lower QL than Auckland, but also more risk of a two-goal lead becoming a routine win. Human layer: recheck exact bookie price, exchange lay price, liquidity, commission and any 2UP restrictions before staking.
-
-Reasons:
-- No strong positive scoring factors were triggered.
-
-Risks:
-- Short favourite price; avoid over-ranking unless the 2UP trigger and comeback angle are both strong.
-
-Data notes:
-- Missing favourite first-half scoring data; early-start angle was skipped.
-- Missing favourite conceded-after-leading data; comeback-volatility angle was skipped.
-- Data quality is incomplete, so confidence has been reduced.
-- Low favourite odds; only useful if back/lay closeness keeps qualifying loss low.
-
-Missing fields:
-- favourite.goals_for_avg
-- favourite.goals_against_avg
-- favourite.first_half_goals_avg
-- favourite.clean_sheet_rate
-- favourite.conceded_after_leading_rate
-- favourite.over_25_rate
 - underdog.goals_for_avg
 - underdog.goals_against_avg
 - underdog.first_half_goals_avg
