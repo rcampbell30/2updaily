@@ -122,18 +122,44 @@ Usually avoid:
 - uncertain kick-offs/status;
 - matches where 2UP eligibility cannot be confirmed or reasonably checked.
 
+## Team baseline data layer
+
+The repo now has semi-static team baseline files. These are designed to be refreshed every 3 to 6 months and used as the stable football-data layer before doing any daily odds/account checks.
+
+Baseline files currently available:
+
+- `data/team_baselines/premier_league_2025_26.csv` - richer Premier League baseline.
+- `data/team_baselines/a_league_men_2025_26.csv` - richer A-League Men baseline.
+- `data/team_baselines/additional_leagues_compact_2025_26.csv` - compact baseline for Championship, LaLiga, Serie A, Scottish Premiership, and Eredivisie.
+
+Use these files before ranking daily candidates. They help identify:
+
+- teams that can realistically go two goals ahead;
+- teams that concede enough for the lay side to stay alive;
+- high BTTS / over-goals environments;
+- ultra-safe favourites that may be poor 2UP value despite tiny qualifying loss;
+- low-scoring teams that should usually be avoided as the back side.
+
+Data-quality rules:
+
+- Rich baseline files should be trusted more than compact baseline files.
+- Compact rows are still useful for first-pass filtering but should not be treated as perfect.
+- If a team or league is not in the baseline layer, do not invent stats. Research it or mark the data gap clearly.
+- Daily live odds, 2UP eligibility, exchange liquidity, commission, stake limits, and exact QL still need Rory's human-layer confirmation.
+
 ## Research rules
 
 1. Search current and next-upcoming fixtures from reliable sources.
 2. Convert kick-off times to UK time.
-3. Prioritise 2UP eligibility, back/lay closeness, exchange liquidity, QL, and volatility over normal win probability.
-4. Record bookmaker back odds as `favourite_odds` when verified.
-5. Record lay odds, QL estimates, exchange/source notes, uncertainty, and human-layer checks in `source_notes` until dedicated columns exist.
-6. Prefer volatile favourites: teams that can go two goals ahead but are not guaranteed to close the match calmly.
-7. Avoid ultra-safe dominant favourites unless the QL is excellent and the 2UP trigger chance is high enough to justify the trade.
-8. Do not invent fixtures, odds, stats, kick-off times, favourites, liquidity, qualifying loss, or offer eligibility.
-9. If odds/eligibility are supplied by Rory, treat them as user-confirmed but still tell him to recheck before staking.
-10. This is research only, never staking instruction or guaranteed profit.
+3. Check the relevant baseline team files before final ranking.
+4. Prioritise 2UP eligibility, back/lay closeness, exchange liquidity, QL, and volatility over normal win probability.
+5. Record bookmaker back odds as `favourite_odds` when verified.
+6. Record lay odds, QL estimates, exchange/source notes, uncertainty, and human-layer checks in `source_notes` until dedicated columns exist.
+7. Prefer volatile favourites: teams that can go two goals ahead but are not guaranteed to close the match calmly.
+8. Avoid ultra-safe dominant favourites unless the QL is excellent and the 2UP trigger chance is high enough to justify the trade.
+9. Do not invent fixtures, odds, stats, kick-off times, favourites, liquidity, qualifying loss, or offer eligibility.
+10. If odds/eligibility are supplied by Rory, treat them as user-confirmed but still tell him to recheck before staking.
+11. This is research only, never staking instruction or guaranteed profit.
 
 ## Repo update workflow
 
@@ -141,17 +167,19 @@ When Rory asks for a run:
 
 1. Read this file first.
 2. Inspect `data/fixture_bank_may_2026.csv` or the current fixture-bank file.
-3. Research/update the best candidates.
-4. Update the fixture bank with ranked rows.
-5. Ensure `fixtures_today.csv` reflects the ranked bank.
-6. Regenerate or update:
+3. Inspect the relevant files in `data/team_baselines/` for the teams/leagues in scope.
+4. Research/update the best candidates.
+5. Update the fixture bank with ranked rows.
+6. Ensure `fixtures_today.csv` reflects the ranked bank.
+7. Regenerate or update:
    - `reports/daily_report.md`
    - `reports/archive/YYYY-MM-DD.md`
    - `docs/index.html`
    - `docs/data/today.json`
-7. Commit to `main` with a clear message.
-8. Summarise:
+8. Commit to `main` with a clear message.
+9. Summarise:
    - picks added/changed;
+   - baseline data used;
    - back odds;
    - lay odds;
    - estimated QL;
@@ -172,6 +200,7 @@ Top pick: [fixture]
 Why: [short reason]
 Back/Lay: [prices]
 Approx QL: [£ per £10 stake]
+Baseline used: [file/row]
 Human layer: [exact checks Rory still needs]
 
 Other candidates:
