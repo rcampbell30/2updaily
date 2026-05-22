@@ -14,8 +14,8 @@ It writes:
 - docs/index.html
 - docs/data/today.json
 
-In the full GitHub Actions flow, scripts/fetch_live_fixtures.py runs first and
-refreshes fixtures_today.csv before this script generates the report.
+In the full GitHub Actions flow, scripts/seed_fixtures_today_from_bank.py runs
+first and refreshes fixtures_today.csv from the ChatGPT-maintained fixture bank.
 """
 
 from __future__ import annotations
@@ -54,6 +54,7 @@ def candidate_to_dict(candidate: TwoUpCandidate, rank: int) -> dict:
         "favourite": fixture.favourite,
         "favourite_odds": fixture.favourite_odds,
         "favourite_odds_display": odds_display(fixture.favourite_odds),
+        "source_notes": fixture.source_notes,
         "score": candidate.score,
         "confidence": candidate.confidence,
         "data_quality": candidate.data_quality,
@@ -68,6 +69,17 @@ def list_items(items: list[str], fallback: str) -> str:
     if not items:
         return f"<li>{escape(fallback)}</li>"
     return "\n".join(f"<li>{escape(item)}</li>" for item in items)
+
+
+def render_source_notes(candidate: dict) -> str:
+    source_notes = candidate.get("source_notes", "")
+    if not source_notes:
+        return ""
+
+    return f"""
+                  <h3>Source notes / human layer</h3>
+                  <ul><li>{escape(source_notes)}</li></ul>
+    """
 
 
 def render_html(payload: dict) -> str:
@@ -102,6 +114,8 @@ def render_html(payload: dict) -> str:
                     <div><dt>Score</dt><dd>{candidate['score']}</dd></div>
                     <div><dt>Data quality</dt><dd>{data_quality_percent}%</dd></div>
                   </dl>
+
+                  {render_source_notes(candidate)}
 
                   <h3>Why it fits</h3>
                   <ul>{list_items(candidate['reasons'], 'No strong positive scoring factors were triggered.')}</ul>
