@@ -1,6 +1,6 @@
 {
-  "generated_at_utc": "2026-05-22T23:01:50+00:00",
-  "generated_at_london": "2026-05-23T00:01:50+01:00",
+  "generated_at_utc": "2026-05-22T23:04:06+00:00",
+  "generated_at_london": "2026-05-23T00:04:06+01:00",
   "report_date_london": "2026-05-23",
   "total_fixtures_loaded": 3,
   "total_fixtures_after_filters": 3,
@@ -103,5 +103,82 @@
         "underdog.over_25_rate"
       ]
     }
-  ]
+  ],
+  "tracker": {
+    "summary": {
+      "total_rows": 3,
+      "planned_or_pending": 3,
+      "completed": 0,
+      "trigger_count": 0,
+      "trigger_rate": null,
+      "estimated_ql_total": 1.47,
+      "actual_ql_total": 0,
+      "net_pl_total": 0
+    },
+    "entries": [
+      {
+        "date": "2026-05-23",
+        "fixture": "Bayern Munich vs VfB Stuttgart",
+        "pick": "Bayern Munich",
+        "league": "DFB-Pokal Final",
+        "kickoff_uk": "Saturday 23 May 2026, 19:00 UK",
+        "back_odds": 1.33,
+        "lay_odds": 1.38,
+        "back_stake": 10.0,
+        "estimated_ql": 0.36,
+        "actual_ql": null,
+        "two_up_triggered": "Pending",
+        "trigger_minute": "",
+        "final_score": "Pending",
+        "final_result": "Pending",
+        "net_pl": null,
+        "status": "Planned",
+        "lesson": "Low-QL dry run; strong trigger profile but possible routine-favourite risk.",
+        "notes": "Human layer still required: confirm 2UP availability, live lay price, liquidity, commission and stake limits before any stake.",
+        "last_updated": "2026-05-22"
+      },
+      {
+        "date": "2026-05-23",
+        "fixture": "Auckland FC vs Sydney FC",
+        "pick": "Auckland FC",
+        "league": "A-League Men Grand Final",
+        "kickoff_uk": "Saturday 23 May 2026, 09:10 UK",
+        "back_odds": 2.1,
+        "lay_odds": 2.3,
+        "back_stake": 10.0,
+        "estimated_ql": 0.87,
+        "actual_ql": null,
+        "two_up_triggered": "Pending",
+        "trigger_minute": "",
+        "final_score": "Pending",
+        "final_result": "Pending",
+        "net_pl": null,
+        "status": "Planned",
+        "lesson": "Best strategy-shape test; bigger QL but stronger volatility/final context.",
+        "notes": "Human layer still required: confirm 2UP availability, live lay price, liquidity, commission and stake limits before any stake.",
+        "last_updated": "2026-05-22"
+      },
+      {
+        "date": "2026-05-23",
+        "fixture": "Celtic vs Dunfermline Athletic",
+        "pick": "Celtic",
+        "league": "Scottish Cup Final",
+        "kickoff_uk": "Saturday 23 May 2026, 15:00 UK",
+        "back_odds": 1.2,
+        "lay_odds": 1.23,
+        "back_stake": 10.0,
+        "estimated_ql": 0.24,
+        "actual_ql": null,
+        "two_up_triggered": "Pending",
+        "trigger_minute": "",
+        "final_score": "Pending",
+        "final_result": "Pending",
+        "net_pl": null,
+        "status": "Watchlist",
+        "lesson": "Tiny QL but ultra-short favourite; only useful if liquidity and terms are excellent.",
+        "notes": "Human layer still required: confirm 2UP availability, live lay price, liquidity, commission and stake limits before any stake.",
+        "last_updated": "2026-05-22"
+      }
+    ]
+  }
 }
