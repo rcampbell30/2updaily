@@ -1,4 +1,4 @@
-home_team,away_team,league,kickoff_uk,favourite,favourite_odds
-Machida Zelvia,Urawa Red Diamonds,J1 100 Year Vision League,"Friday 22 May 2026, 11:30 UK",Machida Zelvia,
-Avispa Fukuoka,Vissel Kobe,J1 100 Year Vision League,"Saturday 23 May 2026, 06:00 UK",Vissel Kobe,
-Sanfrecce Hiroshima,Nagoya Grampus,J1 100 Year Vision League,"Saturday 23 May 2026, 06:00 UK",Nagoya Grampus,
+home_team,away_team,league,kickoff_uk,favourite,favourite_odds,source_notes
+Avispa Fukuoka,Vissel Kobe,J1 100 Year Vision League,"Saturday 23 May 2026, 06:00 UK",Vissel Kobe,,J1 matchweek 18; JST converted to UK time
+Sanfrecce Hiroshima,Nagoya Grampus,J1 100 Year Vision League,"Saturday 23 May 2026, 06:00 UK",Nagoya Grampus,,J1 matchweek 18; JST converted to UK time
+Auckland FC,Sydney FC,A-League Men Grand Final,"Saturday 23 May 2026, 09:10 UK",Auckland FC,,A-League Men Grand Final; NZST converted to UK time
