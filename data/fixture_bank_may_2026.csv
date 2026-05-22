@@ -1,23 +1,24 @@
-date,home_team,away_team,league,kickoff_uk,provisional_favourite,favourite_odds,source_notes
-2026-05-22,Machida Zelvia,Urawa Red Diamonds,J1 100 Year Vision League,11:30,Machida Zelvia,,J1 matchweek 18; JST converted to UK time
-2026-05-23,Avispa Fukuoka,Vissel Kobe,J1 100 Year Vision League,06:00,Vissel Kobe,,J1 matchweek 18; JST converted to UK time
-2026-05-23,Sanfrecce Hiroshima,Nagoya Grampus,J1 100 Year Vision League,06:00,Nagoya Grampus,,J1 matchweek 18; JST converted to UK time
-2026-05-23,Kashima Antlers,FC Tokyo,J1 100 Year Vision League,09:30,Kashima Antlers,,J1 matchweek 18; JST converted to UK time
-2026-05-23,Kashiwa Reysol,JEF United Chiba,J1 100 Year Vision League,10:00,Kashiwa Reysol,,J1 matchweek 18; JST converted to UK time
-2026-05-23,Kyoto Sanga,V-Varen Nagasaki,J1 100 Year Vision League,11:00,V-Varen Nagasaki,,J1 matchweek 18; JST converted to UK time
-2026-05-23,Auckland FC,Sydney FC,A-League Men Grand Final,09:10,Auckland FC,,A-League Men Grand Final; NZST converted to UK time
-2026-05-24,Fagiano Okayama,Cerezo Osaka,J1 100 Year Vision League,04:55,Cerezo Osaka,,J1 matchweek 18; JST converted to UK time
-2026-05-24,Mito HollyHock,Kawasaki Frontale,J1 100 Year Vision League,06:00,Kawasaki Frontale,,J1 matchweek 18; JST converted to UK time
-2026-05-24,Tokyo Verdy,Yokohama F. Marinos,J1 100 Year Vision League,06:00,Tokyo Verdy,,J1 matchweek 18; JST converted to UK time
-2026-05-24,Shimizu S-Pulse,Gamba Osaka,J1 100 Year Vision League,09:00,Gamba Osaka,,J1 matchweek 18; JST converted to UK time
-2026-05-24,Brighton & Hove Albion,Manchester United,Premier League,16:00,Manchester United,,Premier League final day; all 16:00 UK time
-2026-05-24,Burnley,Wolverhampton Wanderers,Premier League,16:00,Burnley,,Premier League final day; all 16:00 UK time
-2026-05-24,Crystal Palace,Arsenal,Premier League,16:00,Arsenal,,Premier League final day; all 16:00 UK time
-2026-05-24,Fulham,Newcastle United,Premier League,16:00,Fulham,,Premier League final day; all 16:00 UK time
-2026-05-24,Liverpool,Brentford,Premier League,16:00,Liverpool,,Premier League final day; all 16:00 UK time
-2026-05-24,Manchester City,Aston Villa,Premier League,16:00,Manchester City,,Premier League final day; all 16:00 UK time
-2026-05-24,Nottingham Forest,Bournemouth,Premier League,16:00,Bournemouth,,Premier League final day; all 16:00 UK time
-2026-05-24,Sunderland,Chelsea,Premier League,16:00,Chelsea,,Premier League final day; all 16:00 UK time
-2026-05-24,Tottenham Hotspur,Everton,Premier League,16:00,Everton,,Premier League final day; all 16:00 UK time
-2026-05-24,West Ham United,Leeds United,Premier League,16:00,Leeds United,,Premier League final day; all 16:00 UK time
-2026-05-30,Paris Saint-Germain,Arsenal,Champions League,17:00,Paris Saint-Germain,,UEFA Champions League final; UK kick-off time
+shortlist_rank,date,home_team,away_team,league,kickoff_uk,provisional_favourite,favourite_odds,source_notes
+1,2026-05-23,Bayern Munich,VfB Stuttgart,DFB-Pokal Final,19:00,Bayern Munich,1.33,"Tier 1 cup final. User confirmed 2UP offered. User confirmed back/lay 1.33/1.38; approximate QL per £10 back stake about £0.36 before commission. Bayern won the Bundesliga and Reuters reports they set a new league goals record; Stuttgart are defending cup champions, so 2UP trigger potential with some final volatility. Human layer: recheck exact bookie price, exchange lay price, liquidity, commission and any 2UP restrictions before staking."
+2,2026-05-23,Auckland FC,Sydney FC,A-League Men Grand Final,09:10,Auckland FC,,"Tier 3 but user confirmed A-League is covered for 2UP. Public reporting says Auckland reached their first A-League grand final and beat Adelaide 4-1 on aggregate; Sydney advanced after a penalty shootout. Grand final volatility angle. Human layer: confirm current back odds, lay odds, exchange liquidity and exact QL."
+3,2026-05-23,Celtic,Dunfermline Athletic,Scottish Cup Final,15:00,Celtic,1.20,"Tier 1 domestic cup final but likely very short. User confirmed back/lay 1.20/1.23; approximate QL per £10 back stake about £0.25 before commission. Scottish Cup final is Celtic vs Dunfermline on 23 May 2026 at Hampden; talkSPORT expects a dominant Celtic/over-goals profile. Good 2UP trigger chance but lower comeback volatility and lower value unless QL/liquidity are excellent. Human layer: recheck 2UP terms, liquidity, commission and stake limits."
+999,2026-05-23,Avispa Fukuoka,Vissel Kobe,J1 100 Year Vision League,06:00,Vissel Kobe,,"J1 matchweek 18; JST converted to UK time; lower priority because 2UP eligibility and back/lay odds are not confirmed."
+999,2026-05-23,Sanfrecce Hiroshima,Nagoya Grampus,J1 100 Year Vision League,06:00,Nagoya Grampus,,"J1 matchweek 18; JST converted to UK time; lower priority because 2UP eligibility and back/lay odds are not confirmed."
+999,2026-05-23,Kashima Antlers,FC Tokyo,J1 100 Year Vision League,09:30,Kashima Antlers,,"J1 matchweek 18; JST converted to UK time; lower priority because 2UP eligibility and back/lay odds are not confirmed."
+999,2026-05-23,Kashiwa Reysol,JEF United Chiba,J1 100 Year Vision League,10:00,Kashiwa Reysol,,"J1 matchweek 18; JST converted to UK time; lower priority because 2UP eligibility and back/lay odds are not confirmed."
+999,2026-05-23,Kyoto Sanga,V-Varen Nagasaki,J1 100 Year Vision League,11:00,V-Varen Nagasaki,,"J1 matchweek 18; JST converted to UK time; lower priority because 2UP eligibility and back/lay odds are not confirmed."
+999,2026-05-24,Fagiano Okayama,Cerezo Osaka,J1 100 Year Vision League,04:55,Cerezo Osaka,,"J1 matchweek 18; JST converted to UK time; lower priority because 2UP eligibility and back/lay odds are not confirmed."
+999,2026-05-24,Mito HollyHock,Kawasaki Frontale,J1 100 Year Vision League,06:00,Kawasaki Frontale,,"J1 matchweek 18; JST converted to UK time; lower priority because 2UP eligibility and back/lay odds are not confirmed."
+999,2026-05-24,Tokyo Verdy,Yokohama F. Marinos,J1 100 Year Vision League,06:00,Tokyo Verdy,,"J1 matchweek 18; JST converted to UK time; lower priority because 2UP eligibility and back/lay odds are not confirmed."
+999,2026-05-24,Shimizu S-Pulse,Gamba Osaka,J1 100 Year Vision League,09:00,Gamba Osaka,,"J1 matchweek 18; JST converted to UK time; lower priority because 2UP eligibility and back/lay odds are not confirmed."
+999,2026-05-24,Brighton & Hove Albion,Manchester United,Premier League,16:00,Manchester United,,"Premier League final day; all 16:00 UK time; needs odds and 2UP confirmation."
+999,2026-05-24,Burnley,Wolverhampton Wanderers,Premier League,16:00,Burnley,,"Premier League final day; all 16:00 UK time; needs odds and 2UP confirmation."
+999,2026-05-24,Crystal Palace,Arsenal,Premier League,16:00,Arsenal,,"Premier League final day; all 16:00 UK time; needs odds and 2UP confirmation."
+999,2026-05-24,Fulham,Newcastle United,Premier League,16:00,Fulham,,"Premier League final day; all 16:00 UK time; needs odds and 2UP confirmation."
+999,2026-05-24,Liverpool,Brentford,Premier League,16:00,Liverpool,,"Premier League final day; all 16:00 UK time; needs odds and 2UP confirmation."
+999,2026-05-24,Manchester City,Aston Villa,Premier League,16:00,Manchester City,,"Premier League final day; all 16:00 UK time; needs odds and 2UP confirmation."
+999,2026-05-24,Nottingham Forest,Bournemouth,Premier League,16:00,Bournemouth,,"Premier League final day; all 16:00 UK time; needs odds and 2UP confirmation."
+999,2026-05-24,Sunderland,Chelsea,Premier League,16:00,Chelsea,,"Premier League final day; all 16:00 UK time; needs odds and 2UP confirmation."
+999,2026-05-24,Tottenham Hotspur,Everton,Premier League,16:00,Everton,,"Premier League final day; all 16:00 UK time; needs odds and 2UP confirmation."
+999,2026-05-24,West Ham United,Leeds United,Premier League,16:00,Leeds United,,"Premier League final day; all 16:00 UK time; needs odds and 2UP confirmation."
+999,2026-05-30,Paris Saint-Germain,Arsenal,Champions League,17:00,Paris Saint-Germain,,"UEFA Champions League final; UK kick-off time; needs odds and 2UP confirmation."
