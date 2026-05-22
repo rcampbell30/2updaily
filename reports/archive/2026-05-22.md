@@ -1,20 +1,20 @@
-Generated: 2026-05-22T21:35:38+01:00
+Generated: 2026-05-22T21:38:14+01:00
 Report date: 2026-05-22
 Fixtures loaded: 3
 
 # Daily 2up Shortlist
 
-## 1. Bayern Munich vs VfB Stuttgart
-League: DFB-Pokal Final
-Kick-off: Saturday 23 May 2026, 19:00 UK
-Favourite: Bayern Munich
-Approx odds: 1.33
+## 1. Auckland FC vs Sydney FC
+League: A-League Men Grand Final
+Kick-off: Saturday 23 May 2026, 09:10 UK
+Favourite: Auckland FC
+Approx odds: 2.1
 2up score: 0.0
 Confidence: Low
 Data quality: 0%
 
 Source notes / human layer:
-- Tier 1 cup final. User confirmed 2UP offered. User confirmed back/lay 1.33/1.38; approximate QL per £10 back stake about £0.36 before commission. Bayern won the Bundesliga and Reuters reports they set a new league goals record; Stuttgart are defending cup champions, so 2UP trigger potential with some final volatility. Human layer: recheck exact bookie price, exchange lay price, liquidity, commission and any 2UP restrictions before staking.
+- User likes this best. Tier 3 by league, but user confirmed A-League is covered for 2UP and confirmed back/lay 2.10/2.30. Approximate QL per £10 back stake is about £0.87 before commission, about £1.05 at 2% commission, and about £1.33 at 5% commission. Bigger QL than Bayern/Celtic, but stronger 2UP trading profile: grand final volatility, realistic two-goal lead potential, and better comeback/draw potential than very short favourites. Human layer: recheck exchange liquidity, live price drift, commission, and stake limits before staking.
 
 Reasons:
 - No strong positive scoring factors were triggered.
@@ -26,7 +26,6 @@ Data notes:
 - Missing favourite first-half scoring data; early-start angle was skipped.
 - Missing favourite conceded-after-leading data; comeback-volatility angle was skipped.
 - Data quality is incomplete, so confidence has been reduced.
-- Low favourite odds; only useful if back/lay closeness keeps qualifying loss low.
 
 Missing fields:
 - favourite.goals_for_avg
@@ -42,17 +41,17 @@ Missing fields:
 - underdog.conceded_after_leading_rate
 - underdog.over_25_rate
 
-## 2. Auckland FC vs Sydney FC
-League: A-League Men Grand Final
-Kick-off: Saturday 23 May 2026, 09:10 UK
-Favourite: Auckland FC
-Approx odds: Unknown
+## 2. Bayern Munich vs VfB Stuttgart
+League: DFB-Pokal Final
+Kick-off: Saturday 23 May 2026, 19:00 UK
+Favourite: Bayern Munich
+Approx odds: 1.33
 2up score: 0.0
 Confidence: Low
 Data quality: 0%
 
 Source notes / human layer:
-- Tier 3 but user confirmed A-League is covered for 2UP. Public reporting says Auckland reached their first A-League grand final and beat Adelaide 4-1 on aggregate; Sydney advanced after a penalty shootout. Grand final volatility angle. Human layer: confirm current back odds, lay odds, exchange liquidity and exact QL.
+- Tier 1 cup final. User confirmed 2UP offered. User confirmed back/lay 1.33/1.38; approximate QL per £10 back stake about £0.36 before commission. Bayern won the Bundesliga and Reuters reports they set a new league goals record; Stuttgart are defending cup champions, so 2UP trigger potential with some final volatility. Lower QL than Auckland, but also more risk of a two-goal lead becoming a routine win. Human layer: recheck exact bookie price, exchange lay price, liquidity, commission and any 2UP restrictions before staking.
 
 Reasons:
 - No strong positive scoring factors were triggered.
@@ -64,7 +63,7 @@ Data notes:
 - Missing favourite first-half scoring data; early-start angle was skipped.
 - Missing favourite conceded-after-leading data; comeback-volatility angle was skipped.
 - Data quality is incomplete, so confidence has been reduced.
-- Missing favourite odds; odds-range filter was skipped for this fixture.
+- Low favourite odds; only useful if back/lay closeness keeps qualifying loss low.
 
 Missing fields:
 - favourite.goals_for_avg
