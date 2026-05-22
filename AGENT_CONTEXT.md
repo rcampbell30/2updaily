@@ -131,6 +131,7 @@ Baseline files currently available:
 - `data/team_baselines/premier_league_2025_26.csv` - richer Premier League baseline.
 - `data/team_baselines/a_league_men_2025_26.csv` - richer A-League Men baseline.
 - `data/team_baselines/additional_leagues_compact_2025_26.csv` - compact baseline for Championship, LaLiga, Serie A, Scottish Premiership, and Eredivisie.
+- `data/team_baselines/bundesliga_dfb_pokal_finalists_2025_26.csv` - compact Bayern/Stuttgart DFB-Pokal final baseline.
 
 Use these files before ranking daily candidates. They help identify:
 
