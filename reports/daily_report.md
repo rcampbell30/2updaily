@@ -1,45 +1,10 @@
-Generated: 2026-05-22T23:22:44+01:00
+Generated: 2026-05-22T23:24:09+01:00
 Report date: 2026-05-22
 Fixtures loaded: 3
 
 # Daily 2up Shortlist
 
-## 1. Celtic vs Dunfermline Athletic
-League: Scottish Cup Final
-Kick-off: Saturday 23 May 2026, 15:00 UK
-Favourite: Celtic
-Approx odds: 1.2
-2up score: 35.0
-Confidence: Low
-Data quality: 33%
-
-Source notes / human layer:
-- Tier 1 domestic cup final but likely very short. User confirmed back/lay 1.20/1.23; approximate QL per £10 back stake about £0.24 before commission, about £0.28 at 2% commission, and about £0.34 at 5% commission. Baseline used: data/team_baselines/additional_leagues_compact_2025_26.csv. Celtic baseline: High trigger profile, Back candidate, 1.92 goals for avg, 1.08 goals against avg, 0.58 BTTS, 0.68 over 2.5. Good 2UP trigger chance but lower comeback volatility and lower value unless QL/liquidity are excellent. Human layer: recheck 2UP terms, liquidity, commission and stake limits.
-
-Reasons:
-- Celtic have strong scoring output.
-- The match profile suggests goal volatility.
-
-Risks:
-- No major statistical risk flagged from the available data.
-
-Data notes:
-- Missing favourite first-half scoring data; early-start angle was skipped.
-- Missing favourite conceded-after-leading data; comeback-volatility angle was skipped.
-- Data quality is incomplete, so confidence has been reduced.
-- Low favourite odds; only useful if back/lay closeness keeps qualifying loss low.
-
-Missing fields:
-- favourite.first_half_goals_avg
-- favourite.conceded_after_leading_rate
-- underdog.goals_for_avg
-- underdog.goals_against_avg
-- underdog.first_half_goals_avg
-- underdog.clean_sheet_rate
-- underdog.conceded_after_leading_rate
-- underdog.over_25_rate
-
-## 2. Auckland FC vs Sydney FC
+## 1. Auckland FC vs Sydney FC
 League: A-League Men Grand Final
 Kick-off: Saturday 23 May 2026, 09:10 UK
 Favourite: Auckland FC
@@ -65,12 +30,47 @@ Missing fields:
 - favourite.conceded_after_leading_rate
 - underdog.conceded_after_leading_rate
 
+## 2. Celtic vs Dunfermline Athletic
+League: Scottish Cup Final
+Kick-off: Saturday 23 May 2026, 15:00 UK
+Favourite: Celtic
+Approx odds: 1.2
+2up score: 10.0
+Confidence: Low
+Data quality: 33%
+
+Source notes / human layer:
+- Tier 1 domestic cup final but likely very short. User confirmed back/lay 1.20/1.23; approximate QL per £10 back stake about £0.24 before commission, about £0.28 at 2% commission, and about £0.34 at 5% commission. Baseline used: data/team_baselines/additional_leagues_compact_2025_26.csv. Celtic baseline: High trigger profile, Back candidate, 1.92 goals for avg, 1.08 goals against avg, 0.58 BTTS, 0.68 over 2.5. Good 2UP trigger chance but lower comeback volatility and lower value unless QL/liquidity are excellent. Human layer: recheck 2UP terms, liquidity, commission and stake limits.
+
+Reasons:
+- Celtic have strong scoring output.
+- The match profile suggests goal volatility.
+
+Risks:
+- Ultra-short favourite price; useful only if qualifying loss is tiny and the match still has real comeback volatility.
+
+Data notes:
+- Missing favourite first-half scoring data; early-start angle was skipped.
+- Missing favourite conceded-after-leading data; comeback-volatility angle was skipped.
+- Data quality is incomplete, so confidence has been reduced.
+- Low favourite odds; only useful if back/lay closeness keeps qualifying loss low.
+
+Missing fields:
+- favourite.first_half_goals_avg
+- favourite.conceded_after_leading_rate
+- underdog.goals_for_avg
+- underdog.goals_against_avg
+- underdog.first_half_goals_avg
+- underdog.clean_sheet_rate
+- underdog.conceded_after_leading_rate
+- underdog.over_25_rate
+
 ## 3. Bayern Munich vs VfB Stuttgart
 League: DFB-Pokal Final
 Kick-off: Saturday 23 May 2026, 19:00 UK
 Favourite: Bayern Munich
 Approx odds: 1.33
-2up score: 0.0
+2up score: -15.0
 Confidence: Low
 Data quality: 0%
 
@@ -81,7 +81,7 @@ Reasons:
 - No strong positive scoring factors were triggered.
 
 Risks:
-- No major statistical risk flagged from the available data.
+- Short favourite price; avoid over-ranking unless the 2UP trigger and comeback angle are both strong.
 
 Data notes:
 - Missing favourite first-half scoring data; early-start angle was skipped.
