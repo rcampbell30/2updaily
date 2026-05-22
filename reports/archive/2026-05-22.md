@@ -1,4 +1,4 @@
-Generated: 2026-05-22T21:38:14+01:00
+Generated: 2026-05-22T21:39:52+01:00
 Report date: 2026-05-22
 Fixtures loaded: 3
 
@@ -14,7 +14,7 @@ Confidence: Low
 Data quality: 0%
 
 Source notes / human layer:
-- User likes this best. Tier 3 by league, but user confirmed A-League is covered for 2UP and confirmed back/lay 2.10/2.30. Approximate QL per £10 back stake is about £0.87 before commission, about £1.05 at 2% commission, and about £1.33 at 5% commission. Bigger QL than Bayern/Celtic, but stronger 2UP trading profile: grand final volatility, realistic two-goal lead potential, and better comeback/draw potential than very short favourites. Human layer: recheck exchange liquidity, live price drift, commission, and stake limits before staking.
+- User likes this best. Tier 3 by league, but user confirmed A-League is covered for 2UP and confirmed back/lay 2.10/2.30. Approximate QL per £10 back stake is about £0.87 before commission, about £0.97 at 2% commission, and about £1.13 at 5% commission. Bigger QL than Bayern/Celtic, but stronger 2UP trading profile: grand final volatility, realistic two-goal lead potential, and better comeback/draw potential than very short favourites. Human layer: recheck exchange liquidity, live price drift, commission, and stake limits before staking.
 
 Reasons:
 - No strong positive scoring factors were triggered.
@@ -51,7 +51,7 @@ Confidence: Low
 Data quality: 0%
 
 Source notes / human layer:
-- Tier 1 cup final. User confirmed 2UP offered. User confirmed back/lay 1.33/1.38; approximate QL per £10 back stake about £0.36 before commission. Bayern won the Bundesliga and Reuters reports they set a new league goals record; Stuttgart are defending cup champions, so 2UP trigger potential with some final volatility. Lower QL than Auckland, but also more risk of a two-goal lead becoming a routine win. Human layer: recheck exact bookie price, exchange lay price, liquidity, commission and any 2UP restrictions before staking.
+- Tier 1 cup final. User confirmed 2UP offered. User confirmed back/lay 1.33/1.38; approximate QL per £10 back stake about £0.36 before commission, about £0.42 at 2% commission, and about £0.50 at 5% commission. Bayern won the Bundesliga and Reuters reports they set a new league goals record; Stuttgart are defending cup champions, so 2UP trigger potential with some final volatility. Lower QL than Auckland, but also more risk of a two-goal lead becoming a routine win. Human layer: recheck exact bookie price, exchange lay price, liquidity, commission and any 2UP restrictions before staking.
 
 Reasons:
 - No strong positive scoring factors were triggered.
@@ -89,7 +89,7 @@ Confidence: Low
 Data quality: 0%
 
 Source notes / human layer:
-- Tier 1 domestic cup final but likely very short. User confirmed back/lay 1.20/1.23; approximate QL per £10 back stake about £0.25 before commission. Scottish Cup final is Celtic vs Dunfermline on 23 May 2026 at Hampden; talkSPORT expects a dominant Celtic/over-goals profile. Good 2UP trigger chance but lower comeback volatility and lower value unless QL/liquidity are excellent. Human layer: recheck 2UP terms, liquidity, commission and stake limits.
+- Tier 1 domestic cup final but likely very short. User confirmed back/lay 1.20/1.23; approximate QL per £10 back stake about £0.24 before commission, about £0.28 at 2% commission, and about £0.34 at 5% commission. Scottish Cup final is Celtic vs Dunfermline on 23 May 2026 at Hampden; talkSPORT expects a dominant Celtic/over-goals profile. Good 2UP trigger chance but lower comeback volatility and lower value unless QL/liquidity are excellent. Human layer: recheck 2UP terms, liquidity, commission and stake limits.
 
 Reasons:
 - No strong positive scoring factors were triggered.
