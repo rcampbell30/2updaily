@@ -1,14 +1,9 @@
-name: Generate daily 2up report
+name: Generate 2up report
 
 on:
   push:
     branches:
       - main
-  schedule:
-    # GitHub cron uses UTC. This runs at 07:47 UTC daily.
-    # In UK winter this is 07:47 London time; in UK summer this is 08:47 London time.
-    # Avoiding exactly 08:00 helps reduce scheduled workflow delays.
-    - cron: "47 7 * * *"
   workflow_dispatch:
 
 permissions:
@@ -30,7 +25,7 @@ jobs:
       - name: Seed fixtures from ChatGPT-maintained fixture bank
         run: python scripts/seed_fixtures_today_from_bank.py
 
-      - name: Generate daily report and static site files
+      - name: Generate report and static site files
         env:
           PYTHONPATH: ${{ github.workspace }}
         run: python scripts/generate_daily_report.py
