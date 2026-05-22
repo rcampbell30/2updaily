@@ -9,9 +9,9 @@ Blank values are allowed for harder-to-source fields such as:
 - conceded_after_leading_rate
 - favourite_odds
 
-If live fixtures contain teams not yet present in team_stats.csv, the runner
-creates empty TeamStats objects for them instead of crashing. That keeps the
-daily site generation alive while clearly reducing data quality in the report.
+If fixtures contain teams not yet present in team_stats.csv, the runner creates
+empty TeamStats objects for them instead of crashing. That keeps the daily site
+generation alive while clearly reducing data quality in the report.
 """
 
 import csv
@@ -96,6 +96,7 @@ def load_fixtures(path: Path, stats_by_team: Dict[str, TeamStats]) -> list[Fixtu
                 favourite_odds=parse_float(row.get("favourite_odds", "")),
                 home_stats=require_team_stats(stats_by_team, home_team),
                 away_stats=require_team_stats(stats_by_team, away_team),
+                source_notes=row.get("source_notes", "").strip(),
             )
             fixtures.append(fixture)
 
