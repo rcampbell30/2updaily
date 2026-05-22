@@ -213,7 +213,17 @@ class VolatilityAgent:
 
         if fixture.favourite_odds is None:
             data_notes.append("Missing favourite odds; odds-range filter was skipped for this fixture.")
+        elif fixture.favourite_odds < 1.30:
+            score -= 25
+            risks.append(
+                "Ultra-short favourite price; useful only if qualifying loss is tiny and the match still has real comeback volatility."
+            )
+            data_notes.append("Low favourite odds; only useful if back/lay closeness keeps qualifying loss low.")
         elif fixture.favourite_odds < 1.40:
+            score -= 15
+            risks.append(
+                "Short favourite price; avoid over-ranking unless the 2UP trigger and comeback angle are both strong."
+            )
             data_notes.append("Low favourite odds; only useful if back/lay closeness keeps qualifying loss low.")
 
         if favourite.goals_for_avg is not None:
