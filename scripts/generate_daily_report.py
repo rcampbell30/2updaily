@@ -6,6 +6,7 @@ This script is designed for GitHub Actions, but it also works locally:
 
 It reads:
 - team_stats.csv
+- data/team_baselines/*.csv
 - fixtures_today.csv
 
 It writes:
@@ -26,12 +27,11 @@ from html import escape
 from pathlib import Path
 from zoneinfo import ZoneInfo
 
-from run_twoup_from_split_csv import load_fixtures, load_team_stats
+from run_twoup_from_split_csv import load_fixtures, load_all_team_stats
 from twoup_agents import TwoUpCandidate, TwoUpResearchPipeline
 
 
 ROOT = Path(__file__).resolve().parents[1]
-TEAM_STATS_PATH = ROOT / "team_stats.csv"
 FIXTURES_PATH = ROOT / "fixtures_today.csv"
 REPORTS_DIR = ROOT / "reports"
 ARCHIVE_DIR = REPORTS_DIR / "archive"
@@ -262,7 +262,7 @@ def main() -> None:
     utc_now = datetime.now(ZoneInfo("UTC"))
     report_date = london_now.date().isoformat()
 
-    stats_by_team = load_team_stats(TEAM_STATS_PATH)
+    stats_by_team = load_all_team_stats()
     fixtures = load_fixtures(FIXTURES_PATH, stats_by_team)
 
     pipeline = TwoUpResearchPipeline()
