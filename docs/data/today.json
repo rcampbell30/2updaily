@@ -1,37 +1,37 @@
 {
-  "generated_at_utc": "2026-05-22T22:16:00+00:00",
-  "generated_at_london": "2026-05-22T23:16:00+01:00",
+  "generated_at_utc": "2026-05-22T22:22:44+00:00",
+  "generated_at_london": "2026-05-22T23:22:44+01:00",
   "report_date_london": "2026-05-22",
   "total_fixtures_loaded": 3,
   "total_fixtures_after_filters": 3,
   "candidates": [
     {
       "rank": 1,
-      "home_team": "Auckland FC",
-      "away_team": "Sydney FC",
-      "league": "A-League Men Grand Final",
-      "kickoff_uk": "Saturday 23 May 2026, 09:10 UK",
-      "favourite": "Auckland FC",
-      "favourite_odds": 2.1,
-      "favourite_odds_display": "2.1",
-      "source_notes": "User likes this best. Tier 3 by league, but user confirmed A-League is covered for 2UP and confirmed back/lay 2.10/2.30. Baseline used: data/team_baselines/a_league_men_2025_26.csv. Auckland baseline: High 2UP trigger profile, Back candidate, 1.62 goals for avg, 0.88 first-half goals for avg, 0.08 failed-to-score rate, 0.69 BTTS, 0.62 over 2.5. Sydney baseline is more controlled/defensive, so this remains a user-preferred volatility pick mainly because of grand-final context and workable 2.10/2.30 pricing rather than pure chaos stats. Approximate QL per \u00a310 back stake is about \u00a30.87 before commission, about \u00a30.97 at 2% commission, and about \u00a31.13 at 5% commission. Human layer: recheck 2UP availability, exchange liquidity, live price drift, commission, and stake limits before staking.",
-      "score": 0.0,
+      "home_team": "Celtic",
+      "away_team": "Dunfermline Athletic",
+      "league": "Scottish Cup Final",
+      "kickoff_uk": "Saturday 23 May 2026, 15:00 UK",
+      "favourite": "Celtic",
+      "favourite_odds": 1.2,
+      "favourite_odds_display": "1.2",
+      "source_notes": "Tier 1 domestic cup final but likely very short. User confirmed back/lay 1.20/1.23; approximate QL per \u00a310 back stake about \u00a30.24 before commission, about \u00a30.28 at 2% commission, and about \u00a30.34 at 5% commission. Baseline used: data/team_baselines/additional_leagues_compact_2025_26.csv. Celtic baseline: High trigger profile, Back candidate, 1.92 goals for avg, 1.08 goals against avg, 0.58 BTTS, 0.68 over 2.5. Good 2UP trigger chance but lower comeback volatility and lower value unless QL/liquidity are excellent. Human layer: recheck 2UP terms, liquidity, commission and stake limits.",
+      "score": 35.0,
       "confidence": "Low",
-      "data_quality": 0.0,
-      "reasons": [],
+      "data_quality": 0.33,
+      "reasons": [
+        "Celtic have strong scoring output.",
+        "The match profile suggests goal volatility."
+      ],
       "risks": [],
       "data_notes": [
         "Missing favourite first-half scoring data; early-start angle was skipped.",
         "Missing favourite conceded-after-leading data; comeback-volatility angle was skipped.",
-        "Data quality is incomplete, so confidence has been reduced."
+        "Data quality is incomplete, so confidence has been reduced.",
+        "Low favourite odds; only useful if back/lay closeness keeps qualifying loss low."
       ],
       "missing_fields": [
-        "favourite.goals_for_avg",
-        "favourite.goals_against_avg",
         "favourite.first_half_goals_avg",
-        "favourite.clean_sheet_rate",
         "favourite.conceded_after_leading_rate",
-        "favourite.over_25_rate",
         "underdog.goals_for_avg",
         "underdog.goals_against_avg",
         "underdog.first_half_goals_avg",
@@ -42,6 +42,34 @@
     },
     {
       "rank": 2,
+      "home_team": "Auckland FC",
+      "away_team": "Sydney FC",
+      "league": "A-League Men Grand Final",
+      "kickoff_uk": "Saturday 23 May 2026, 09:10 UK",
+      "favourite": "Auckland FC",
+      "favourite_odds": 2.1,
+      "favourite_odds_display": "2.1",
+      "source_notes": "User likes this best. Tier 3 by league, but user confirmed A-League is covered for 2UP and confirmed back/lay 2.10/2.30. Baseline used: data/team_baselines/a_league_men_2025_26.csv. Auckland baseline: High 2UP trigger profile, Back candidate, 1.62 goals for avg, 0.88 first-half goals for avg, 0.08 failed-to-score rate, 0.69 BTTS, 0.62 over 2.5. Sydney baseline is more controlled/defensive, so this remains a user-preferred volatility pick mainly because of grand-final context and workable 2.10/2.30 pricing rather than pure chaos stats. Approximate QL per \u00a310 back stake is about \u00a30.87 before commission, about \u00a30.97 at 2% commission, and about \u00a31.13 at 5% commission. Human layer: recheck 2UP availability, exchange liquidity, live price drift, commission, and stake limits before staking.",
+      "score": 15.0,
+      "confidence": "Low",
+      "data_quality": 0.83,
+      "reasons": [
+        "Auckland FC start games well.",
+        "The match profile suggests goal volatility."
+      ],
+      "risks": [
+        "Sydney FC are not clearly weak defensively."
+      ],
+      "data_notes": [
+        "Missing favourite conceded-after-leading data; comeback-volatility angle was skipped."
+      ],
+      "missing_fields": [
+        "favourite.conceded_after_leading_rate",
+        "underdog.conceded_after_leading_rate"
+      ]
+    },
+    {
+      "rank": 3,
       "home_team": "Bayern Munich",
       "away_team": "VfB Stuttgart",
       "league": "DFB-Pokal Final",
@@ -50,42 +78,6 @@
       "favourite_odds": 1.33,
       "favourite_odds_display": "1.33",
       "source_notes": "Tier 1 cup final. User confirmed 2UP offered. User confirmed back/lay 1.33/1.38; approximate QL per \u00a310 back stake about \u00a30.36 before commission, about \u00a30.42 at 2% commission, and about \u00a30.50 at 5% commission. Baseline data gap: no Bundesliga baseline file has been added yet, so this relies on fixture-bank public research and user-confirmed pricing rather than the semi-static baseline layer. Bayern won the Bundesliga and Reuters reports they set a new league goals record; Stuttgart are defending cup champions, so 2UP trigger potential exists with some final volatility. Lower QL than Auckland, but also more risk of a two-goal lead becoming a routine win. Human layer: recheck exact bookie price, exchange lay price, liquidity, commission and any 2UP restrictions before staking.",
-      "score": 0.0,
-      "confidence": "Low",
-      "data_quality": 0.0,
-      "reasons": [],
-      "risks": [],
-      "data_notes": [
-        "Missing favourite first-half scoring data; early-start angle was skipped.",
-        "Missing favourite conceded-after-leading data; comeback-volatility angle was skipped.",
-        "Data quality is incomplete, so confidence has been reduced.",
-        "Low favourite odds; only useful if back/lay closeness keeps qualifying loss low."
-      ],
-      "missing_fields": [
-        "favourite.goals_for_avg",
-        "favourite.goals_against_avg",
-        "favourite.first_half_goals_avg",
-        "favourite.clean_sheet_rate",
-        "favourite.conceded_after_leading_rate",
-        "favourite.over_25_rate",
-        "underdog.goals_for_avg",
-        "underdog.goals_against_avg",
-        "underdog.first_half_goals_avg",
-        "underdog.clean_sheet_rate",
-        "underdog.conceded_after_leading_rate",
-        "underdog.over_25_rate"
-      ]
-    },
-    {
-      "rank": 3,
-      "home_team": "Celtic",
-      "away_team": "Dunfermline Athletic",
-      "league": "Scottish Cup Final",
-      "kickoff_uk": "Saturday 23 May 2026, 15:00 UK",
-      "favourite": "Celtic",
-      "favourite_odds": 1.2,
-      "favourite_odds_display": "1.2",
-      "source_notes": "Tier 1 domestic cup final but likely very short. User confirmed back/lay 1.20/1.23; approximate QL per \u00a310 back stake about \u00a30.24 before commission, about \u00a30.28 at 2% commission, and about \u00a30.34 at 5% commission. Baseline used: data/team_baselines/additional_leagues_compact_2025_26.csv. Celtic baseline: High trigger profile, Back candidate, 1.92 goals for avg, 1.08 goals against avg, 0.58 BTTS, 0.68 over 2.5. Good 2UP trigger chance but lower comeback volatility and lower value unless QL/liquidity are excellent. Human layer: recheck 2UP terms, liquidity, commission and stake limits.",
       "score": 0.0,
       "confidence": "Low",
       "data_quality": 0.0,
