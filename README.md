@@ -49,6 +49,7 @@ Current baseline files:
 - `data/team_baselines/premier_league_2025_26.csv` - richer Premier League baseline.
 - `data/team_baselines/a_league_men_2025_26.csv` - richer A-League Men baseline.
 - `data/team_baselines/additional_leagues_compact_2025_26.csv` - compact Championship, LaLiga, Serie A, Scottish Premiership, and Eredivisie baseline.
+- `data/team_baselines/bundesliga_dfb_pokal_finalists_2025_26.csv` - compact Bayern/Stuttgart DFB-Pokal final baseline.
 
 These files are intended to be refreshed every 3 to 6 months. They give the stable football layer: scoring, conceding, BTTS/over-goals profile, clean sheets, failed-to-score rate, and 2UP role classification.
 
