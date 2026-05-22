@@ -2,7 +2,7 @@
 
 2upDaily is a small Python narrow-agent project for producing a 2UP early-payout matched-betting research shortlist.
 
-It uses a **ChatGPT-maintained fixture bank** as the source of truth. The intended workflow is now manual: Rory asks ChatGPT to read `AGENT_CONTEXT.md`, then ChatGPT uses that file plus the current repo state to research/update the shortlist when requested.
+It uses a **ChatGPT-maintained fixture bank** plus semi-static **team baseline CSVs** as the source of truth. The intended workflow is manual: Rory asks ChatGPT to read `AGENT_CONTEXT.md`, then ChatGPT uses that file plus the current repo state to research/update the shortlist when requested.
 
 This is a shortlist/research tool only. It does not place bets, guarantee profit, check bookmaker 2UP eligibility, or replace bankroll discipline.
 
@@ -14,7 +14,7 @@ Read this file first when running a future update:
 AGENT_CONTEXT.md
 ```
 
-That file contains the strategy, ranking rules, human-layer checks, qualifying-loss logic, and preferred final-answer format.
+That file contains the strategy, ranking rules, baseline-data rules, human-layer checks, qualifying-loss logic, and preferred final-answer format.
 
 The workflow is:
 
@@ -22,6 +22,8 @@ The workflow is:
 Read AGENT_CONTEXT.md
 ↓
 Inspect the current fixture bank
+↓
+Inspect relevant team baseline CSVs
 ↓
 Research current/next fixtures when asked
 ↓
@@ -33,6 +35,24 @@ Generate reports and static site files
 ↓
 Commit the update
 ```
+
+## Baseline team data
+
+Semi-static team baselines live here:
+
+```text
+data/team_baselines/
+```
+
+Current baseline files:
+
+- `data/team_baselines/premier_league_2025_26.csv` - richer Premier League baseline.
+- `data/team_baselines/a_league_men_2025_26.csv` - richer A-League Men baseline.
+- `data/team_baselines/additional_leagues_compact_2025_26.csv` - compact Championship, LaLiga, Serie A, Scottish Premiership, and Eredivisie baseline.
+
+These files are intended to be refreshed every 3 to 6 months. They give the stable football layer: scoring, conceding, BTTS/over-goals profile, clean sheets, failed-to-score rate, and 2UP role classification.
+
+Daily/manual checks still need the human layer: 2UP availability, current bookmaker back price, exchange lay price, exchange liquidity, commission, stake limits, restrictions, and exact qualifying loss.
 
 ## Quick local run
 
@@ -84,7 +104,8 @@ Commit the generated files back to the repo
 
 - `AGENT_CONTEXT.md` - source-of-truth prompt/context for future ChatGPT-assisted runs.
 - `data/fixture_bank_may_2026.csv` - current fixture bank and ranking source.
-- `team_stats.csv` - update this with team-level stats when reliable data is available.
+- `data/team_baselines/` - semi-static league/team baseline data refreshed every 3 to 6 months.
+- `team_stats.csv` - simple scorer-compatible stats template.
 - `fixtures_today.csv` - generated from the fixture bank, but can still be edited manually if needed.
 
 ## Main files
@@ -134,4 +155,4 @@ The module will skip missing values instead of crashing and will print data-qual
 
 ## Current limitation
 
-The fixture bank can record public fixture research and user-confirmed back/lay notes, but private account checks still need the human layer: 2UP eligibility, live bookie price, live exchange lay price, liquidity, restrictions, commission, stake limits, and exact qualifying loss.
+The fixture bank and baseline files can record public fixture research and user-confirmed back/lay notes, but private account checks still need the human layer: 2UP eligibility, live bookie price, live exchange lay price, liquidity, restrictions, commission, stake limits, and exact qualifying loss.
