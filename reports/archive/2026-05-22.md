@@ -1,4 +1,4 @@
-Generated: 2026-05-22T21:33:56+01:00
+Generated: 2026-05-22T21:34:19+01:00
 Report date: 2026-05-22
 Fixtures loaded: 3
 
@@ -12,6 +12,9 @@ Approx odds: 1.33
 2up score: 0.0
 Confidence: Low
 Data quality: 0%
+
+Source notes / human layer:
+- Tier 1 cup final. User confirmed 2UP offered. User confirmed back/lay 1.33/1.38; approximate QL per £10 back stake about £0.36 before commission. Bayern won the Bundesliga and Reuters reports they set a new league goals record; Stuttgart are defending cup champions, so 2UP trigger potential with some final volatility. Human layer: recheck exact bookie price, exchange lay price, liquidity, commission and any 2UP restrictions before staking.
 
 Reasons:
 - No strong positive scoring factors were triggered.
@@ -48,6 +51,9 @@ Approx odds: Unknown
 Confidence: Low
 Data quality: 0%
 
+Source notes / human layer:
+- Tier 3 but user confirmed A-League is covered for 2UP. Public reporting says Auckland reached their first A-League grand final and beat Adelaide 4-1 on aggregate; Sydney advanced after a penalty shootout. Grand final volatility angle. Human layer: confirm current back odds, lay odds, exchange liquidity and exact QL.
+
 Reasons:
 - No strong positive scoring factors were triggered.
 
@@ -82,6 +88,9 @@ Approx odds: 1.2
 2up score: 0.0
 Confidence: Low
 Data quality: 0%
+
+Source notes / human layer:
+- Tier 1 domestic cup final but likely very short. User confirmed back/lay 1.20/1.23; approximate QL per £10 back stake about £0.25 before commission. Scottish Cup final is Celtic vs Dunfermline on 23 May 2026 at Hampden; talkSPORT expects a dominant Celtic/over-goals profile. Good 2UP trigger chance but lower comeback volatility and lower value unless QL/liquidity are excellent. Human layer: recheck 2UP terms, liquidity, commission and stake limits.
 
 Reasons:
 - No strong positive scoring factors were triggered.
