@@ -1,4 +1,4 @@
-Generated: 2026-05-22T23:27:41+01:00
+Generated: 2026-05-22T23:28:49+01:00
 Report date: 2026-05-22
 Fixtures loaded: 3
 
@@ -14,7 +14,7 @@ Confidence: Low
 Data quality: 67%
 
 Source notes / human layer:
-- Tier 1 cup final. User confirmed 2UP offered. User confirmed back/lay 1.33/1.38; approximate QL per £10 back stake about £0.36 before commission, about £0.42 at 2% commission, and about £0.50 at 5% commission. Baseline data gap: no Bundesliga baseline file has been added yet, so this relies on fixture-bank public research and user-confirmed pricing rather than the semi-static baseline layer. Bayern won the Bundesliga and Reuters reports they set a new league goals record; Stuttgart are defending cup champions, so 2UP trigger potential exists with some final volatility. Lower QL than Auckland, but also more risk of a two-goal lead becoming a routine win. Human layer: recheck exact bookie price, exchange lay price, liquidity, commission and any 2UP restrictions before staking.
+- Tier 1 cup final. User confirmed 2UP offered. User confirmed back/lay 1.33/1.38; approximate QL per £10 back stake about £0.36 before commission, about £0.42 at 2% commission, and about £0.50 at 5% commission. Baseline used: data/team_baselines/bundesliga_dfb_pokal_finalists_2025_26.csv. Bayern cup-route baseline: High 2UP trigger profile, Back candidate, 2.80 goals for avg, 1.00 goals against avg, 0.60 BTTS, 0.60 over 2.5, 0.60 over 3.5. Stuttgart cup-route baseline: High trigger profile, Lay-side comeback candidate, 2.60 goals for avg, 1.00 goals against avg, 0.40 BTTS, 0.60 over 2.5. Bayern won the Bundesliga and Reuters reports they set a new league goals record; Stuttgart are defending cup champions, so 2UP trigger potential exists with some final volatility. Low QL, but still short-favourite/routine-win risk. Human layer: recheck exact bookie price, exchange lay price, liquidity, commission and any 2UP restrictions before staking.
 
 Reasons:
 - Bayern Munich have strong scoring output.
