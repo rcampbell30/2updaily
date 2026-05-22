@@ -1,12 +1,47 @@
 {
-  "generated_at_utc": "2026-05-22T20:31:18+00:00",
-  "generated_at_london": "2026-05-22T21:31:18+01:00",
+  "generated_at_utc": "2026-05-22T20:33:56+00:00",
+  "generated_at_london": "2026-05-22T21:33:56+01:00",
   "report_date_london": "2026-05-22",
   "total_fixtures_loaded": 3,
-  "total_fixtures_after_filters": 1,
+  "total_fixtures_after_filters": 3,
   "candidates": [
     {
       "rank": 1,
+      "home_team": "Bayern Munich",
+      "away_team": "VfB Stuttgart",
+      "league": "DFB-Pokal Final",
+      "kickoff_uk": "Saturday 23 May 2026, 19:00 UK",
+      "favourite": "Bayern Munich",
+      "favourite_odds": 1.33,
+      "favourite_odds_display": "1.33",
+      "score": 0.0,
+      "confidence": "Low",
+      "data_quality": 0.0,
+      "reasons": [],
+      "risks": [],
+      "data_notes": [
+        "Missing favourite first-half scoring data; early-start angle was skipped.",
+        "Missing favourite conceded-after-leading data; comeback-volatility angle was skipped.",
+        "Data quality is incomplete, so confidence has been reduced.",
+        "Low favourite odds; only useful if back/lay closeness keeps qualifying loss low."
+      ],
+      "missing_fields": [
+        "favourite.goals_for_avg",
+        "favourite.goals_against_avg",
+        "favourite.first_half_goals_avg",
+        "favourite.clean_sheet_rate",
+        "favourite.conceded_after_leading_rate",
+        "favourite.over_25_rate",
+        "underdog.goals_for_avg",
+        "underdog.goals_against_avg",
+        "underdog.first_half_goals_avg",
+        "underdog.clean_sheet_rate",
+        "underdog.conceded_after_leading_rate",
+        "underdog.over_25_rate"
+      ]
+    },
+    {
+      "rank": 2,
       "home_team": "Auckland FC",
       "away_team": "Sydney FC",
       "league": "A-League Men Grand Final",
@@ -24,6 +59,41 @@
         "Missing favourite conceded-after-leading data; comeback-volatility angle was skipped.",
         "Data quality is incomplete, so confidence has been reduced.",
         "Missing favourite odds; odds-range filter was skipped for this fixture."
+      ],
+      "missing_fields": [
+        "favourite.goals_for_avg",
+        "favourite.goals_against_avg",
+        "favourite.first_half_goals_avg",
+        "favourite.clean_sheet_rate",
+        "favourite.conceded_after_leading_rate",
+        "favourite.over_25_rate",
+        "underdog.goals_for_avg",
+        "underdog.goals_against_avg",
+        "underdog.first_half_goals_avg",
+        "underdog.clean_sheet_rate",
+        "underdog.conceded_after_leading_rate",
+        "underdog.over_25_rate"
+      ]
+    },
+    {
+      "rank": 3,
+      "home_team": "Celtic",
+      "away_team": "Dunfermline Athletic",
+      "league": "Scottish Cup Final",
+      "kickoff_uk": "Saturday 23 May 2026, 15:00 UK",
+      "favourite": "Celtic",
+      "favourite_odds": 1.2,
+      "favourite_odds_display": "1.2",
+      "score": 0.0,
+      "confidence": "Low",
+      "data_quality": 0.0,
+      "reasons": [],
+      "risks": [],
+      "data_notes": [
+        "Missing favourite first-half scoring data; early-start angle was skipped.",
+        "Missing favourite conceded-after-leading data; comeback-volatility angle was skipped.",
+        "Data quality is incomplete, so confidence has been reduced.",
+        "Low favourite odds; only useful if back/lay closeness keeps qualifying loss low."
       ],
       "missing_fields": [
         "favourite.goals_for_avg",
