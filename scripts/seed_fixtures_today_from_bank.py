@@ -1,17 +1,8 @@
-"""Seed fixtures_today.csv from the May fixture bank.
+"""Seed fixtures_today.csv from the fixture bank.
 
-This keeps the homepage populated with a rolling shortlist when the live
-fixtures API is unavailable. It selects the next three upcoming banked fixtures
-from data/fixture_bank_may_2026.csv and writes them in the format used by the
-report generator.
-
-Important behaviour:
-- Uses Europe/London for "today" so GitHub's UTC runner does not drift against UK dates.
-- Always rewrites fixtures_today.csv. If no upcoming bank rows exist, it writes
-  only the CSV header instead of leaving stale fixtures in place.
-
-The report generator currently displays the kickoff_uk field directly, so we
-include the day and date in that field to make the main dashboard readable.
+Selects the best upcoming rows from data/fixture_bank_may_2026.csv and writes
+fixtures_today.csv for the report generator. If shortlist_rank exists, lower
+rank numbers are preferred before plain chronological order.
 """
 
 from __future__ import annotations
@@ -34,11 +25,12 @@ OUTPUT_FIELDS = [
     "kickoff_uk",
     "favourite",
     "favourite_odds",
+    "source_notes",
 ]
 
 
-def london_today_iso() -> str:
-    return datetime.now(LONDON_TZ).date().isoformat()
+def now_london() -> datetime:
+    return datetime.now(LONDON_TZ)
 
 
 def human_date(iso_date: str) -> str:
@@ -47,6 +39,31 @@ def human_date(iso_date: str) -> str:
     except ValueError:
         return iso_date
     return parsed.strftime("%A %d %B %Y")
+
+
+def parse_match_datetime(row: dict[str, str]) -> datetime | None:
+    match_date = row.get("date", "").strip()
+    kickoff = row.get("kickoff_uk", "").strip()
+    if not match_date or not kickoff:
+        return None
+
+    try:
+        parsed = datetime.strptime(f"{match_date} {kickoff}", "%Y-%m-%d %H:%M")
+    except ValueError:
+        return None
+
+    return parsed.replace(tzinfo=LONDON_TZ)
+
+
+def rank_value(row: dict[str, str]) -> int:
+    raw_rank = row.get("shortlist_rank", "").strip()
+    if not raw_rank:
+        return 999
+
+    try:
+        return int(raw_rank)
+    except ValueError:
+        return 999
 
 
 def format_dashboard_kickoff(row: dict[str, str]) -> str:
@@ -64,17 +81,29 @@ def load_upcoming_bank_rows() -> list[dict[str, str]]:
     if not FIXTURE_BANK_PATH.exists():
         return []
 
-    today = london_today_iso()
+    now = now_london()
     rows: list[dict[str, str]] = []
 
     with FIXTURE_BANK_PATH.open(newline="", encoding="utf-8") as handle:
         reader = csv.DictReader(handle)
         for row in reader:
+            match_datetime = parse_match_datetime(row)
+            if match_datetime is not None:
+                if match_datetime >= now:
+                    rows.append(row)
+                continue
+
             match_date = row.get("date", "").strip()
-            if match_date and match_date >= today:
+            if match_date and match_date >= now.date().isoformat():
                 rows.append(row)
 
-    rows.sort(key=lambda row: (row.get("date", ""), row.get("kickoff_uk", "")))
+    rows.sort(
+        key=lambda row: (
+            rank_value(row),
+            row.get("date", ""),
+            row.get("kickoff_uk", ""),
+        )
+    )
     return rows[:MAX_FIXTURES]
 
 
@@ -86,6 +115,7 @@ def to_report_row(row: dict[str, str]) -> dict[str, str]:
         "kickoff_uk": format_dashboard_kickoff(row),
         "favourite": row.get("provisional_favourite", "").strip(),
         "favourite_odds": row.get("favourite_odds", "").strip(),
+        "source_notes": row.get("source_notes", "").strip(),
     }
 
 
@@ -101,9 +131,9 @@ def main() -> None:
     write_fixtures(rows)
 
     if rows:
-        print(f"Seeded fixtures_today.csv with {len(rows)} upcoming fixture-bank rows including day/date in kickoff_uk.")
+        print(f"Seeded fixtures_today.csv with {len(rows)} fixture-bank rows.")
     else:
-        print("No upcoming fixture-bank rows found; wrote an empty fixtures_today.csv header to prevent stale fixtures.")
+        print("No upcoming fixture-bank rows found; wrote empty fixtures_today.csv.")
 
 
 if __name__ == "__main__":
