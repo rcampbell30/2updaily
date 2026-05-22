@@ -2,22 +2,12 @@
 twoup_agents.py
 ================
 
-A small narrow-agent pipeline for creating 2up matched-betting research
-shortlists from football fixture and team-stat data.
+A small narrow-agent pipeline for creating 2up research shortlists from football
+fixture and team-stat data.
 
-This module does not place bets, scrape bookmakers, or guarantee profit.
-It takes structured data supplied by you, filters fixtures, scores them,
-and prints a ranked shortlist with reasons, risks, confidence, and data
-quality notes.
-
-Update notes for this version
------------------------------
-- TeamStats fields are optional.
-- Missing values are skipped rather than crashing the program.
-- Hard-to-source fields such as first_half_goals_avg and
-  conceded_after_leading_rate can be left blank in CSV files.
-- Favourite odds can now be blank/unknown for live fixture feeds.
-- Candidates include data quality and missing-field notes.
+This module does not place bets, scrape bookmakers, or guarantee profit. It
+takes structured data, filters fixtures, scores them, and prints a ranked
+shortlist with reasons, risks, confidence, source notes, and data-quality notes.
 """
 
 from dataclasses import dataclass, field
@@ -26,11 +16,7 @@ from typing import List, Optional, Tuple
 
 @dataclass
 class TeamStats:
-    """Team statistics used by the 2up scoring model.
-
-    All numeric fields are optional so that incomplete real-world data can
-    still be used safely. Missing values are skipped by the scoring agent.
-    """
+    """Team statistics used by the 2up scoring model."""
 
     name: str
     goals_for_avg: Optional[float] = None
@@ -53,6 +39,7 @@ class Fixture:
     favourite_odds: Optional[float]
     home_stats: TeamStats
     away_stats: TeamStats
+    source_notes: str = ""
 
 
 @dataclass
@@ -70,7 +57,7 @@ class TwoUpCandidate:
 
 
 class LeagueFilterAgent:
-    """Keeps major leagues plus Japan and Australia."""
+    """Keeps competitions likely to have usable 2up coverage/liquidity."""
 
     def __init__(self) -> None:
         self.allowed_keywords = [
@@ -79,10 +66,15 @@ class LeagueFilterAgent:
             "La Liga",
             "Serie A",
             "Bundesliga",
+            "DFB-Pokal",
             "Ligue 1",
             "Champions League",
             "Europa League",
             "Conference League",
+            "FA Cup",
+            "EFL Cup",
+            "Scottish Cup",
+            "Scottish Premiership",
             "Eredivisie",
             "Primeira Liga",
             "Japan",
@@ -102,16 +94,16 @@ class LeagueFilterAgent:
 
 
 class OddsFilterAgent:
-    """Keeps fixtures with favourite odds in a sensible 2up range.
+    """Keeps fixtures with favourite odds in a practical 2up range.
 
-    If odds are missing, the fixture is allowed through. That keeps the live
-    fixture feed useful even before odds automation exists, while the report
-    clearly marks the odds as unknown and lowers confidence.
+    The lower bound is deliberately 1.20 rather than 1.40 because low-odds picks
+    can still be useful when the bookmaker back price and exchange lay price are
+    very close, keeping the qualifying loss low.
     """
 
     def __init__(
         self,
-        min_odds: Optional[float] = 1.40,
+        min_odds: Optional[float] = 1.20,
         max_odds: Optional[float] = 2.40,
         allow_missing_odds: bool = True,
     ) -> None:
@@ -221,8 +213,9 @@ class VolatilityAgent:
 
         if fixture.favourite_odds is None:
             data_notes.append("Missing favourite odds; odds-range filter was skipped for this fixture.")
+        elif fixture.favourite_odds < 1.40:
+            data_notes.append("Low favourite odds; only useful if back/lay closeness keeps qualifying loss low.")
 
-        # Favourite attacking strength
         if favourite.goals_for_avg is not None:
             if favourite.goals_for_avg >= 1.8:
                 score += 20
@@ -231,13 +224,11 @@ class VolatilityAgent:
                 score -= 15
                 risks.append(f"{favourite.name} may not score enough for a strong 2up angle.")
 
-        # Favourite early scoring / fast start profile
         if favourite.first_half_goals_avg is not None:
             if favourite.first_half_goals_avg >= 0.8:
                 score += 15
                 reasons.append(f"{favourite.name} start games well.")
 
-        # Underdog defensive weakness
         if underdog.goals_against_avg is not None:
             if underdog.goals_against_avg >= 1.5:
                 score += 20
@@ -246,7 +237,6 @@ class VolatilityAgent:
                 score -= 15
                 risks.append(f"{underdog.name} are not clearly weak defensively.")
 
-        # Match goal environment
         over_25_values = [
             value for value in [favourite.over_25_rate, underdog.over_25_rate]
             if value is not None
@@ -255,13 +245,11 @@ class VolatilityAgent:
             score += 15
             reasons.append("The match profile suggests goal volatility.")
 
-        # Key 2up angle: favourite can lead but still concede
         if favourite.conceded_after_leading_rate is not None:
             if favourite.conceded_after_leading_rate >= 0.25:
                 score += 20
                 reasons.append(f"{favourite.name} have shown vulnerability after leading.")
 
-        # Detractor: ultra-solid favourite defence reduces comeback potential
         if favourite.clean_sheet_rate is not None and favourite.clean_sheet_rate >= 0.55:
             score -= 10
             risks.append(
@@ -352,6 +340,11 @@ class ReportAgent:
             lines.append(f"2up score: {candidate.score}")
             lines.append(f"Confidence: {candidate.confidence}")
             lines.append(f"Data quality: {data_quality_percent}%")
+
+            if fixture.source_notes:
+                lines.append("")
+                lines.append("Source notes / human layer:")
+                lines.append(f"- {fixture.source_notes}")
 
             lines.append("")
             lines.append("Reasons:")
