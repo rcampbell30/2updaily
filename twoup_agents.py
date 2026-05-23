@@ -270,7 +270,14 @@ class VolatilityAgent:
 
 
 class TwoUpScoringAgent:
-    """Turns fixtures into ranked 2up candidates."""
+    """Turns fixtures into ranked 2up candidates.
+
+    Confidence is deliberately a practical trade-confidence label, not only a
+    spreadsheet-completeness label. Missing model fields still reduce confidence
+    and are shown separately under data quality/missing fields, but a candidate
+    can be lifted to Medium when Rory has supplied enough human-layer market
+    evidence: 2UP availability, back/lay prices, and a QL estimate.
+    """
 
     def __init__(self) -> None:
         self.volatility_agent = VolatilityAgent()
@@ -298,6 +305,46 @@ class TwoUpScoringAgent:
 
         return order[index]
 
+    @staticmethod
+    def _has_user_confirmed_trade_evidence(fixture: Fixture) -> bool:
+        notes = fixture.source_notes.lower()
+        has_user_confirmation = "user confirmed" in notes or "user-confirmed" in notes
+        has_2up_evidence = "2up" in notes or "2 goals ahead" in notes
+        has_back_lay_evidence = "back/lay" in notes or "back / lay" in notes
+        has_ql_evidence = " ql" in notes or "qualifying loss" in notes
+        return (
+            fixture.favourite_odds is not None
+            and has_user_confirmation
+            and has_2up_evidence
+            and has_back_lay_evidence
+            and has_ql_evidence
+        )
+
+    @staticmethod
+    def _apply_human_layer_confidence_floor(
+        confidence: str,
+        score: float,
+        data_quality: float,
+        fixture: Fixture,
+        data_notes: List[str],
+    ) -> str:
+        if not TwoUpScoringAgent._has_user_confirmed_trade_evidence(fixture):
+            return confidence
+
+        if data_quality < 0.50:
+            data_notes.append(
+                "User-confirmed market evidence exists, but model confidence stays limited because baseline data quality is below 50%."
+            )
+            return confidence
+
+        if score >= 30 and confidence == "Low":
+            data_notes.append(
+                "Confidence includes user-confirmed 2UP/back-lay/QL evidence; specialist model fields are still incomplete."
+            )
+            return "Medium"
+
+        return confidence
+
     def score_fixture(self, fixture: Fixture) -> TwoUpCandidate:
         score, reasons, risks, data_notes, missing_fields, data_quality = self.volatility_agent.run(fixture)
         base_confidence = self._base_confidence(score)
@@ -305,6 +352,13 @@ class TwoUpScoringAgent:
             base_confidence,
             data_quality,
             odds_missing=fixture.favourite_odds is None,
+        )
+        confidence = self._apply_human_layer_confidence_floor(
+            confidence,
+            score,
+            data_quality,
+            fixture,
+            data_notes,
         )
 
         return TwoUpCandidate(
