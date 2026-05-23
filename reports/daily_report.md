@@ -1,113 +1,90 @@
-Generated: 2026-05-23 11:45 BST
+Generated: 2026-05-23 21:30 BST
 Report date: 2026-05-23
 Fixtures loaded: 3
 
 # Daily 2up Shortlist
 
-## 1. Bayern Munich vs VfB Stuttgart
-League: DFB-Pokal Final
-Kick-off: Saturday 23 May 2026, 19:00 UK
-Favourite: Bayern Munich
-Approx odds: 1.4
-2up score: 35.0
-Confidence: Medium
-Data quality: 67%
-
-Source notes / human layer:
-- Tier 1 cup final. User confirmed 2UP offered and updated current back/lay to 1.40/1.42 on 2026-05-23; approximate QL per £10 back stake about £0.14 before commission, about £0.20 at 2% commission, and about £0.29 at 5% commission. Baseline used: data/team_baselines/bundesliga_dfb_pokal_finalists_2025_26.csv. Bayern cup-route baseline: High 2UP trigger profile, Back candidate, 2.80 goals for avg, 1.00 goals against avg, 0.60 BTTS, 0.60 over 2.5, 0.60 over 3.5. Stuttgart cup-route baseline: High trigger profile, Lay-side comeback candidate, 2.60 goals for avg, 1.00 goals against avg, 0.40 BTTS, 0.60 over 2.5. Bayern won the Bundesliga and Reuters reports they set a new league goals record; Stuttgart are defending cup champions, so 2UP trigger potential exists with some final volatility. Stronger than the old 1.33/1.38 note because QL is now tiny while the cup-final comeback/draw angle remains alive. Human layer: recheck exact bookie price, exchange lay price, liquidity, commission and any 2UP restrictions before staking.
-
-Reasons:
-- Bayern Munich have strong scoring output.
-- The match profile suggests goal volatility.
-
-Risks:
-- No major statistical risk flagged from the available data.
-
-Data notes:
-- Missing favourite first-half scoring data; early-start angle was skipped.
-- Missing favourite conceded-after-leading data; comeback-volatility angle was skipped.
-- Data quality is incomplete, so confidence has been reduced.
-- Confidence includes user-confirmed 2UP/back-lay/QL evidence; specialist model fields are still incomplete.
-
-Missing fields:
-- favourite.first_half_goals_avg
-- favourite.conceded_after_leading_rate
-- underdog.first_half_goals_avg
-- underdog.conceded_after_leading_rate
-
-## 2. Celtic vs Dunfermline Athletic
-League: Scottish Cup Final
-Kick-off: Saturday 23 May 2026, 15:00 UK
-Favourite: Celtic
-Approx odds: 1.2
-2up score: 10.0
-Confidence: Low
-Data quality: 33%
-
-Source notes / human layer:
-- Tier 1 domestic cup final but likely very short. User confirmed back/lay 1.20/1.23; approximate QL per £10 back stake about £0.24 before commission, about £0.28 at 2% commission, and about £0.34 at 5% commission. Baseline used: data/team_baselines/additional_leagues_compact_2025_26.csv. Celtic baseline: High trigger profile, Back candidate, 1.92 goals for avg, 1.08 goals against avg, 0.58 BTTS, 0.68 over 2.5. Good 2UP trigger chance but lower comeback volatility and lower value unless QL/liquidity are excellent. Human layer: recheck 2UP terms, liquidity, commission and stake limits.
-
-Reasons:
-- Celtic have strong scoring output.
-- The match profile suggests goal volatility.
-
-Risks:
-- Ultra-short favourite price; useful only if qualifying loss is tiny and the match still has real comeback volatility.
-
-Data notes:
-- Missing favourite first-half scoring data; early-start angle was skipped.
-- Missing favourite conceded-after-leading data; comeback-volatility angle was skipped.
-- Data quality is incomplete, so confidence has been reduced.
-- Low favourite odds; only useful if back/lay closeness keeps qualifying loss low.
-- User-confirmed market evidence exists, but model confidence stays limited because baseline data quality is below 50%.
-
-Missing fields:
-- favourite.first_half_goals_avg
-- favourite.conceded_after_leading_rate
-- underdog.goals_for_avg
-- underdog.goals_against_avg
-- underdog.first_half_goals_avg
-- underdog.clean_sheet_rate
-- underdog.conceded_after_leading_rate
-- underdog.over_25_rate
-
-## 3. Fagiano Okayama vs Cerezo Osaka
-League: J1 100 Year Vision League
-Kick-off: Sunday 24 May 2026, 04:55 UK
-Favourite: Cerezo Osaka
+## 1. Manchester City vs Aston Villa
+League: Premier League
+Kick-off: Sunday 24 May 2026, 16:00 UK
+Favourite: Manchester City
 Approx odds: Unknown
-2up score: 0.0
+2up score: 50.0
 Confidence: Low
-Data quality: 0%
+Data quality: 83%
 
 Source notes / human layer:
-- J1 matchweek 18; JST converted to UK time; lower priority because 2UP eligibility and back/lay odds are not confirmed.
+- New watchlist pick from 2026-05-23 rerun. Premier League final day, 16:00 UK. Public previews indicate City are favoured at home against Villa and that both teams scoring is plausible; Villa may rotate after their Europa League win and with Champions League football secured. Baseline used: data/team_baselines/premier_league_2025_26.csv. Manchester City baseline: High 2UP trigger profile but Avoid: too safe, 2.05 goals for avg, 0.89 goals against avg, 1.08 first-half goals for avg, 0.62 over 2.5. Aston Villa baseline: Medium trigger profile, Medium comeback vulnerability, 1.46 goals for avg, 1.30 goals against avg, 0.57 BTTS, 0.51 over 2.5. Strongest new model score because City can realistically go two ahead, but this remains a watchlist not a confirmed trade because 2UP availability, exact back/lay, liquidity, commission and QL are not user-confirmed. Routine-favourite risk remains if City control the game after 2-0.
 
 Reasons:
-- No strong positive scoring factors were triggered.
+- Manchester City have strong scoring output.
+- Manchester City start games well.
+- The match profile suggests goal volatility.
 
 Risks:
 - No major statistical risk flagged from the available data.
 
 Data notes:
-- Missing favourite first-half scoring data; early-start angle was skipped.
 - Missing favourite conceded-after-leading data; comeback-volatility angle was skipped.
-- Data quality is incomplete, so confidence has been reduced.
 - Missing favourite odds; odds-range filter was skipped for this fixture.
 
 Missing fields:
-- favourite.goals_for_avg
-- favourite.goals_against_avg
-- favourite.first_half_goals_avg
-- favourite.clean_sheet_rate
 - favourite.conceded_after_leading_rate
-- favourite.over_25_rate
-- underdog.goals_for_avg
-- underdog.goals_against_avg
-- underdog.first_half_goals_avg
-- underdog.clean_sheet_rate
 - underdog.conceded_after_leading_rate
-- underdog.over_25_rate
+
+## 2. West Ham United vs Leeds United
+League: Premier League
+Kick-off: Sunday 24 May 2026, 16:00 UK
+Favourite: Leeds United
+Approx odds: Unknown
+2up score: 20.0
+Confidence: Low
+Data quality: 83%
+
+Source notes / human layer:
+- New watchlist pick from 2026-05-23 rerun. Premier League final day, 16:00 UK. Existing bank had Leeds as provisional favourite; this must be rechecked against live markets. Baseline used: data/team_baselines/premier_league_2025_26.csv. Leeds baseline: Medium 2UP trigger profile, High comeback vulnerability, Back candidate, 1.32 goals for avg, 1.43 goals against avg, 0.65 first-half goals for avg, 0.59 BTTS, 0.54 over 2.5. West Ham baseline: Low trigger profile, High comeback vulnerability, Lay-side comeback candidate, 1.33 goals for avg, 1.67 goals against avg, 0.59 over 2.5. Good volatility and comeback/draw shape, but only moderate two-goal trigger power. Human layer: confirm correct favourite, 2UP availability, bookmaker back price, exchange lay price, liquidity, commission, stake limits and exact QL before considering it.
+
+Reasons:
+- West Ham United concede regularly.
+- The match profile suggests goal volatility.
+
+Risks:
+- Leeds United may not score enough for a strong 2up angle.
+
+Data notes:
+- Missing favourite conceded-after-leading data; comeback-volatility angle was skipped.
+- Missing favourite odds; odds-range filter was skipped for this fixture.
+
+Missing fields:
+- favourite.conceded_after_leading_rate
+- underdog.conceded_after_leading_rate
+
+## 3. Tottenham Hotspur vs Everton
+League: Premier League
+Kick-off: Sunday 24 May 2026, 16:00 UK
+Favourite: Everton
+Approx odds: Unknown
+2up score: 20.0
+Confidence: Low
+Data quality: 83%
+
+Source notes / human layer:
+- New watchlist pick from 2026-05-23 rerun. Premier League final day, 16:00 UK. Existing bank had Everton as provisional favourite; this must be rechecked because favourite status may be fragile. Baseline used: data/team_baselines/premier_league_2025_26.csv. Everton baseline: Medium trigger profile, Medium comeback vulnerability, Context-only, 1.27 goals for avg, 1.32 goals against avg, 0.51 first-half goals for avg, 0.46 over 2.5. Tottenham baseline: Low trigger profile, High comeback vulnerability, Back candidate, 1.27 goals for avg, 1.54 goals against avg, 0.65 over 2.5, 0.62 BTTS. This is more of a chaos/volatility watch than a clean trigger pick: Spurs are leaky enough to keep the lay alive, but Everton may not have enough two-goal trigger power. Human layer: confirm correct favourite, 2UP availability, back/lay, liquidity, commission, stake limits and exact QL.
+
+Reasons:
+- Tottenham concede regularly.
+- The match profile suggests goal volatility.
+
+Risks:
+- Everton may not score enough for a strong 2up angle.
+
+Data notes:
+- Missing favourite conceded-after-leading data; comeback-volatility angle was skipped.
+- Missing favourite odds; odds-range filter was skipped for this fixture.
+
+Missing fields:
+- favourite.conceded_after_leading_rate
+- underdog.conceded_after_leading_rate
 
 ## 2UP Results Tracker
 
