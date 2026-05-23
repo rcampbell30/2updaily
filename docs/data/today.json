@@ -1,7 +1,7 @@
 {
-  "generated_at_utc": "2026-05-23T20:30:03+00:00",
-  "generated_at_london": "2026-05-23 21:30 BST",
-  "report_date_london": "2026-05-23",
+  "generated_at_utc": "2026-05-23T23:02:59+00:00",
+  "generated_at_london": "2026-05-24 00:02 BST",
+  "report_date_london": "2026-05-24",
   "total_fixtures_loaded": 3,
   "total_fixtures_after_filters": 3,
   "candidates": [
@@ -95,13 +95,13 @@
   "tracker": {
     "summary": {
       "total_rows": 3,
-      "planned_or_pending": 2,
-      "completed": 1,
+      "planned_or_pending": 0,
+      "completed": 3,
       "trigger_count": 0,
       "trigger_rate": 0.0,
       "estimated_ql_total": 1.25,
-      "actual_ql_total": 0.87,
-      "net_pl_total": -0.87
+      "actual_ql_total": 1.25,
+      "net_pl_total": -1.25
     },
     "entries": [
       {
@@ -114,15 +114,15 @@
         "lay_odds": 1.42,
         "back_stake": 10.0,
         "estimated_ql": 0.14,
-        "actual_ql": null,
-        "two_up_triggered": "Pending",
+        "actual_ql": 0.14,
+        "two_up_triggered": "No",
         "trigger_minute": "",
-        "final_score": "Pending",
-        "final_result": "Pending",
-        "net_pl": null,
-        "status": "Planned",
-        "lesson": "Excellent low-QL 2UP test after updated 1.40/1.42 prices; strong trigger profile but still has routine-favourite risk if Bayern control the final.",
-        "notes": "Human layer still required: confirm 2UP availability, live lay price, liquidity, commission and stake limits before any stake.",
+        "final_score": "No 2UP profit confirmed; final score not provided",
+        "final_result": "No 2UP trigger",
+        "net_pl": -0.14,
+        "status": "Settled",
+        "lesson": "Excellent low-QL test but no 2UP profit; strong reminder that even good low-QL setups still need actual two-goal separation and offer settlement.",
+        "notes": "Settled from user-confirmed no 2UP profit across the old pick slate. Exact final score and exchange/book settlement not provided, so estimated QL is recorded as actual QL until corrected.",
         "last_updated": "2026-05-23"
       },
       {
@@ -156,16 +156,16 @@
         "lay_odds": 1.23,
         "back_stake": 10.0,
         "estimated_ql": 0.24,
-        "actual_ql": null,
-        "two_up_triggered": "Pending",
+        "actual_ql": 0.24,
+        "two_up_triggered": "No",
         "trigger_minute": "",
-        "final_score": "Pending",
-        "final_result": "Pending",
-        "net_pl": null,
-        "status": "Watchlist",
-        "lesson": "Tiny QL but ultra-short favourite; only useful if liquidity and terms are excellent.",
-        "notes": "Human layer still required: confirm 2UP availability, live lay price, liquidity and stake limits.",
-        "last_updated": "2026-05-22"
+        "final_score": "No 2UP profit confirmed; final score not provided",
+        "final_result": "No 2UP trigger",
+        "net_pl": -0.24,
+        "status": "Settled",
+        "lesson": "Tiny QL but no 2UP profit; useful lesson that ultra-short favourites are only worthwhile when the two-goal trigger actually arrives.",
+        "notes": "Settled from user-confirmed no 2UP profit across the old pick slate. Exact final score and exchange/book settlement not provided, so estimated QL is recorded as actual QL until corrected.",
+        "last_updated": "2026-05-23"
       }
     ]
   }
