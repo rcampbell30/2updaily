@@ -1,9 +1,9 @@
 {
-  "generated_at_utc": "2026-05-23T23:22:41+00:00",
-  "generated_at_london": "2026-05-24 00:22 BST",
+  "generated_at_utc": "2026-05-23T23:26:48+00:00",
+  "generated_at_london": "2026-05-24 00:26 BST",
   "report_date_london": "2026-05-24",
   "total_fixtures_loaded": 3,
-  "total_fixtures_after_filters": 3,
+  "total_fixtures_after_filters": 2,
   "candidates": [
     {
       "rank": 1,
@@ -14,7 +14,7 @@
       "favourite": "Manchester City",
       "favourite_odds": null,
       "favourite_odds_display": "Unknown",
-      "source_notes": "New watchlist pick from 2026-05-23 rerun. Premier League final day, 16:00 UK. Public previews indicate City are favoured at home against Villa and that both teams scoring is plausible; Villa may rotate after their Europa League win and with Champions League football secured. Baseline used: data/team_baselines/premier_league_2025_26.csv. Manchester City baseline: High 2UP trigger profile but Avoid: too safe, 2.05 goals for avg, 0.89 goals against avg, 1.08 first-half goals for avg, 0.62 over 2.5. Aston Villa baseline: Medium trigger profile, Medium comeback vulnerability, 1.46 goals for avg, 1.30 goals against avg, 0.57 BTTS, 0.51 over 2.5. Strongest new model score because City can realistically go two ahead, but this remains a watchlist not a confirmed trade because 2UP availability, exact back/lay, liquidity, commission and QL are not user-confirmed. Routine-favourite risk remains if City control the game after 2-0.",
+      "source_notes": "New watchlist pick from 2026-05-23 rerun. Premier League final day, 16:00 UK. Public previews indicate City are favoured at home against Villa and that both teams scoring is plausible; Villa may rotate after their Europa League win and with Champions League football secured. Baseline used: data/team_baselines/premier_league_2025_26.csv. Manchester City baseline: High 2UP trigger profile but Avoid: too safe, 2.05 goals for avg, 0.89 goals against avg, 1.08 first-half goals for avg, 0.62 over 2.5. Aston Villa baseline: Medium trigger profile, Medium comeback vulnerability, 1.46 goals for avg, 1.30 goals against avg, 0.57 BTTS, 0.51 over 2.5. Strongest new model score because City can realistically go two ahead, but this remains a watchlist not a confirmed trade because 2UP availability, exact back/lay, liquidity, commission and QL are not user-confirmed. Routine-favourite risk remains if City control the game after 2-0. Rory said Man City odds are not worth noting yet and will update later.",
       "score": 50.0,
       "confidence": "Low",
       "data_quality": 0.83,
@@ -39,52 +39,21 @@
       "away_team": "Leeds United",
       "league": "Premier League",
       "kickoff_uk": "Sunday 24 May 2026, 16:00 UK",
-      "favourite": "Leeds United",
-      "favourite_odds": null,
-      "favourite_odds_display": "Unknown",
-      "source_notes": "New watchlist pick from 2026-05-23 rerun. Premier League final day, 16:00 UK. Existing bank had Leeds as provisional favourite; this must be rechecked against live markets. Baseline used: data/team_baselines/premier_league_2025_26.csv. Leeds baseline: Medium 2UP trigger profile, High comeback vulnerability, Back candidate, 1.32 goals for avg, 1.43 goals against avg, 0.65 first-half goals for avg, 0.59 BTTS, 0.54 over 2.5. West Ham baseline: Low trigger profile, High comeback vulnerability, Lay-side comeback candidate, 1.33 goals for avg, 1.67 goals against avg, 0.59 over 2.5. Good volatility and comeback/draw shape, but only moderate two-goal trigger power. Human layer: confirm correct favourite, 2UP availability, bookmaker back price, exchange lay price, liquidity, commission, stake limits and exact QL before considering it.",
-      "score": 20.0,
+      "favourite": "West Ham United",
+      "favourite_odds": 1.75,
+      "favourite_odds_display": "1.75",
+      "source_notes": "Updated from Rory's live market check on 2026-05-24: West Ham back/lay 1.75/1.83. Approximate QL per \u00a310 back stake: about \u00a30.44 before commission, about \u00a30.52 at 2%, and about \u00a30.66 at 5%. This corrects the previous provisional favourite from Leeds to West Ham based on Rory's market check. Baseline used: data/team_baselines/premier_league_2025_26.csv. West Ham baseline: Low 2UP trigger profile, High comeback vulnerability, Lay-side comeback candidate, 1.33 goals for avg, 1.67 goals against avg, 0.57 first-half goals for avg, 0.59 over 2.5. Leeds baseline: Medium 2UP trigger profile, High comeback vulnerability, Back candidate, 1.32 goals for avg, 1.43 goals against avg, 0.65 first-half goals for avg, 0.59 BTTS, 0.54 over 2.5. Good QL and volatile match shape, but West Ham's own two-goal trigger power is limited. Human layer still needed: confirm 2UP is showing, exchange liquidity near 1.83, commission, stake limits and any account restrictions.",
+      "score": 0.0,
       "confidence": "Low",
       "data_quality": 0.83,
       "reasons": [
-        "West Ham United concede regularly.",
         "The match profile suggests goal volatility."
       ],
       "risks": [
-        "Leeds United may not score enough for a strong 2up angle."
+        "West Ham United may not score enough for a strong 2up angle."
       ],
       "data_notes": [
-        "Missing favourite conceded-after-leading data; comeback-volatility angle was skipped.",
-        "Missing favourite odds; odds-range filter was skipped for this fixture."
-      ],
-      "missing_fields": [
-        "favourite.conceded_after_leading_rate",
-        "underdog.conceded_after_leading_rate"
-      ]
-    },
-    {
-      "rank": 3,
-      "home_team": "Tottenham Hotspur",
-      "away_team": "Everton",
-      "league": "Premier League",
-      "kickoff_uk": "Sunday 24 May 2026, 16:00 UK",
-      "favourite": "Everton",
-      "favourite_odds": null,
-      "favourite_odds_display": "Unknown",
-      "source_notes": "New watchlist pick from 2026-05-23 rerun. Premier League final day, 16:00 UK. Existing bank had Everton as provisional favourite; this must be rechecked because favourite status may be fragile. Baseline used: data/team_baselines/premier_league_2025_26.csv. Everton baseline: Medium trigger profile, Medium comeback vulnerability, Context-only, 1.27 goals for avg, 1.32 goals against avg, 0.51 first-half goals for avg, 0.46 over 2.5. Tottenham baseline: Low trigger profile, High comeback vulnerability, Back candidate, 1.27 goals for avg, 1.54 goals against avg, 0.65 over 2.5, 0.62 BTTS. This is more of a chaos/volatility watch than a clean trigger pick: Spurs are leaky enough to keep the lay alive, but Everton may not have enough two-goal trigger power. Human layer: confirm correct favourite, 2UP availability, back/lay, liquidity, commission, stake limits and exact QL.",
-      "score": 20.0,
-      "confidence": "Low",
-      "data_quality": 0.83,
-      "reasons": [
-        "Tottenham concede regularly.",
-        "The match profile suggests goal volatility."
-      ],
-      "risks": [
-        "Everton may not score enough for a strong 2up angle."
-      ],
-      "data_notes": [
-        "Missing favourite conceded-after-leading data; comeback-volatility angle was skipped.",
-        "Missing favourite odds; odds-range filter was skipped for this fixture."
+        "Missing favourite conceded-after-leading data; comeback-volatility angle was skipped."
       ],
       "missing_fields": [
         "favourite.conceded_after_leading_rate",
