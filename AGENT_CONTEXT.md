@@ -33,8 +33,8 @@ Do not over-rank ultra-short favourites just because they create tiny qualifying
 Example from the May 2026 update:
 
 - Celtic at 1.20 back / 1.23 lay is a very low-QL trade, but the comeback/draw angle is weak because a two-goal lead is likely to become a routine win.
-- Bayern at 1.33 back / 1.38 lay is also low QL and has better final volatility than Celtic, but still risks becoming a routine favourite win.
-- Auckland FC at 2.10 back / 2.30 lay has a bigger QL, but Rory preferred it because it has a stronger 2UP shape: grand-final volatility, realistic two-goal lead potential, and better chance that the lay remains alive after a 2UP trigger.
+- Bayern at 1.40 back / 1.42 lay is a very strong low-QL trade because Rory confirmed 2UP availability, tight back/lay pricing, and a tiny QL. It can be Medium confidence even with incomplete specialist model fields, but it still carries routine-favourite risk if Bayern simply control the final.
+- Auckland FC at 2.10 back / 2.30 lay had a bigger QL and good strategy shape, but the 1-0 result showed the core 2UP risk: a favourite can win without ever creating the required two-goal separation.
 
 So the ranking should balance:
 
@@ -148,6 +148,36 @@ Data-quality rules:
 - If a team or league is not in the baseline layer, do not invent stats. Research it or mark the data gap clearly.
 - Daily live odds, 2UP eligibility, exchange liquidity, commission, stake limits, and exact QL still need Rory's human-layer confirmation.
 
+## Confidence and honesty rules
+
+Confidence should reflect practical trade confidence, not only spreadsheet completeness.
+
+Keep these concepts separate:
+
+- `Data quality` = how complete the baseline model fields are.
+- `Confidence` = practical confidence in the 2UP research candidate after combining baseline data with Rory-confirmed human-layer market evidence.
+
+A candidate can be lifted from Low to Medium confidence when all of the following are true:
+
+- Rory has confirmed 2UP / 2 Goals Ahead availability for the exact fixture;
+- Rory has supplied current back/lay prices;
+- QL has been estimated from those prices;
+- favourite odds are present;
+- candidate score is at least 30;
+- baseline data quality is at least 50%.
+
+Do not lift confidence just because the fixture feels attractive. If 2UP eligibility, back/lay prices, QL, liquidity, or baseline data are missing, keep confidence limited and explain why.
+
+Do not use High confidence unless both the football-data layer and human-layer market checks are genuinely strong. Missing first-half or conceded-after-leading data should still be shown in the notes, even when confidence is lifted to Medium.
+
+Use wording like:
+
+```text
+Confidence includes user-confirmed 2UP/back-lay/QL evidence; specialist model fields are still incomplete.
+```
+
+This avoids the old problem where a candidate with excellent user-confirmed market data was labelled Low only because specialist model fields were incomplete. It also avoids the opposite problem: pretending the model knows more than it does.
+
 ## Research rules
 
 1. Search current and next-upcoming fixtures from reliable sources.
@@ -160,7 +190,8 @@ Data-quality rules:
 8. Avoid ultra-safe dominant favourites unless the QL is excellent and the 2UP trigger chance is high enough to justify the trade.
 9. Do not invent fixtures, odds, stats, kick-off times, favourites, liquidity, qualifying loss, or offer eligibility.
 10. If odds/eligibility are supplied by Rory, treat them as user-confirmed but still tell him to recheck before staking.
-11. This is research only, never staking instruction or guaranteed profit.
+11. Confidence labels must respect user-confirmed 2UP/back-lay/QL evidence, but missing data must still be stated clearly.
+12. This is research only, never staking instruction or guaranteed profit.
 
 ## Repo update workflow
 
@@ -177,6 +208,8 @@ When Rory asks for a run:
    - `reports/archive/YYYY-MM-DD.md`
    - `docs/index.html`
    - `docs/data/today.json`
+   - `docs/data/results.json`
+   - `docs/tracker.html`
 8. Commit to `main` with a clear message.
 9. Summarise:
    - picks added/changed;
@@ -186,6 +219,7 @@ When Rory asks for a run:
    - estimated QL;
    - 2UP rationale;
    - volatility/comeback angle;
+   - confidence/data-quality reasoning;
    - human-layer checks;
    - commit hash;
    - whether report/dashboard updated.
@@ -201,6 +235,7 @@ Top pick: [fixture]
 Why: [short reason]
 Back/Lay: [prices]
 Approx QL: [£ per £10 stake]
+Confidence/Data quality: [confidence label + any missing-data caveat]
 Baseline used: [file/row]
 Human layer: [exact checks Rory still needs]
 
