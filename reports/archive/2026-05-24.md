@@ -1,4 +1,4 @@
-Generated: 2026-05-24 00:26 BST
+Generated: 2026-05-24 00:28 BST
 Report date: 2026-05-24
 Fixtures loaded: 3
 
@@ -42,7 +42,7 @@ Confidence: Low
 Data quality: 83%
 
 Source notes / human layer:
-- Updated from Rory's live market check on 2026-05-24: West Ham back/lay 1.75/1.83. Approximate QL per £10 back stake: about £0.44 before commission, about £0.52 at 2%, and about £0.66 at 5%. This corrects the previous provisional favourite from Leeds to West Ham based on Rory's market check. Baseline used: data/team_baselines/premier_league_2025_26.csv. West Ham baseline: Low 2UP trigger profile, High comeback vulnerability, Lay-side comeback candidate, 1.33 goals for avg, 1.67 goals against avg, 0.57 first-half goals for avg, 0.59 over 2.5. Leeds baseline: Medium 2UP trigger profile, High comeback vulnerability, Back candidate, 1.32 goals for avg, 1.43 goals against avg, 0.65 first-half goals for avg, 0.59 BTTS, 0.54 over 2.5. Good QL and volatile match shape, but West Ham's own two-goal trigger power is limited. Human layer still needed: confirm 2UP is showing, exchange liquidity near 1.83, commission, stake limits and any account restrictions.
+- Double-sided 2UP angle updated from Rory's live market checks on 2026-05-24. West Ham back/lay 1.75/1.83: approximate QL per £10 back stake about £0.44 before commission, about £0.52 at 2%, and about £0.66 at 5%. Leeds back/lay 4.10/4.40: approximate QL per £10 back stake about £0.68 before commission, about £0.83 at 2%, and about £1.05 at 5%. Combined baseline QL if backing and laying both sides for £10 each: about £1.12 before commission, about £1.35 at 2%, and about £1.71 at 5%. Strategy note: this is not a normal single-side 2UP; it is backing and laying both teams so either side can trigger a 2UP payout. If no side goes two goals ahead, expect roughly the combined QL loss. If one side goes two ahead and then fails to win, that side can create the 2UP profit while the other side likely contributes only its QL. Baseline used: data/team_baselines/premier_league_2025_26.csv. West Ham baseline: Low 2UP trigger profile, High comeback vulnerability, Lay-side comeback candidate, 1.33 goals for avg, 1.67 goals against avg, 0.57 first-half goals for avg, 0.59 over 2.5. Leeds baseline: Medium 2UP trigger profile, High comeback vulnerability, Back candidate, 1.32 goals for avg, 1.43 goals against avg, 0.65 first-half goals for avg, 0.59 BTTS, 0.54 over 2.5. The double-sided shape is interesting because both sides are leaky, but neither has elite two-goal trigger power. Human layer still needed: confirm 2UP is showing for both teams, exchange liquidity near 1.83 and 4.40, commission, stake limits and any account restrictions.
 
 Reasons:
 - The match profile suggests goal volatility.
