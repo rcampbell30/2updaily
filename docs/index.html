@@ -3,113 +3,102 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>2upDaily Research Dashboard</title>
-  <link rel="stylesheet" href="app.css">
+  <title>2upDaily Research Shortlist</title>
+  <style>
+    :root { color-scheme: dark; --bg:#0f172a; --panel:#111827; --text:#e5e7eb; --muted:#9ca3af; --accent:#38bdf8; --border:#334155; }
+    * { box-sizing:border-box; }
+    body { margin:0; font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; background:radial-gradient(circle at top,#1e293b 0,var(--bg) 45%); color:var(--text); line-height:1.5; }
+    main { width:min(1100px,calc(100% - 32px)); margin:0 auto; padding:40px 0 64px; }
+    h1 { margin:0 0 8px; font-size:clamp(2rem,5vw,4rem); letter-spacing:-0.04em; }
+    h2 { margin:0 0 16px; } h3 { margin:20px 0 8px; color:var(--accent); }
+    .muted, .subtitle, .notice { color:var(--muted); }
+    .status { display:flex; flex-wrap:wrap; gap:12px; margin:24px 0; }
+    .pill { border:1px solid var(--border); background:rgba(15,23,42,.72); padding:8px 12px; border-radius:999px; color:var(--muted); }
+    .card { border:1px solid var(--border); background:linear-gradient(180deg,rgba(31,41,55,.92),rgba(17,24,39,.94)); border-radius:20px; padding:22px; margin:18px 0; box-shadow:0 20px 60px rgba(0,0,0,.24); }
+    .card-head { display:flex; gap:12px; justify-content:space-between; align-items:flex-start; }
+    .card-head span { background:rgba(56,189,248,.14); color:#bae6fd; border:1px solid rgba(56,189,248,.42); padding:6px 10px; border-radius:999px; white-space:nowrap; font-weight:700; }
+    .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(140px,1fr)); gap:12px; margin:12px 0 18px; }
+    .grid div { background:rgba(15,23,42,.72); border:1px solid var(--border); border-radius:14px; padding:12px; }
+    .grid span { display:block; color:var(--muted); font-size:.78rem; text-transform:uppercase; letter-spacing:.08em; }
+    .grid strong { display:block; margin-top:4px; }
+    ul { padding-left:1.2rem; } li { margin:6px 0; }
+    .table-wrap { width:100%; overflow-x:auto; }
+    table { width:100%; border-collapse:collapse; min-width:760px; }
+    th, td { border-bottom:1px solid var(--border); padding:10px 8px; text-align:left; vertical-align:top; }
+    th { color:var(--muted); font-size:.78rem; text-transform:uppercase; letter-spacing:.08em; }
+  </style>
 </head>
 <body>
   <main>
-    <header>
-      <p class="confidence">2UP Research Dashboard</p>
-      <h1>2upDaily</h1>
-      <p class="subtitle">A focused 2UP early-payout research dashboard. It ranks shortlist candidates, shows the human checks still needed, and tracks results so the system learns from real outcomes.</p>
-      <nav class="site-nav">
-        <a href="tracker.html">Open tracker</a>
-        <a href="data/today.json">Today JSON</a>
-        <a href="data/results.json">Results JSON</a>
-      </nav>
-    </header>
-
+    <header><h1>2upDaily</h1><p class="subtitle">Today’s 2UP research shortlist. This is a data-driven shortlist tool, not a guarantee, and it does not place bets.</p></header>
     <section class="status">
       <span class="pill">Report date: 2026-05-23</span>
-      <span class="pill">Generated: 2026-05-23 02:19 UK</span>
+      <span class="pill">Generated: 2026-05-23T02:30:22+01:00</span>
       <span class="pill">Fixtures loaded: 3</span>
       <span class="pill">Candidates shown: 3</span>
     </section>
-
-    <article class="card">
-      <div class="card-head">
-        <h2>1. Bayern Munich vs VfB Stuttgart</h2>
-        <span>Low confidence</span>
-      </div>
-      <div class="grid">
-        <div><span>League</span><strong>DFB-Pokal Final</strong></div>
-        <div><span>Kick-off</span><strong>Sat 23 May, 19:00 UK</strong></div>
-        <div><span>Favourite</span><strong>Bayern Munich</strong></div>
-        <div><span>Back / Lay</span><strong>1.33 / 1.38</strong></div>
-        <div><span>Score</span><strong>20.0</strong></div>
-        <div><span>Data quality</span><strong>67%</strong></div>
-        <div><span>Approx QL</span><strong>£0.36 / £10</strong></div>
-      </div>
-      <h3>Why it fits</h3>
-      <ul>
-        <li>Bayern have strong scoring output and the fixture has a good 2UP trigger profile.</li>
-        <li>The back/lay spread is tight, so this is the cleanest low-QL dry run.</li>
-      </ul>
-      <h3>Risk</h3>
-      <ul>
-        <li>Short favourite risk: if Bayern go 2-0 up, the match may simply become a routine win rather than a comeback opportunity.</li>
-      </ul>
-      <h3>Human layer</h3>
-      <p>Recheck 2UP availability, exact bookie price, exchange lay price, liquidity, commission, stake limits, and restrictions before staking.</p>
-    </article>
-
-    <article class="card">
-      <div class="card-head">
-        <h2>2. Auckland FC vs Sydney FC</h2>
-        <span>Best strategy shape</span>
-      </div>
-      <div class="grid">
-        <div><span>League</span><strong>A-League Men Grand Final</strong></div>
-        <div><span>Kick-off</span><strong>Sat 23 May, 09:10 UK</strong></div>
-        <div><span>Favourite</span><strong>Auckland FC</strong></div>
-        <div><span>Back / Lay</span><strong>2.10 / 2.30</strong></div>
-        <div><span>Score</span><strong>15.0</strong></div>
-        <div><span>Data quality</span><strong>83%</strong></div>
-        <div><span>Approx QL</span><strong>£0.87 / £10</strong></div>
-      </div>
-      <h3>Why it fits</h3>
-      <ul>
-        <li>Auckland start games well and the A-League baseline supports a High 2UP trigger profile.</li>
-        <li>This is the better Rory-style volatility test because the odds are bigger and the final context may keep the lay side alive.</li>
-      </ul>
-      <h3>Risk</h3>
-      <ul>
-        <li>Sydney are relatively controlled defensively, so this needs live liquidity and price discipline.</li>
-      </ul>
-      <h3>Human layer</h3>
-      <p>Recheck 2UP availability, price drift, lay liquidity, commission, and stake limits close to kick-off.</p>
-    </article>
-
-    <article class="card">
-      <div class="card-head">
-        <h2>3. Celtic vs Dunfermline Athletic</h2>
-        <span>Watchlist</span>
-      </div>
-      <div class="grid">
-        <div><span>League</span><strong>Scottish Cup Final</strong></div>
-        <div><span>Kick-off</span><strong>Sat 23 May, 15:00 UK</strong></div>
-        <div><span>Favourite</span><strong>Celtic</strong></div>
-        <div><span>Back / Lay</span><strong>1.20 / 1.23</strong></div>
-        <div><span>Score</span><strong>10.0</strong></div>
-        <div><span>Data quality</span><strong>33%</strong></div>
-        <div><span>Approx QL</span><strong>£0.24 / £10</strong></div>
-      </div>
-      <h3>Why it fits</h3>
-      <ul>
-        <li>Celtic have strong scoring output and a good chance of creating a 2UP trigger.</li>
-      </ul>
-      <h3>Risk</h3>
-      <ul>
-        <li>Ultra-short favourite risk. This is mostly a tiny-QL option, not the best comeback-volatility profile.</li>
-      </ul>
-    </article>
-
+    
+        <article class="card">
+          <div class="card-head"><h2>1. Bayern Munich vs VfB Stuttgart</h2><span>Low</span></div>
+          <div class="grid">
+            <div><span>League</span><strong>DFB-Pokal Final</strong></div>
+            <div><span>Kick-off</span><strong>Saturday 23 May 2026, 19:00 UK</strong></div>
+            <div><span>Favourite</span><strong>Bayern Munich</strong></div>
+            <div><span>Odds</span><strong>1.33</strong></div>
+            <div><span>Score</span><strong>20.0</strong></div>
+            <div><span>Data Quality</span><strong>67%</strong></div>
+          </div>
+          <h3>Source notes / human layer</h3><p>Tier 1 cup final. User confirmed 2UP offered. User confirmed back/lay 1.33/1.38; approximate QL per £10 back stake about £0.36 before commission, about £0.42 at 2% commission, and about £0.50 at 5% commission. Baseline used: data/team_baselines/bundesliga_dfb_pokal_finalists_2025_26.csv. Bayern cup-route baseline: High 2UP trigger profile, Back candidate, 2.80 goals for avg, 1.00 goals against avg, 0.60 BTTS, 0.60 over 2.5, 0.60 over 3.5. Stuttgart cup-route baseline: High trigger profile, Lay-side comeback candidate, 2.60 goals for avg, 1.00 goals against avg, 0.40 BTTS, 0.60 over 2.5. Bayern won the Bundesliga and Reuters reports they set a new league goals record; Stuttgart are defending cup champions, so 2UP trigger potential exists with some final volatility. Low QL, but still short-favourite/routine-win risk. Human layer: recheck exact bookie price, exchange lay price, liquidity, commission and any 2UP restrictions before staking.</p>
+          <h3>Why it fits</h3><ul><li>Bayern Munich have strong scoring output.</li>
+<li>The match profile suggests goal volatility.</li></ul>
+          <h3>Risks</h3><ul><li>Short favourite price; avoid over-ranking unless the 2UP trigger and comeback angle are both strong.</li></ul>
+          <h3>Data notes</h3><ul><li>Missing favourite first-half scoring data; early-start angle was skipped.</li>
+<li>Missing favourite conceded-after-leading data; comeback-volatility angle was skipped.</li>
+<li>Data quality is incomplete, so confidence has been reduced.</li>
+<li>Low favourite odds; only useful if back/lay closeness keeps qualifying loss low.</li></ul>
+        </article>
+        
+        <article class="card">
+          <div class="card-head"><h2>2. Auckland FC vs Sydney FC</h2><span>Low</span></div>
+          <div class="grid">
+            <div><span>League</span><strong>A-League Men Grand Final</strong></div>
+            <div><span>Kick-off</span><strong>Saturday 23 May 2026, 09:10 UK</strong></div>
+            <div><span>Favourite</span><strong>Auckland FC</strong></div>
+            <div><span>Odds</span><strong>2.1</strong></div>
+            <div><span>Score</span><strong>15.0</strong></div>
+            <div><span>Data Quality</span><strong>83%</strong></div>
+          </div>
+          <h3>Source notes / human layer</h3><p>User likes this best. Tier 3 by league, but user confirmed A-League is covered for 2UP and confirmed back/lay 2.10/2.30. Baseline used: data/team_baselines/a_league_men_2025_26.csv. Auckland baseline: High 2UP trigger profile, Back candidate, 1.62 goals for avg, 0.88 first-half goals for avg, 0.08 failed-to-score rate, 0.69 BTTS, 0.62 over 2.5. Sydney baseline is more controlled/defensive, so this remains a user-preferred volatility pick mainly because of grand-final context and workable 2.10/2.30 pricing rather than pure chaos stats. Approximate QL per £10 back stake is about £0.87 before commission, about £0.97 at 2% commission, and about £1.13 at 5% commission. Human layer: recheck 2UP availability, exchange liquidity, live price drift, commission, and stake limits before staking.</p>
+          <h3>Why it fits</h3><ul><li>Auckland FC start games well.</li>
+<li>The match profile suggests goal volatility.</li></ul>
+          <h3>Risks</h3><ul><li>Sydney FC are not clearly weak defensively.</li></ul>
+          <h3>Data notes</h3><ul><li>Missing favourite conceded-after-leading data; comeback-volatility angle was skipped.</li></ul>
+        </article>
+        
+        <article class="card">
+          <div class="card-head"><h2>3. Celtic vs Dunfermline Athletic</h2><span>Low</span></div>
+          <div class="grid">
+            <div><span>League</span><strong>Scottish Cup Final</strong></div>
+            <div><span>Kick-off</span><strong>Saturday 23 May 2026, 15:00 UK</strong></div>
+            <div><span>Favourite</span><strong>Celtic</strong></div>
+            <div><span>Odds</span><strong>1.2</strong></div>
+            <div><span>Score</span><strong>10.0</strong></div>
+            <div><span>Data Quality</span><strong>33%</strong></div>
+          </div>
+          <h3>Source notes / human layer</h3><p>Tier 1 domestic cup final but likely very short. User confirmed back/lay 1.20/1.23; approximate QL per £10 back stake about £0.24 before commission, about £0.28 at 2% commission, and about £0.34 at 5% commission. Baseline used: data/team_baselines/additional_leagues_compact_2025_26.csv. Celtic baseline: High trigger profile, Back candidate, 1.92 goals for avg, 1.08 goals against avg, 0.58 BTTS, 0.68 over 2.5. Good 2UP trigger chance but lower comeback volatility and lower value unless QL/liquidity are excellent. Human layer: recheck 2UP terms, liquidity, commission and stake limits.</p>
+          <h3>Why it fits</h3><ul><li>Celtic have strong scoring output.</li>
+<li>The match profile suggests goal volatility.</li></ul>
+          <h3>Risks</h3><ul><li>Ultra-short favourite price; useful only if qualifying loss is tiny and the match still has real comeback volatility.</li></ul>
+          <h3>Data notes</h3><ul><li>Missing favourite first-half scoring data; early-start angle was skipped.</li>
+<li>Missing favourite conceded-after-leading data; comeback-volatility angle was skipped.</li>
+<li>Data quality is incomplete, so confidence has been reduced.</li>
+<li>Low favourite odds; only useful if back/lay closeness keeps qualifying loss low.</li></ul>
+        </article>
+        
+    
     <section class="card">
-      <div class="card-head">
-        <h2>2UP Results Tracker</h2>
-        <span>Feedback loop</span>
-      </div>
-      <p class="muted">Records planned and settled tests so the system can learn from real outcomes. Keep account-sensitive bookmaker details out of the repo.</p>
+      <h2>2UP Results Tracker</h2>
+      <p class="muted">Records planned and settled 2UP tests so the system can learn from real outcomes. Keep account-sensitive details out of the repo.</p>
       <div class="grid">
         <div><span>Total Rows</span><strong>3</strong></div>
         <div><span>Completed</span><strong>0</strong></div>
@@ -123,17 +112,132 @@
         <table>
           <thead><tr><th>Date</th><th>Fixture</th><th>Pick</th><th>Status</th><th>2UP</th><th>Est. QL</th><th>Net P/L</th></tr></thead>
           <tbody>
-            <tr><td>2026-05-23</td><td>Bayern Munich vs VfB Stuttgart</td><td>Bayern Munich</td><td class="planned">Planned</td><td class="pending">Pending</td><td class="money">£0.36</td><td class="pending">Pending</td></tr>
-            <tr><td>2026-05-23</td><td>Auckland FC vs Sydney FC</td><td>Auckland FC</td><td class="planned">Planned</td><td class="pending">Pending</td><td class="money">£0.87</td><td class="pending">Pending</td></tr>
-            <tr><td>2026-05-23</td><td>Celtic vs Dunfermline Athletic</td><td>Celtic</td><td class="planned">Watchlist</td><td class="pending">Pending</td><td class="money">£0.24</td><td class="pending">Pending</td></tr>
-          </tbody>
+        <tr>
+          <td>2026-05-23</td>
+          <td>Bayern Munich vs VfB Stuttgart</td>
+          <td>Bayern Munich</td>
+          <td>Planned</td>
+          <td>Pending</td>
+          <td>£0.36</td>
+          <td>Pending</td>
+        </tr>
+        
+        <tr>
+          <td>2026-05-23</td>
+          <td>Auckland FC vs Sydney FC</td>
+          <td>Auckland FC</td>
+          <td>Planned</td>
+          <td>Pending</td>
+          <td>£0.87</td>
+          <td>Pending</td>
+        </tr>
+        
+        <tr>
+          <td>2026-05-23</td>
+          <td>Celtic vs Dunfermline Athletic</td>
+          <td>Celtic</td>
+          <td>Watchlist</td>
+          <td>Pending</td>
+          <td>£0.24</td>
+          <td>Pending</td>
+        </tr>
+        </tbody>
         </table>
       </div>
     </section>
+    
+    <section class="card notice"><strong>Reminder:</strong> use this as a research shortlist only. Confirm the bookmaker offer, odds, liquidity, and staking plan before doing anything with real money.</section>
 
-    <section class="card notice">
-      <strong>Reminder:</strong> this is a research shortlist only. Confirm the bookmaker offer, odds, liquidity, and staking plan before doing anything with real money.
+<!-- daily-pick-calendar:start -->
+
+        
+    <section>
+      <h2>Today’s fixture-bank pick</h2>
+      <article class="pick-card">
+        <div class="card-header">
+          <h3>Today — Saturday 23 May 2026<br>Auckland FC vs Sydney FC</h3>
+          <span class="confidence">Fixture bank</span>
+        </div>
+        
+      <dl class="meta-grid">
+        <div><dt>Date</dt><dd>Saturday 23 May 2026</dd></div>
+        <div><dt>League</dt><dd>A-League Men Grand Final</dd></div>
+        <div><dt>Kick-off UK</dt><dd>09:10</dd></div>
+        <div><dt>Provisional favourite</dt><dd>Auckland FC</dd></div>
+        <div><dt>Odds</dt><dd>2.10</dd></div>
+      </dl>
+    
+        <h3>What to do today</h3>
+        <ul>
+          <li>Check live odds before using this as a 2UP research angle.</li>
+          <li>Confirm the bookmaker early-payout terms still apply.</li>
+          <li>Only treat this as a shortlist candidate, not a guaranteed pick.</li>
+        </ul>
+        <p class="subtitle">User likes this best. Tier 3 by league, but user confirmed A-League is covered for 2UP and confirmed back/lay 2.10/2.30. Baseline used: data/team_baselines/a_league_men_2025_26.csv. Auckland baseline: High 2UP trigger profile, Back candidate, 1.62 goals for avg, 0.88 first-half goals for avg, 0.08 failed-to-score rate, 0.69 BTTS, 0.62 over 2.5. Sydney baseline is more controlled/defensive, so this remains a user-preferred volatility pick mainly because of grand-final context and workable 2.10/2.30 pricing rather than pure chaos stats. Approximate QL per £10 back stake is about £0.87 before commission, about £0.97 at 2% commission, and about £1.13 at 5% commission. Human layer: recheck 2UP availability, exchange liquidity, live price drift, commission, and stake limits before staking.</p>
+      </article>
     </section>
+    
+        <section>
+          <h2>Upcoming pick calendar</h2>
+          <p class="subtitle">Organised by day and date. One provisional 2UP research fixture is shown per available May matchday. If there is no fixture today, the featured card rolls forward to the next banked fixture.</p>
+          
+    <article class="pick-card">
+      <div class="card-header">
+        <h3>Today — Saturday 23 May 2026<br>Auckland FC vs Sydney FC</h3>
+        <span class="confidence">Fixture bank</span>
+      </div>
+      
+      <dl class="meta-grid">
+        <div><dt>Date</dt><dd>Saturday 23 May 2026</dd></div>
+        <div><dt>League</dt><dd>A-League Men Grand Final</dd></div>
+        <div><dt>Kick-off UK</dt><dd>09:10</dd></div>
+        <div><dt>Provisional favourite</dt><dd>Auckland FC</dd></div>
+        <div><dt>Odds</dt><dd>2.10</dd></div>
+      </dl>
+    
+      <p class="subtitle">User likes this best. Tier 3 by league, but user confirmed A-League is covered for 2UP and confirmed back/lay 2.10/2.30. Baseline used: data/team_baselines/a_league_men_2025_26.csv. Auckland baseline: High 2UP trigger profile, Back candidate, 1.62 goals for avg, 0.88 first-half goals for avg, 0.08 failed-to-score rate, 0.69 BTTS, 0.62 over 2.5. Sydney baseline is more controlled/defensive, so this remains a user-preferred volatility pick mainly because of grand-final context and workable 2.10/2.30 pricing rather than pure chaos stats. Approximate QL per £10 back stake is about £0.87 before commission, about £0.97 at 2% commission, and about £1.13 at 5% commission. Human layer: recheck 2UP availability, exchange liquidity, live price drift, commission, and stake limits before staking.</p>
+    </article>
+    
+
+    <article class="pick-card">
+      <div class="card-header">
+        <h3>Tomorrow — Sunday 24 May 2026<br>Fagiano Okayama vs Cerezo Osaka</h3>
+        <span class="confidence">Fixture bank</span>
+      </div>
+      
+      <dl class="meta-grid">
+        <div><dt>Date</dt><dd>Sunday 24 May 2026</dd></div>
+        <div><dt>League</dt><dd>J1 100 Year Vision League</dd></div>
+        <div><dt>Kick-off UK</dt><dd>04:55</dd></div>
+        <div><dt>Provisional favourite</dt><dd>Cerezo Osaka</dd></div>
+        <div><dt>Odds</dt><dd>Check odds</dd></div>
+      </dl>
+    
+      <p class="subtitle">J1 matchweek 18; JST converted to UK time; lower priority because 2UP eligibility and back/lay odds are not confirmed.</p>
+    </article>
+    
+
+    <article class="pick-card">
+      <div class="card-header">
+        <h3>Saturday — Saturday 30 May 2026<br>Paris Saint-Germain vs Arsenal</h3>
+        <span class="confidence">Fixture bank</span>
+      </div>
+      
+      <dl class="meta-grid">
+        <div><dt>Date</dt><dd>Saturday 30 May 2026</dd></div>
+        <div><dt>League</dt><dd>Champions League</dd></div>
+        <div><dt>Kick-off UK</dt><dd>17:00</dd></div>
+        <div><dt>Provisional favourite</dt><dd>Paris Saint-Germain</dd></div>
+        <div><dt>Odds</dt><dd>Check odds</dd></div>
+      </dl>
+    
+      <p class="subtitle">UEFA Champions League final; UK kick-off time; needs odds and 2UP confirmation.</p>
+    </article>
+    
+        </section>
+        
+<!-- daily-pick-calendar:end -->
+
   </main>
 </body>
 </html>
