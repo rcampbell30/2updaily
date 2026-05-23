@@ -1,6 +1,6 @@
 {
-  "generated_at_utc": "2026-05-23T23:28:37+00:00",
-  "generated_at_london": "2026-05-24 00:28 BST",
+  "generated_at_utc": "2026-05-23T23:31:39+00:00",
+  "generated_at_london": "2026-05-24 00:31 BST",
   "report_date_london": "2026-05-24",
   "total_fixtures_loaded": 3,
   "total_fixtures_after_filters": 2,
@@ -63,12 +63,12 @@
   ],
   "tracker": {
     "summary": {
-      "total_rows": 3,
-      "planned_or_pending": 0,
+      "total_rows": 4,
+      "planned_or_pending": 1,
       "completed": 3,
       "trigger_count": 0,
       "trigger_rate": 0.0,
-      "estimated_ql_total": 1.25,
+      "estimated_ql_total": 2.37,
       "actual_ql_total": 1.25,
       "net_pl_total": -1.25
     },
@@ -135,6 +135,27 @@
         "lesson": "Tiny QL but no 2UP profit; useful lesson that ultra-short favourites are only worthwhile when the two-goal trigger actually arrives.",
         "notes": "Settled from user-confirmed no 2UP profit across the old pick slate. Exact final score and exchange/book settlement not provided, so estimated QL is recorded as actual QL until corrected.",
         "last_updated": "2026-05-23"
+      },
+      {
+        "date": "2026-05-24",
+        "fixture": "West Ham United vs Leeds United",
+        "pick": "double-sided: West Ham + Leeds",
+        "league": "Premier League",
+        "kickoff_uk": "Sunday 24 May 2026, 16:00 UK",
+        "back_odds": null,
+        "lay_odds": null,
+        "back_stake": 20.0,
+        "estimated_ql": 1.12,
+        "actual_ql": null,
+        "two_up_triggered": "Pending",
+        "trigger_minute": "",
+        "final_score": "Pending",
+        "final_result": "Pending",
+        "net_pl": null,
+        "status": "Planned",
+        "lesson": "Confirmed double-sided 2UP test: backing and laying both teams so either side can trigger a 2UP payout. Combined baseline QL is modest, but both teams still need actual two-goal separation for upside.",
+        "notes": "Rory confirmed 2UP is showing for both sides and usable liquidity near the lays. QL per \u00a310 each side: West Ham about \u00a30.44 before commission; Leeds about \u00a30.68 before commission; combined about \u00a31.12 before commission, \u00a31.35 at 2%, \u00a31.71 at 5%. Recheck exact prices, liquidity, commission and stake limits before placing.",
+        "last_updated": "2026-05-24"
       }
     ]
   }
