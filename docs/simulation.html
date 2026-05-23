@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>2UP Dummy Simulation</title>
+  <link rel="stylesheet" href="app.css">
+</head>
+<body>
+  <main>
+    <header>
+      <p class="confidence">Paper test</p>
+      <h1>Dummy Bankroll Simulation</h1>
+      <p class="subtitle">A paper-only simulation starting from 1,000 dummy units. This tracks selected shortlist fixtures and records whether the research workflow finds a 2UP trigger before the redundancy payment arrives.</p>
+      <p class="nav"><a href="./">← Back to dashboard</a> <a href="tracker.html">Open results tracker</a></p>
+    </header>
+
+    <section class="card">
+      <div class="card-head">
+        <h2>Simulation Summary</h2>
+        <span>Starting bank: 1,000</span>
+      </div>
+      <div class="grid">
+        <div><span>Starting Bank</span><strong>1,000.00</strong></div>
+        <div><span>Current Bank</span><strong>1,000.00</strong></div>
+        <div><span>Selected Rows</span><strong>3</strong></div>
+        <div><span>Completed</span><strong>0</strong></div>
+        <div><span>2UP Triggers</span><strong>0</strong></div>
+        <div><span>Trigger Rate</span><strong>Pending</strong></div>
+      </div>
+    </section>
+
+    <section class="card">
+      <div class="card-head">
+        <h2>Selected Simulation Fixtures</h2>
+        <span>Pending</span>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Fixture</th>
+              <th>Pick</th>
+              <th>Status</th>
+              <th>Bank Before</th>
+              <th>Planned Units</th>
+              <th>2UP</th>
+              <th>Sim P/L</th>
+              <th>Bank After</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>2026-05-23</td>
+              <td>Auckland FC vs Sydney FC</td>
+              <td>Auckland FC</td>
+              <td class="planned">Planned</td>
+              <td class="money">1,000.00</td>
+              <td class="money">1,000.00</td>
+              <td class="pending">Pending</td>
+              <td class="pending">Pending</td>
+              <td class="pending">Pending</td>
+            </tr>
+            <tr>
+              <td>2026-05-23</td>
+              <td>Celtic vs Dunfermline Athletic</td>
+              <td>Celtic</td>
+              <td class="planned">Watchlist</td>
+              <td class="pending">Pending</td>
+              <td class="pending">Pending</td>
+              <td class="pending">Pending</td>
+              <td class="pending">Pending</td>
+              <td class="pending">Pending</td>
+            </tr>
+            <tr>
+              <td>2026-05-23</td>
+              <td>Bayern Munich vs VfB Stuttgart</td>
+              <td>Bayern Munich</td>
+              <td class="planned">Planned</td>
+              <td class="pending">Pending</td>
+              <td class="pending">Pending</td>
+              <td class="pending">Pending</td>
+              <td class="pending">Pending</td>
+              <td class="pending">Pending</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Update source</h2>
+      <p class="subtitle">Update <code>data/simulation_tracker.csv</code> after each simulated result. This page is for paper testing only.</p>
+    </section>
+  </main>
+</body>
+</html>
