@@ -178,6 +178,30 @@ Confidence includes user-confirmed 2UP/back-lay/QL evidence; specialist model fi
 
 This avoids the old problem where a candidate with excellent user-confirmed market data was labelled Low only because specialist model fields were incomplete. It also avoids the opposite problem: pretending the model knows more than it does.
 
+## Required odds-check handoff
+
+After producing a new shortlist, ChatGPT must ask Rory for the live market checks before treating any pick as trade-ready.
+
+For each top candidate, ask Rory for:
+
+- whether 2UP / 2 Goals Ahead is showing on his bookmaker account;
+- bookmaker back odds;
+- exchange lay odds;
+- rough available lay liquidity at or near that lay price;
+- commission assumption if it is not the normal default;
+- any stake-limit or account restriction warning.
+
+Use a concise handoff like:
+
+```text
+Before I can rank these as real trades, send me the back/lay for:
+1. [fixture] — back ? / lay ? / 2UP showing? / liquidity?
+2. [fixture] — back ? / lay ? / 2UP showing? / liquidity?
+3. [fixture] — back ? / lay ? / 2UP showing? / liquidity?
+```
+
+Do not leave a run at the watchlist stage without asking for lay odds. The whole point of the system is to move from football shape to trade shape. A fixture with good football data but no back/lay/QL remains a watchlist candidate only.
+
 ## Research rules
 
 1. Search current and next-upcoming fixtures from reliable sources.
@@ -191,7 +215,8 @@ This avoids the old problem where a candidate with excellent user-confirmed mark
 9. Do not invent fixtures, odds, stats, kick-off times, favourites, liquidity, qualifying loss, or offer eligibility.
 10. If odds/eligibility are supplied by Rory, treat them as user-confirmed but still tell him to recheck before staking.
 11. Confidence labels must respect user-confirmed 2UP/back-lay/QL evidence, but missing data must still be stated clearly.
-12. This is research only, never staking instruction or guaranteed profit.
+12. After every new watchlist run, explicitly ask Rory for back odds, lay odds, 2UP confirmation and liquidity for the top candidates.
+13. This is research only, never staking instruction or guaranteed profit.
 
 ## Repo update workflow
 
@@ -223,6 +248,7 @@ When Rory asks for a run:
    - human-layer checks;
    - commit hash;
    - whether report/dashboard updated.
+10. If any top candidate is still missing lay odds or 2UP confirmation, ask Rory for those values in the final response.
 
 ## Preferred final answer format after a run
 
@@ -233,8 +259,8 @@ Done — repo updated.
 
 Top pick: [fixture]
 Why: [short reason]
-Back/Lay: [prices]
-Approx QL: [£ per £10 stake]
+Back/Lay: [prices or missing]
+Approx QL: [£ per £10 stake or pending]
 Confidence/Data quality: [confidence label + any missing-data caveat]
 Baseline used: [file/row]
 Human layer: [exact checks Rory still needs]
@@ -242,6 +268,11 @@ Human layer: [exact checks Rory still needs]
 Other candidates:
 1. ...
 2. ...
+
+Needed from Rory before trade ranking:
+1. [fixture] — back ? / lay ? / 2UP showing? / liquidity?
+2. [fixture] — back ? / lay ? / 2UP showing? / liquidity?
+3. [fixture] — back ? / lay ? / 2UP showing? / liquidity?
 
 Commit: [hash]
 Report/dashboard: [updated / not updated / uncertain]
