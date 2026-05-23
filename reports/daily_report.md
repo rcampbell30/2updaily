@@ -1,4 +1,4 @@
-Generated: 2026-05-23 02:47 BST
+Generated: 2026-05-23 11:18 BST
 Report date: 2026-05-23
 Fixtures loaded: 3
 
@@ -8,26 +8,25 @@ Fixtures loaded: 3
 League: DFB-Pokal Final
 Kick-off: Saturday 23 May 2026, 19:00 UK
 Favourite: Bayern Munich
-Approx odds: 1.33
-2up score: 20.0
+Approx odds: 1.4
+2up score: 35.0
 Confidence: Low
 Data quality: 67%
 
 Source notes / human layer:
-- Tier 1 cup final. User confirmed 2UP offered. User confirmed back/lay 1.33/1.38; approximate QL per £10 back stake about £0.36 before commission, about £0.42 at 2% commission, and about £0.50 at 5% commission. Baseline used: data/team_baselines/bundesliga_dfb_pokal_finalists_2025_26.csv. Bayern cup-route baseline: High 2UP trigger profile, Back candidate, 2.80 goals for avg, 1.00 goals against avg, 0.60 BTTS, 0.60 over 2.5, 0.60 over 3.5. Stuttgart cup-route baseline: High trigger profile, Lay-side comeback candidate, 2.60 goals for avg, 1.00 goals against avg, 0.40 BTTS, 0.60 over 2.5. Bayern won the Bundesliga and Reuters reports they set a new league goals record; Stuttgart are defending cup champions, so 2UP trigger potential exists with some final volatility. Low QL, but still short-favourite/routine-win risk. Human layer: recheck exact bookie price, exchange lay price, liquidity, commission and any 2UP restrictions before staking.
+- Tier 1 cup final. User confirmed 2UP offered and updated current back/lay to 1.40/1.42 on 2026-05-23; approximate QL per £10 back stake about £0.14 before commission, about £0.20 at 2% commission, and about £0.29 at 5% commission. Baseline used: data/team_baselines/bundesliga_dfb_pokal_finalists_2025_26.csv. Bayern cup-route baseline: High 2UP trigger profile, Back candidate, 2.80 goals for avg, 1.00 goals against avg, 0.60 BTTS, 0.60 over 2.5, 0.60 over 3.5. Stuttgart cup-route baseline: High trigger profile, Lay-side comeback candidate, 2.60 goals for avg, 1.00 goals against avg, 0.40 BTTS, 0.60 over 2.5. Bayern won the Bundesliga and Reuters reports they set a new league goals record; Stuttgart are defending cup champions, so 2UP trigger potential exists with some final volatility. Stronger than the old 1.33/1.38 note because QL is now tiny while the cup-final comeback/draw angle remains alive. Human layer: recheck exact bookie price, exchange lay price, liquidity, commission and any 2UP restrictions before staking.
 
 Reasons:
 - Bayern Munich have strong scoring output.
 - The match profile suggests goal volatility.
 
 Risks:
-- Short favourite price; avoid over-ranking unless the 2UP trigger and comeback angle are both strong.
+- No major statistical risk flagged from the available data.
 
 Data notes:
 - Missing favourite first-half scoring data; early-start angle was skipped.
 - Missing favourite conceded-after-leading data; comeback-volatility angle was skipped.
 - Data quality is incomplete, so confidence has been reduced.
-- Low favourite odds; only useful if back/lay closeness keeps qualifying loss low.
 
 Missing fields:
 - favourite.first_half_goals_avg
@@ -35,33 +34,7 @@ Missing fields:
 - underdog.first_half_goals_avg
 - underdog.conceded_after_leading_rate
 
-## 2. Auckland FC vs Sydney FC
-League: A-League Men Grand Final
-Kick-off: Saturday 23 May 2026, 09:10 UK
-Favourite: Auckland FC
-Approx odds: 2.1
-2up score: 15.0
-Confidence: Low
-Data quality: 83%
-
-Source notes / human layer:
-- User likes this best. Tier 3 by league, but user confirmed A-League is covered for 2UP and confirmed back/lay 2.10/2.30. Baseline used: data/team_baselines/a_league_men_2025_26.csv. Auckland baseline: High 2UP trigger profile, Back candidate, 1.62 goals for avg, 0.88 first-half goals for avg, 0.08 failed-to-score rate, 0.69 BTTS, 0.62 over 2.5. Sydney baseline is more controlled/defensive, so this remains a user-preferred volatility pick mainly because of grand-final context and workable 2.10/2.30 pricing rather than pure chaos stats. Approximate QL per £10 back stake is about £0.87 before commission, about £0.97 at 2% commission, and about £1.13 at 5% commission. Human layer: recheck 2UP availability, exchange liquidity, live price drift, commission, and stake limits before staking.
-
-Reasons:
-- Auckland FC start games well.
-- The match profile suggests goal volatility.
-
-Risks:
-- Sydney FC are not clearly weak defensively.
-
-Data notes:
-- Missing favourite conceded-after-leading data; comeback-volatility angle was skipped.
-
-Missing fields:
-- favourite.conceded_after_leading_rate
-- underdog.conceded_after_leading_rate
-
-## 3. Celtic vs Dunfermline Athletic
+## 2. Celtic vs Dunfermline Athletic
 League: Scottish Cup Final
 Kick-off: Saturday 23 May 2026, 15:00 UK
 Favourite: Celtic
@@ -89,6 +62,44 @@ Data notes:
 Missing fields:
 - favourite.first_half_goals_avg
 - favourite.conceded_after_leading_rate
+- underdog.goals_for_avg
+- underdog.goals_against_avg
+- underdog.first_half_goals_avg
+- underdog.clean_sheet_rate
+- underdog.conceded_after_leading_rate
+- underdog.over_25_rate
+
+## 3. Fagiano Okayama vs Cerezo Osaka
+League: J1 100 Year Vision League
+Kick-off: Sunday 24 May 2026, 04:55 UK
+Favourite: Cerezo Osaka
+Approx odds: Unknown
+2up score: 0.0
+Confidence: Low
+Data quality: 0%
+
+Source notes / human layer:
+- J1 matchweek 18; JST converted to UK time; lower priority because 2UP eligibility and back/lay odds are not confirmed.
+
+Reasons:
+- No strong positive scoring factors were triggered.
+
+Risks:
+- No major statistical risk flagged from the available data.
+
+Data notes:
+- Missing favourite first-half scoring data; early-start angle was skipped.
+- Missing favourite conceded-after-leading data; comeback-volatility angle was skipped.
+- Data quality is incomplete, so confidence has been reduced.
+- Missing favourite odds; odds-range filter was skipped for this fixture.
+
+Missing fields:
+- favourite.goals_for_avg
+- favourite.goals_against_avg
+- favourite.first_half_goals_avg
+- favourite.clean_sheet_rate
+- favourite.conceded_after_leading_rate
+- favourite.over_25_rate
 - underdog.goals_for_avg
 - underdog.goals_against_avg
 - underdog.first_half_goals_avg
