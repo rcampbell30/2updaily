@@ -1,4 +1,4 @@
-"""Generate the daily 2up report, tracker JSON, and static site files."""
+"""Generate the daily 2up report, tracker JSON, and polished GitHub Pages UI."""
 
 from __future__ import annotations
 
@@ -49,6 +49,17 @@ def money_display(value: float | None) -> str:
     return f"{sign}£{abs(value):.2f}"
 
 
+def status_class(value: str) -> str:
+    cleaned = value.strip().lower()
+    if cleaned in {"planned", "watchlist"}:
+        return "planned"
+    if cleaned in {"pending", ""}:
+        return "pending"
+    if cleaned in COMPLETED_STATUSES:
+        return "money"
+    return ""
+
+
 def candidate_to_dict(candidate: TwoUpCandidate, rank: int) -> dict:
     fixture = candidate.fixture
     return {
@@ -74,6 +85,7 @@ def candidate_to_dict(candidate: TwoUpCandidate, rank: int) -> dict:
 def read_tracker(path: Path = TRACKER_PATH) -> list[dict]:
     if not path.exists():
         return []
+
     with path.open(newline="", encoding="utf-8") as file:
         rows = []
         for row in csv.DictReader(file):
@@ -125,35 +137,42 @@ def list_items(items: list[str], fallback: str) -> str:
     return "\n".join(f"<li>{escape(item)}</li>" for item in values)
 
 
-def tracker_html(tracker: dict) -> str:
+def trigger_rate_display(value: float | None) -> str:
+    return "Pending" if value is None else f"{value * 100:.0f}%"
+
+
+def tracker_dashboard_html(tracker: dict) -> str:
     rows = tracker["entries"]
     summary = tracker["summary"]
-    trigger_rate = summary["trigger_rate"]
-    trigger_text = "Pending" if trigger_rate is None else f"{trigger_rate * 100:.0f}%"
     row_html = ""
     for row in rows:
         row_html += f"""
-        <tr>
-          <td>{escape(row['date'])}</td>
-          <td>{escape(row['fixture'])}</td>
-          <td>{escape(row['pick'])}</td>
-          <td>{escape(row['status'])}</td>
-          <td>{escape(row['two_up_triggered'])}</td>
-          <td>{money_display(row['estimated_ql'])}</td>
-          <td>{money_display(row['net_pl'])}</td>
-        </tr>
+            <tr>
+              <td>{escape(row['date'])}</td>
+              <td>{escape(row['fixture'])}</td>
+              <td>{escape(row['pick'])}</td>
+              <td class="{status_class(row['status'])}">{escape(row['status'])}</td>
+              <td class="{status_class(row['two_up_triggered'])}">{escape(row['two_up_triggered'])}</td>
+              <td class="money">{money_display(row['estimated_ql'])}</td>
+              <td class="{status_class(str(row['net_pl']))}">{money_display(row['net_pl'])}</td>
+            </tr>
         """
+
     if not row_html:
         row_html = "<tr><td colspan='7'>No tracker rows yet.</td></tr>"
+
     return f"""
     <section class="card">
-      <h2>2UP Results Tracker</h2>
-      <p class="muted">Records planned and settled 2UP tests so the system can learn from real outcomes. Keep account-sensitive details out of the repo.</p>
+      <div class="card-head">
+        <h2>2UP Results Tracker</h2>
+        <span>Feedback loop</span>
+      </div>
+      <p class="muted">Records planned and settled tests so the system can learn from real outcomes. Keep account-sensitive bookmaker details out of the repo.</p>
       <div class="grid">
         <div><span>Total Rows</span><strong>{summary['total_rows']}</strong></div>
         <div><span>Completed</span><strong>{summary['completed']}</strong></div>
         <div><span>2UP Triggers</span><strong>{summary['trigger_count']}</strong></div>
-        <div><span>Trigger Rate</span><strong>{trigger_text}</strong></div>
+        <div><span>Trigger Rate</span><strong>{trigger_rate_display(summary['trigger_rate'])}</strong></div>
         <div><span>Est. QL</span><strong>{money_display(summary['estimated_ql_total'])}</strong></div>
         <div><span>Actual QL</span><strong>{money_display(summary['actual_ql_total'])}</strong></div>
         <div><span>Net P/L</span><strong>{money_display(summary['net_pl_total'])}</strong></div>
@@ -168,18 +187,180 @@ def tracker_html(tracker: dict) -> str:
     """
 
 
+def tracker_page_html(payload: dict) -> str:
+    tracker = payload["tracker"]
+    rows = tracker["entries"]
+    summary = tracker["summary"]
+    row_html = ""
+    for row in rows:
+        back_lay = "Pending"
+        if row.get("back_odds") is not None and row.get("lay_odds") is not None:
+            back_lay = f"{row['back_odds']} / {row['lay_odds']}"
+        row_html += f"""
+            <tr>
+              <td>{escape(row['date'])}</td>
+              <td>{escape(row['fixture'])}</td>
+              <td>{escape(row['pick'])}</td>
+              <td class="{status_class(row['status'])}">{escape(row['status'])}</td>
+              <td class="{status_class(row['two_up_triggered'])}">{escape(row['two_up_triggered'])}</td>
+              <td>{escape(back_lay)}</td>
+              <td class="money">{money_display(row['estimated_ql'])}</td>
+              <td class="{status_class(str(row['net_pl']))}">{money_display(row['net_pl'])}</td>
+              <td class="note">{escape(row['lesson'])}</td>
+            </tr>
+        """
+
+    if not row_html:
+        row_html = "<tr><td colspan='9'>No tracker rows yet.</td></tr>"
+
+    return f"""<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>2UP Results Tracker</title>
+  <link rel="stylesheet" href="app.css">
+</head>
+<body>
+  <main>
+    <header>
+      <p class="confidence">Feedback loop</p>
+      <h1>2UP Results Tracker</h1>
+      <p class="subtitle">Tracks planned and settled 2UP tests so the system can learn from real outcomes. Do not add account-sensitive bookmaker details here.</p>
+      <p class="nav"><a href="./">← Back to dashboard</a></p>
+    </header>
+
+    <section class="card">
+      <div class="card-head">
+        <h2>Summary</h2>
+        <span>Current test slate</span>
+      </div>
+      <div class="grid">
+        <div><span>Total Rows</span><strong>{summary['total_rows']}</strong></div>
+        <div><span>Completed</span><strong>{summary['completed']}</strong></div>
+        <div><span>2UP Triggers</span><strong>{summary['trigger_count']}</strong></div>
+        <div><span>Trigger Rate</span><strong>{trigger_rate_display(summary['trigger_rate'])}</strong></div>
+        <div><span>Estimated QL</span><strong>{money_display(summary['estimated_ql_total'])}</strong></div>
+        <div><span>Actual QL</span><strong>{money_display(summary['actual_ql_total'])}</strong></div>
+        <div><span>Net P/L</span><strong>{money_display(summary['net_pl_total'])}</strong></div>
+      </div>
+    </section>
+
+    <section class="card">
+      <div class="card-head">
+        <h2>Tracked Tests</h2>
+        <span>Pending outcomes</span>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Date</th><th>Fixture</th><th>Pick</th><th>Status</th><th>2UP</th><th>Back/Lay</th><th>Est. QL</th><th>Net P/L</th><th>Lesson</th></tr></thead>
+          <tbody>{row_html}</tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>How to update after a match</h2>
+      <p class="subtitle">Update <code>data/results_tracker.csv</code> with the actual result, then regenerate the page. Set <code>status</code> to <code>Settled</code> once complete.</p>
+    </section>
+  </main>
+</body>
+</html>
+"""
+
+
+def candidate_card(candidate: dict) -> str:
+    title = f"{candidate['rank']}. {candidate['home_team']} vs {candidate['away_team']}"
+    data_quality = int(candidate["data_quality"] * 100)
+    source_notes = candidate.get("source_notes") or "No source notes."
+    confidence = f"{candidate['confidence']} confidence"
+    if candidate["rank"] == 2:
+        confidence = "Volatility watch"
+    elif candidate["rank"] == 3:
+        confidence = "Watchlist"
+
+    return f"""
+    <article class="card">
+      <div class="card-head">
+        <h2>{escape(title)}</h2>
+        <span>{escape(confidence)}</span>
+      </div>
+      <div class="grid">
+        <div><span>League</span><strong>{escape(candidate['league'])}</strong></div>
+        <div><span>Kick-off</span><strong>{escape(candidate['kickoff_uk'])}</strong></div>
+        <div><span>Favourite</span><strong>{escape(candidate['favourite'])}</strong></div>
+        <div><span>Odds</span><strong>{escape(candidate['favourite_odds_display'])}</strong></div>
+        <div><span>Score</span><strong>{candidate['score']}</strong></div>
+        <div><span>Data quality</span><strong>{data_quality}%</strong></div>
+      </div>
+      <h3>Why it fits</h3>
+      <ul>{list_items(candidate['reasons'], 'No strong positive scoring factors were triggered.')}</ul>
+      <h3>Risks</h3>
+      <ul>{list_items(candidate['risks'], 'No major statistical risk flagged from available data.')}</ul>
+      <h3>Human layer / notes</h3>
+      <p>{escape(source_notes)}</p>
+      <h3>Data notes</h3>
+      <ul>{list_items(candidate['data_notes'], 'No data quality notes.')}</ul>
+    </article>
+    """
+
+
+def render_html(payload: dict) -> str:
+    cards = "\n".join(candidate_card(candidate) for candidate in payload["candidates"])
+    if not cards:
+        cards = "<section class='card'><h2>No candidates found</h2><p>No fixtures passed the current filters.</p></section>"
+
+    return f"""<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>2upDaily Research Dashboard</title>
+  <link rel="stylesheet" href="app.css">
+</head>
+<body>
+  <main>
+    <header>
+      <p class="confidence">2UP Research Dashboard</p>
+      <h1>2upDaily</h1>
+      <p class="subtitle">A focused 2UP early-payout research dashboard. It ranks shortlist candidates, shows the human checks still needed, and tracks results so the system learns from real outcomes.</p>
+      <nav class="site-nav">
+        <a href="tracker.html">Open tracker</a>
+        <a href="data/today.json">Today JSON</a>
+        <a href="data/results.json">Results JSON</a>
+      </nav>
+    </header>
+
+    <section class="status">
+      <span class="pill">Report date: {escape(payload['report_date_london'])}</span>
+      <span class="pill">Generated: {escape(payload['generated_at_london'])}</span>
+      <span class="pill">Fixtures loaded: {payload['total_fixtures_loaded']}</span>
+      <span class="pill">Candidates shown: {len(payload['candidates'])}</span>
+    </section>
+
+    {cards}
+
+    {tracker_dashboard_html(payload['tracker'])}
+
+    <section class="card notice">
+      <strong>Reminder:</strong> this is a research shortlist only. Confirm the bookmaker offer, odds, liquidity, and staking plan before doing anything with real money.
+    </section>
+  </main>
+</body>
+</html>
+"""
+
+
 def tracker_markdown(tracker: dict) -> str:
     rows = tracker["entries"]
     summary = tracker["summary"]
-    trigger_rate = summary["trigger_rate"]
-    trigger_text = "Pending" if trigger_rate is None else f"{trigger_rate * 100:.0f}%"
     lines = [
         "## 2UP Results Tracker",
         "",
         f"Total rows: {summary['total_rows']}",
         f"Completed: {summary['completed']}",
         f"2UP triggers: {summary['trigger_count']}",
-        f"Trigger rate: {trigger_text}",
+        f"Trigger rate: {trigger_rate_display(summary['trigger_rate'])}",
         f"Estimated QL total: {money_display(summary['estimated_ql_total'])}",
         f"Actual QL total: {money_display(summary['actual_ql_total'])}",
         f"Net P/L: {money_display(summary['net_pl_total'])}",
@@ -192,79 +373,6 @@ def tracker_markdown(tracker: dict) -> str:
             f"| {row['date']} | {row['fixture']} | {row['pick']} | {row['status']} | {row['two_up_triggered']} | {money_display(row['estimated_ql'])} | {money_display(row['net_pl'])} |"
         )
     return "\n".join(lines) + "\n"
-
-
-def render_html(payload: dict) -> str:
-    cards = ""
-    for candidate in payload["candidates"]:
-        title = f"{candidate['rank']}. {candidate['home_team']} vs {candidate['away_team']}"
-        data_quality = int(candidate["data_quality"] * 100)
-        source_notes = candidate.get("source_notes") or "No source notes."
-        cards += f"""
-        <article class="card">
-          <div class="card-head"><h2>{escape(title)}</h2><span>{escape(candidate['confidence'])}</span></div>
-          <div class="grid">
-            <div><span>League</span><strong>{escape(candidate['league'])}</strong></div>
-            <div><span>Kick-off</span><strong>{escape(candidate['kickoff_uk'])}</strong></div>
-            <div><span>Favourite</span><strong>{escape(candidate['favourite'])}</strong></div>
-            <div><span>Odds</span><strong>{escape(candidate['favourite_odds_display'])}</strong></div>
-            <div><span>Score</span><strong>{candidate['score']}</strong></div>
-            <div><span>Data Quality</span><strong>{data_quality}%</strong></div>
-          </div>
-          <h3>Source notes / human layer</h3><p>{escape(source_notes)}</p>
-          <h3>Why it fits</h3><ul>{list_items(candidate['reasons'], 'No strong positive scoring factors were triggered.')}</ul>
-          <h3>Risks</h3><ul>{list_items(candidate['risks'], 'No major statistical risk flagged from available data.')}</ul>
-          <h3>Data notes</h3><ul>{list_items(candidate['data_notes'], 'No data quality notes.')}</ul>
-        </article>
-        """
-    if not cards:
-        cards = "<section class='card'><h2>No candidates found</h2><p>No fixtures passed the current filters.</p></section>"
-    return f"""<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>2upDaily Research Shortlist</title>
-  <style>
-    :root {{ color-scheme: dark; --bg:#0f172a; --panel:#111827; --text:#e5e7eb; --muted:#9ca3af; --accent:#38bdf8; --border:#334155; }}
-    * {{ box-sizing:border-box; }}
-    body {{ margin:0; font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; background:radial-gradient(circle at top,#1e293b 0,var(--bg) 45%); color:var(--text); line-height:1.5; }}
-    main {{ width:min(1100px,calc(100% - 32px)); margin:0 auto; padding:40px 0 64px; }}
-    h1 {{ margin:0 0 8px; font-size:clamp(2rem,5vw,4rem); letter-spacing:-0.04em; }}
-    h2 {{ margin:0 0 16px; }} h3 {{ margin:20px 0 8px; color:var(--accent); }}
-    .muted, .subtitle, .notice {{ color:var(--muted); }}
-    .status {{ display:flex; flex-wrap:wrap; gap:12px; margin:24px 0; }}
-    .pill {{ border:1px solid var(--border); background:rgba(15,23,42,.72); padding:8px 12px; border-radius:999px; color:var(--muted); }}
-    .card {{ border:1px solid var(--border); background:linear-gradient(180deg,rgba(31,41,55,.92),rgba(17,24,39,.94)); border-radius:20px; padding:22px; margin:18px 0; box-shadow:0 20px 60px rgba(0,0,0,.24); }}
-    .card-head {{ display:flex; gap:12px; justify-content:space-between; align-items:flex-start; }}
-    .card-head span {{ background:rgba(56,189,248,.14); color:#bae6fd; border:1px solid rgba(56,189,248,.42); padding:6px 10px; border-radius:999px; white-space:nowrap; font-weight:700; }}
-    .grid {{ display:grid; grid-template-columns:repeat(auto-fit,minmax(140px,1fr)); gap:12px; margin:12px 0 18px; }}
-    .grid div {{ background:rgba(15,23,42,.72); border:1px solid var(--border); border-radius:14px; padding:12px; }}
-    .grid span {{ display:block; color:var(--muted); font-size:.78rem; text-transform:uppercase; letter-spacing:.08em; }}
-    .grid strong {{ display:block; margin-top:4px; }}
-    ul {{ padding-left:1.2rem; }} li {{ margin:6px 0; }}
-    .table-wrap {{ width:100%; overflow-x:auto; }}
-    table {{ width:100%; border-collapse:collapse; min-width:760px; }}
-    th, td {{ border-bottom:1px solid var(--border); padding:10px 8px; text-align:left; vertical-align:top; }}
-    th {{ color:var(--muted); font-size:.78rem; text-transform:uppercase; letter-spacing:.08em; }}
-  </style>
-</head>
-<body>
-  <main>
-    <header><h1>2upDaily</h1><p class="subtitle">Today’s 2UP research shortlist. This is a data-driven shortlist tool, not a guarantee, and it does not place bets.</p></header>
-    <section class="status">
-      <span class="pill">Report date: {escape(payload['report_date_london'])}</span>
-      <span class="pill">Generated: {escape(payload['generated_at_london'])}</span>
-      <span class="pill">Fixtures loaded: {payload['total_fixtures_loaded']}</span>
-      <span class="pill">Candidates shown: {len(payload['candidates'])}</span>
-    </section>
-    {cards}
-    {tracker_html(payload['tracker'])}
-    <section class="card notice"><strong>Reminder:</strong> use this as a research shortlist only. Confirm the bookmaker offer, odds, liquidity, and staking plan before doing anything with real money.</section>
-  </main>
-</body>
-</html>
-"""
 
 
 def main() -> None:
@@ -286,7 +394,7 @@ def main() -> None:
     tracker = {"summary": tracker_summary(tracker_rows), "entries": tracker_rows}
     payload = {
         "generated_at_utc": utc_now.isoformat(timespec="seconds"),
-        "generated_at_london": london_now.isoformat(timespec="seconds"),
+        "generated_at_london": london_now.strftime("%Y-%m-%d %H:%M %Z"),
         "report_date_london": report_date,
         "total_fixtures_loaded": len(fixtures),
         "total_fixtures_after_filters": len(filtered),
@@ -310,6 +418,7 @@ def main() -> None:
     (DATA_DIR / "today.json").write_text(json.dumps(payload, indent=2), encoding="utf-8")
     (DATA_DIR / "results.json").write_text(json.dumps(tracker, indent=2), encoding="utf-8")
     (DOCS_DIR / "index.html").write_text(render_html(payload), encoding="utf-8")
+    (DOCS_DIR / "tracker.html").write_text(tracker_page_html(payload), encoding="utf-8")
 
     print(f"Generated report for {report_date}")
     print(f"Fixtures loaded: {len(fixtures)}")
