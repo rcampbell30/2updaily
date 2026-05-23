@@ -1,6 +1,6 @@
 {
-  "generated_at_utc": "2026-05-23T10:27:37+00:00",
-  "generated_at_london": "2026-05-23 11:27 BST",
+  "generated_at_utc": "2026-05-23T10:30:18+00:00",
+  "generated_at_london": "2026-05-23 11:30 BST",
   "report_date_london": "2026-05-23",
   "total_fixtures_loaded": 3,
   "total_fixtures_after_filters": 3,
@@ -112,13 +112,13 @@
   "tracker": {
     "summary": {
       "total_rows": 3,
-      "planned_or_pending": 3,
-      "completed": 0,
+      "planned_or_pending": 2,
+      "completed": 1,
       "trigger_count": 0,
-      "trigger_rate": null,
+      "trigger_rate": 0.0,
       "estimated_ql_total": 1.25,
-      "actual_ql_total": 0,
-      "net_pl_total": 0
+      "actual_ql_total": 0.87,
+      "net_pl_total": -0.87
     },
     "entries": [
       {
@@ -152,16 +152,16 @@
         "lay_odds": 2.3,
         "back_stake": 10.0,
         "estimated_ql": 0.87,
-        "actual_ql": null,
-        "two_up_triggered": "Pending",
+        "actual_ql": 0.87,
+        "two_up_triggered": "No",
         "trigger_minute": "",
-        "final_score": "Pending",
-        "final_result": "Pending",
-        "net_pl": null,
-        "status": "Planned",
-        "lesson": "Best strategy-shape test; bigger QL but stronger volatility/final context.",
-        "notes": "Human layer still required: confirm 2UP availability, live lay price, liquidity, commission and stake limits before any stake.",
-        "last_updated": "2026-05-22"
+        "final_score": "Auckland FC 1-0 Sydney FC",
+        "final_result": "Auckland win",
+        "net_pl": -0.87,
+        "status": "Settled",
+        "lesson": "No 2UP trigger despite the win; good reminder that a solid volatility shape still needs actual two-goal separation, not just the favourite winning.",
+        "notes": "Settled from user-confirmed 1-0 result. No 2UP trigger; recorded estimated QL as actual QL until exact book/exchange settlement says otherwise.",
+        "last_updated": "2026-05-23"
       },
       {
         "date": "2026-05-23",
@@ -181,7 +181,7 @@
         "net_pl": null,
         "status": "Watchlist",
         "lesson": "Tiny QL but ultra-short favourite; only useful if liquidity and terms are excellent.",
-        "notes": "Human layer still required: confirm 2UP availability, live lay price, liquidity, commission and stake limits before any stake.",
+        "notes": "Human layer still required: confirm 2UP availability, live lay price, liquidity and stake limits.",
         "last_updated": "2026-05-22"
       }
     ]

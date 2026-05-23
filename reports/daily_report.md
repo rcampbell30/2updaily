@@ -1,4 +1,4 @@
-Generated: 2026-05-23 11:27 BST
+Generated: 2026-05-23 11:30 BST
 Report date: 2026-05-23
 Fixtures loaded: 3
 
@@ -110,16 +110,16 @@ Missing fields:
 ## 2UP Results Tracker
 
 Total rows: 3
-Completed: 0
+Completed: 1
 2UP triggers: 0
-Trigger rate: Pending
+Trigger rate: 0%
 Estimated QL total: £1.25
-Actual QL total: £0.00
-Net P/L: £0.00
+Actual QL total: £0.87
+Net P/L: -£0.87
 
 | Date | Fixture | Pick | Status | 2UP | Est. QL | Net P/L |
 |---|---|---|---|---|---:|---:|
 | 2026-05-23 | Bayern Munich vs VfB Stuttgart | Bayern Munich | Planned | Pending | £0.14 | Pending |
-| 2026-05-23 | Auckland FC vs Sydney FC | Auckland FC | Planned | Pending | £0.87 | Pending |
+| 2026-05-23 | Auckland FC vs Sydney FC | Auckland FC | Settled | No | £0.87 | -£0.87 |
 | 2026-05-23 | Celtic vs Dunfermline Athletic | Celtic | Watchlist | Pending | £0.24 | Pending |
 
