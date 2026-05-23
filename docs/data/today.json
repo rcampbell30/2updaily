@@ -1,6 +1,6 @@
 {
-  "generated_at_utc": "2026-05-23T10:30:18+00:00",
-  "generated_at_london": "2026-05-23 11:30 BST",
+  "generated_at_utc": "2026-05-23T10:43:52+00:00",
+  "generated_at_london": "2026-05-23 11:43 BST",
   "report_date_london": "2026-05-23",
   "total_fixtures_loaded": 3,
   "total_fixtures_after_filters": 3,
@@ -16,7 +16,7 @@
       "favourite_odds_display": "1.4",
       "source_notes": "Tier 1 cup final. User confirmed 2UP offered and updated current back/lay to 1.40/1.42 on 2026-05-23; approximate QL per \u00a310 back stake about \u00a30.14 before commission, about \u00a30.20 at 2% commission, and about \u00a30.29 at 5% commission. Baseline used: data/team_baselines/bundesliga_dfb_pokal_finalists_2025_26.csv. Bayern cup-route baseline: High 2UP trigger profile, Back candidate, 2.80 goals for avg, 1.00 goals against avg, 0.60 BTTS, 0.60 over 2.5, 0.60 over 3.5. Stuttgart cup-route baseline: High trigger profile, Lay-side comeback candidate, 2.60 goals for avg, 1.00 goals against avg, 0.40 BTTS, 0.60 over 2.5. Bayern won the Bundesliga and Reuters reports they set a new league goals record; Stuttgart are defending cup champions, so 2UP trigger potential exists with some final volatility. Stronger than the old 1.33/1.38 note because QL is now tiny while the cup-final comeback/draw angle remains alive. Human layer: recheck exact bookie price, exchange lay price, liquidity, commission and any 2UP restrictions before staking.",
       "score": 35.0,
-      "confidence": "Low",
+      "confidence": "Medium",
       "data_quality": 0.67,
       "reasons": [
         "Bayern Munich have strong scoring output.",
@@ -26,7 +26,8 @@
       "data_notes": [
         "Missing favourite first-half scoring data; early-start angle was skipped.",
         "Missing favourite conceded-after-leading data; comeback-volatility angle was skipped.",
-        "Data quality is incomplete, so confidence has been reduced."
+        "Data quality is incomplete, so confidence has been reduced.",
+        "Confidence includes user-confirmed 2UP/back-lay/QL evidence; specialist model fields are still incomplete."
       ],
       "missing_fields": [
         "favourite.first_half_goals_avg",
@@ -59,7 +60,8 @@
         "Missing favourite first-half scoring data; early-start angle was skipped.",
         "Missing favourite conceded-after-leading data; comeback-volatility angle was skipped.",
         "Data quality is incomplete, so confidence has been reduced.",
-        "Low favourite odds; only useful if back/lay closeness keeps qualifying loss low."
+        "Low favourite odds; only useful if back/lay closeness keeps qualifying loss low.",
+        "User-confirmed market evidence exists, but model confidence stays limited because baseline data quality is below 50%."
       ],
       "missing_fields": [
         "favourite.first_half_goals_avg",

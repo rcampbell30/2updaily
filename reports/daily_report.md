@@ -1,4 +1,4 @@
-Generated: 2026-05-23 11:30 BST
+Generated: 2026-05-23 11:43 BST
 Report date: 2026-05-23
 Fixtures loaded: 3
 
@@ -10,7 +10,7 @@ Kick-off: Saturday 23 May 2026, 19:00 UK
 Favourite: Bayern Munich
 Approx odds: 1.4
 2up score: 35.0
-Confidence: Low
+Confidence: Medium
 Data quality: 67%
 
 Source notes / human layer:
@@ -27,6 +27,7 @@ Data notes:
 - Missing favourite first-half scoring data; early-start angle was skipped.
 - Missing favourite conceded-after-leading data; comeback-volatility angle was skipped.
 - Data quality is incomplete, so confidence has been reduced.
+- Confidence includes user-confirmed 2UP/back-lay/QL evidence; specialist model fields are still incomplete.
 
 Missing fields:
 - favourite.first_half_goals_avg
@@ -58,6 +59,7 @@ Data notes:
 - Missing favourite conceded-after-leading data; comeback-volatility angle was skipped.
 - Data quality is incomplete, so confidence has been reduced.
 - Low favourite odds; only useful if back/lay closeness keeps qualifying loss low.
+- User-confirmed market evidence exists, but model confidence stays limited because baseline data quality is below 50%.
 
 Missing fields:
 - favourite.first_half_goals_avg
