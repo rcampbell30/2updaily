@@ -1,6 +1,6 @@
 {
-  "generated_at_utc": "2026-05-23T10:18:49+00:00",
-  "generated_at_london": "2026-05-23 11:18 BST",
+  "generated_at_utc": "2026-05-23T10:27:37+00:00",
+  "generated_at_london": "2026-05-23 11:27 BST",
   "report_date_london": "2026-05-23",
   "total_fixtures_loaded": 3,
   "total_fixtures_after_filters": 3,
@@ -116,7 +116,7 @@
       "completed": 0,
       "trigger_count": 0,
       "trigger_rate": null,
-      "estimated_ql_total": 1.47,
+      "estimated_ql_total": 1.25,
       "actual_ql_total": 0,
       "net_pl_total": 0
     },
@@ -127,10 +127,10 @@
         "pick": "Bayern Munich",
         "league": "DFB-Pokal Final",
         "kickoff_uk": "Saturday 23 May 2026, 19:00 UK",
-        "back_odds": 1.33,
-        "lay_odds": 1.38,
+        "back_odds": 1.4,
+        "lay_odds": 1.42,
         "back_stake": 10.0,
-        "estimated_ql": 0.36,
+        "estimated_ql": 0.14,
         "actual_ql": null,
         "two_up_triggered": "Pending",
         "trigger_minute": "",
@@ -138,9 +138,9 @@
         "final_result": "Pending",
         "net_pl": null,
         "status": "Planned",
-        "lesson": "Low-QL dry run; strong trigger profile but possible routine-favourite risk.",
+        "lesson": "Excellent low-QL 2UP test after updated 1.40/1.42 prices; strong trigger profile but still has routine-favourite risk if Bayern control the final.",
         "notes": "Human layer still required: confirm 2UP availability, live lay price, liquidity, commission and stake limits before any stake.",
-        "last_updated": "2026-05-22"
+        "last_updated": "2026-05-23"
       },
       {
         "date": "2026-05-23",
