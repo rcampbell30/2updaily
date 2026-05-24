@@ -1,4 +1,4 @@
-Generated: 2026-05-24 10:16 BST
+Generated: 2026-05-24 10:20 BST
 Report date: 2026-05-24
 Fixtures loaded: 3
 
@@ -90,7 +90,7 @@ Total rows: 5
 Completed: 4
 2UP triggers: 1
 Trigger rate: 25%
-Estimated QL total: £4.87
+Estimated QL total: £4.60
 Actual QL total: £3.75
 Net P/L: -£3.75
 
@@ -99,6 +99,6 @@ Net P/L: -£3.75
 | 2026-05-23 | Bayern Munich vs VfB Stuttgart | Bayern Munich | Settled | No | £0.14 | -£0.14 |
 | 2026-05-23 | Auckland FC vs Sydney FC | Auckland FC | Settled | No | £0.87 | -£0.87 |
 | 2026-05-23 | Celtic vs Dunfermline Athletic | Celtic | Settled | No | £0.24 | -£0.24 |
-| 2026-05-24 | West Ham United vs Leeds United | double-sided: West Ham + Leeds | Planned | Pending | £1.12 | Pending |
+| 2026-05-24 | West Ham United vs Leeds United | Leeds United | Live | Pending | £0.85 | Pending |
 | 2026-05-24 | Sporting Kansas City vs New York Red Bulls | double-sided: Kansas City + NY Red Bulls | Settled | Yes | £2.50 | -£2.50 |
 
