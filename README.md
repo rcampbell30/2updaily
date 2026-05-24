@@ -8,18 +8,23 @@ This is a shortlist/research tool only. It does not place bets, guarantee profit
 
 ## Manual agent workflow
 
-Read this file first when running a future update:
+Read these files first when running a future update:
 
 ```text
 AGENT_CONTEXT.md
+data/user_defaults.md
 ```
 
-That file contains the strategy, ranking rules, baseline-data rules, human-layer checks, qualifying-loss logic, and preferred final-answer format.
+`AGENT_CONTEXT.md` contains the strategy, ranking rules, baseline-data rules, human-layer checks, qualifying-loss logic, and preferred final-answer format.
+
+`data/user_defaults.md` contains Rory-specific operational defaults such as the current default exchange commission. As of 2026-05-24, Rory's default commission is **2%**, so live-position QL should use 2% as the headline value unless Rory says otherwise.
 
 The workflow is:
 
 ```text
 Read AGENT_CONTEXT.md
+↓
+Read data/user_defaults.md
 ↓
 Inspect the current fixture bank
 ↓
@@ -35,6 +40,20 @@ Generate reports and static site files
 ↓
 Commit the update
 ```
+
+## Live managed positions
+
+Watchlist candidates and real placed positions are separate.
+
+Use these files for live managed positions:
+
+```text
+docs/live-bets.html
+docs/data/live-bets.json
+data/results_tracker.csv
+```
+
+Live-position notes should avoid bookmaker/account names and account-sensitive details. Store only the useful trading data: back stake, back odds, lay odds, lay stake/liability at 2% commission, headline QL at 2%, free-bet/reload value if relevant, 2UP trigger status, and settlement status.
 
 ## Baseline team data
 
@@ -104,14 +123,18 @@ Commit the generated files back to the repo
 ## Files to edit
 
 - `AGENT_CONTEXT.md` - source-of-truth prompt/context for future ChatGPT-assisted runs.
+- `data/user_defaults.md` - Rory-specific defaults such as exchange commission and live-position conventions.
 - `data/fixture_bank_may_2026.csv` - current fixture bank and ranking source.
 - `data/team_baselines/` - semi-static league/team baseline data refreshed every 3 to 6 months.
 - `team_stats.csv` - simple scorer-compatible stats template.
 - `fixtures_today.csv` - generated from the fixture bank, but can still be edited manually if needed.
+- `docs/data/live-bets.json` - live managed positions supplied by Rory.
+- `docs/live-bets.html` - static live-position dashboard.
 
 ## Main files
 
 - `AGENT_CONTEXT.md` - manual agent prompt/context.
+- `data/user_defaults.md` - operational defaults for future runs.
 - `twoup_agents.py` - the narrow-agent 2UP research/scoring module.
 - `run_twoup_from_split_csv.py` - the CSV runner.
 - `scripts/seed_fixtures_today_from_bank.py` - seeds `fixtures_today.csv` from the fixture bank.
@@ -129,8 +152,12 @@ The generated static site files live here:
 ```text
 docs/
 ├── index.html
+├── tracker.html
+├── live-bets.html
 └── data/
-    └── today.json
+    ├── today.json
+    ├── results.json
+    └── live-bets.json
 ```
 
 You can publish this through GitHub Pages by setting Pages source to the `docs/` folder on `main`.
