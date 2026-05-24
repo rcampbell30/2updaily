@@ -82,6 +82,34 @@ Approx QL per £10 back stake: £X before commission, £Y at 2%, £Z at 5%.
 
 Do not invent commission. If unknown, show before-commission QL and flag commission as a manual check.
 
+## Double-sided same-market exposure and early payout calc
+
+When Rory backs and lays both teams in the same exchange Match Odds market, do not add exchange liabilities as if they are separate markets. The exchange exposure is shared because only one Match Odds selection can win.
+
+For a two-sided setup with Team A and Team B both backed at the bookmaker and both laid on the exchange:
+
+```text
+exchange_if_A_wins = lay_stake_B - ((lay_odds_A - 1) * lay_stake_A)
+exchange_if_B_wins = lay_stake_A - ((lay_odds_B - 1) * lay_stake_B)
+exchange_if_draw = lay_stake_A + lay_stake_B
+```
+
+Apply exchange commission to the net exchange market profit only when the exchange result is positive. If the net exchange result is negative, commission is normally zero because there is no net exchange win on that market.
+
+This means the required exchange bank is the worst negative exchange outcome, not the sum of both individual lay liabilities.
+
+Call the special scenario calculation an `early payout calc` when Rory asks what happens after a team triggers 2UP.
+
+For an early payout calc:
+
+- Treat the team that triggered 2UP as a winning bookmaker back bet even if the match later draws or loses.
+- Treat the exchange lays according to the final official Match Odds result.
+- If final result is a draw, both team lays win on the exchange, subject to commission on net exchange profit.
+- If the triggering team still wins, its lay loses and the other team lay wins; calculate the net exchange result before applying commission.
+- If both teams somehow trigger 2UP in the same match, state that as a special case and calculate both bookmaker backs as winners.
+
+Example to remember: Kansas City vs NY Red Bulls double-sided 2UP used Kansas back/lay 3.00/3.15 and NY Red Bulls back/lay 2.10/2.26. If NYRB trigger 2UP and the final score is 2-2, NYRB is a winning bookmaker early-payout bet, Kansas bookmaker back loses, and both exchange lays win because the final Match Odds result is the draw.
+
 ## League priority
 
 Tier 1 first:
@@ -216,7 +244,9 @@ Do not leave a run at the watchlist stage without asking for lay odds. The whole
 10. If odds/eligibility are supplied by Rory, treat them as user-confirmed but still tell him to recheck before staking.
 11. Confidence labels must respect user-confirmed 2UP/back-lay/QL evidence, but missing data must still be stated clearly.
 12. After every new watchlist run, explicitly ask Rory for back odds, lay odds, 2UP confirmation and liquidity for the top candidates.
-13. This is research only, never staking instruction or guaranteed profit.
+13. For double-sided same-market setups, calculate shared exchange exposure by final outcome rather than adding lay liabilities separately.
+14. Use `early payout calc` for scenario maths after a 2UP trigger.
+15. This is research only, never staking instruction or guaranteed profit.
 
 ## Repo update workflow
 
