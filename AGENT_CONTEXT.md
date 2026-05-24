@@ -107,8 +107,11 @@ For an early payout calc:
 - If final result is a draw, both team lays win on the exchange, subject to commission on net exchange profit.
 - If the triggering team still wins, its lay loses and the other team lay wins; calculate the net exchange result before applying commission.
 - If both teams somehow trigger 2UP in the same match, state that as a special case and calculate both bookmaker backs as winners.
+- Rare unicorn case: if Team A goes 2-0 up and triggers 2UP, then Team B later goes two goals ahead as well, for example 2-4, and the match eventually ends as a draw such as 4-4, then all four positions can win: both bookmaker backs are treated as early-payout winners and both exchange team lays win because the official Match Odds result is the draw. This is very rare but must be handled explicitly.
 
 Example to remember: Kansas City vs NY Red Bulls double-sided 2UP used Kansas back/lay 3.00/3.15 and NY Red Bulls back/lay 2.10/2.26. If NYRB trigger 2UP and the final score is 2-2, NYRB is a winning bookmaker early-payout bet, Kansas bookmaker back loses, and both exchange lays win because the final Match Odds result is the draw.
+
+Second rare example: Team A 2-0, Team B comes back to 2-4, then final score 4-4. If Rory backed both teams with 2UP and laid both teams on the exchange, both bookmaker backs can win from early payout and both exchange lays can win from the draw result.
 
 ## League priority
 
