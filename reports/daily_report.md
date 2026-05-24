@@ -1,4 +1,4 @@
-Generated: 2026-05-24 01:49 BST
+Generated: 2026-05-24 03:40 BST
 Report date: 2026-05-24
 Fixtures loaded: 3
 
@@ -59,13 +59,13 @@ Missing fields:
 
 ## 2UP Results Tracker
 
-Total rows: 4
-Completed: 3
-2UP triggers: 0
-Trigger rate: 0%
-Estimated QL total: £2.37
-Actual QL total: £1.25
-Net P/L: -£1.25
+Total rows: 5
+Completed: 4
+2UP triggers: 1
+Trigger rate: 25%
+Estimated QL total: £4.87
+Actual QL total: £3.75
+Net P/L: -£3.75
 
 | Date | Fixture | Pick | Status | 2UP | Est. QL | Net P/L |
 |---|---|---|---|---|---:|---:|
@@ -73,4 +73,5 @@ Net P/L: -£1.25
 | 2026-05-23 | Auckland FC vs Sydney FC | Auckland FC | Settled | No | £0.87 | -£0.87 |
 | 2026-05-23 | Celtic vs Dunfermline Athletic | Celtic | Settled | No | £0.24 | -£0.24 |
 | 2026-05-24 | West Ham United vs Leeds United | double-sided: West Ham + Leeds | Planned | Pending | £1.12 | Pending |
+| 2026-05-24 | Sporting Kansas City vs New York Red Bulls | double-sided: Kansas City + NY Red Bulls | Settled | Yes | £2.50 | -£2.50 |
 
