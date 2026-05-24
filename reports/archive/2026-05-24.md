@@ -1,10 +1,37 @@
-Generated: 2026-05-24 09:09 BST
+Generated: 2026-05-24 09:20 BST
 Report date: 2026-05-24
 Fixtures loaded: 3
 
 # Daily 2up Shortlist
 
-## 1. Manchester City vs Aston Villa
+## 1. West Ham United vs Leeds United
+League: Premier League
+Kick-off: Sunday 24 May 2026, 16:00 UK
+Favourite: West Ham United
+Approx odds: 1.75
+2up score: 60.0
+Confidence: Medium
+Data quality: 83%
+
+Source notes / human layer:
+- 2026-05-24 manual agent rerank: moved to Rank 1 for trade practicality; not pure football score. Rory-confirmed market notes already in bank: West Ham back/lay 1.75/1.83 and Leeds back/lay 4.10/4.40. Approx QL per £10: West Ham £0.44 before commission; £0.52 at 2%; £0.66 at 5%; Leeds £0.68 before commission; £0.83 at 2%; £1.05 at 5%; combined double-sided QL about £1.12 before commission; £1.35 at 2%; £1.71 at 5%. Public context checked on 2026-05-24: final-day relegation pressure keeps West Ham highly motivated; talkSPORT noted West Ham must beat Leeds and may still need Tottenham to lose; while Leeds have little table pressure but strong recent form was flagged in public previews. Strategy note: this is a double-sided 2UP angle; backing and laying both teams so either side can trigger a 2UP payout. Baseline used: data/team_baselines/premier_league_2025_26.csv. West Ham baseline: Low 2UP trigger profile; High comeback vulnerability; Lay-side comeback candidate; 1.33 goals for avg; 1.67 goals against avg; 0.57 first-half goals for avg; 0.59 over 2.5. Leeds baseline: Medium 2UP trigger profile; High comeback vulnerability; Back candidate; 1.32 goals for avg; 1.43 goals against avg; 0.65 first-half goals for avg; 0.59 BTTS; 0.54 over 2.5. Trade rationale: usable back/lay shape and modest combined QL beat the Man City watchlist until City prices/2UP are confirmed. Main weakness: neither side has elite two-goal trigger power. Human layer still needed before staking: re-check 2UP is showing for both teams on Rory's account; exchange liquidity near 1.83 and 4.40; commission; stake limits and account restrictions.
+
+Reasons:
+- User-confirmed back/lay/QL evidence improves the trade-practicality rank versus a pure football-shape watchlist.
+- The match profile suggests goal volatility.
+
+Risks:
+- West Ham United may not score enough for a strong 2up angle.
+
+Data notes:
+- Missing favourite conceded-after-leading data; comeback-volatility angle was skipped.
+- Trade-practicality boost applied from user-confirmed market evidence; still re-check 2UP visibility, liquidity, commission, stake limits and account restrictions before staking.
+
+Missing fields:
+- favourite.conceded_after_leading_rate
+- underdog.conceded_after_leading_rate
+
+## 2. Manchester City vs Aston Villa
 League: Premier League
 Kick-off: Sunday 24 May 2026, 16:00 UK
 Favourite: Manchester City
@@ -32,7 +59,7 @@ Missing fields:
 - favourite.conceded_after_leading_rate
 - underdog.conceded_after_leading_rate
 
-## 2. Sunderland vs Chelsea
+## 3. Sunderland vs Chelsea
 League: Premier League
 Kick-off: Sunday 24 May 2026, 16:00 UK
 Favourite: Chelsea
@@ -49,31 +76,6 @@ Reasons:
 
 Risks:
 - No major statistical risk flagged from the available data.
-
-Data notes:
-- Missing favourite conceded-after-leading data; comeback-volatility angle was skipped.
-
-Missing fields:
-- favourite.conceded_after_leading_rate
-- underdog.conceded_after_leading_rate
-
-## 3. West Ham United vs Leeds United
-League: Premier League
-Kick-off: Sunday 24 May 2026, 16:00 UK
-Favourite: West Ham United
-Approx odds: 1.75
-2up score: 0.0
-Confidence: Low
-Data quality: 83%
-
-Source notes / human layer:
-- 2026-05-24 manual agent rerank: moved to Rank 1 for trade practicality; not pure football score. Rory-confirmed market notes already in bank: West Ham back/lay 1.75/1.83 and Leeds back/lay 4.10/4.40. Approx QL per £10: West Ham £0.44 before commission; £0.52 at 2%; £0.66 at 5%; Leeds £0.68 before commission; £0.83 at 2%; £1.05 at 5%; combined double-sided QL about £1.12 before commission; £1.35 at 2%; £1.71 at 5%. Public context checked on 2026-05-24: final-day relegation pressure keeps West Ham highly motivated; talkSPORT noted West Ham must beat Leeds and may still need Tottenham to lose; while Leeds have little table pressure but strong recent form was flagged in public previews. Strategy note: this is a double-sided 2UP angle; backing and laying both teams so either side can trigger a 2UP payout. Baseline used: data/team_baselines/premier_league_2025_26.csv. West Ham baseline: Low 2UP trigger profile; High comeback vulnerability; Lay-side comeback candidate; 1.33 goals for avg; 1.67 goals against avg; 0.57 first-half goals for avg; 0.59 over 2.5. Leeds baseline: Medium 2UP trigger profile; High comeback vulnerability; Back candidate; 1.32 goals for avg; 1.43 goals against avg; 0.65 first-half goals for avg; 0.59 BTTS; 0.54 over 2.5. Trade rationale: usable back/lay shape and modest combined QL beat the Man City watchlist until City prices/2UP are confirmed. Main weakness: neither side has elite two-goal trigger power. Human layer still needed before staking: re-check 2UP is showing for both teams on Rory's account; exchange liquidity near 1.83 and 4.40; commission; stake limits and account restrictions.
-
-Reasons:
-- The match profile suggests goal volatility.
-
-Risks:
-- West Ham United may not score enough for a strong 2up angle.
 
 Data notes:
 - Missing favourite conceded-after-leading data; comeback-volatility angle was skipped.
