@@ -9,9 +9,9 @@
 <body>
   <main>
     <header>
-      <p class="confidence">Live managed position</p>
+      <p class="confidence">Live managed positions</p>
       <h1>Live 2UP Positions</h1>
-      <p class="subtitle">Manual record of real managed 2UP positions and reload/free-bet value. Keep bookmaker/account-specific details out of the repo.</p>
+      <p class="subtitle">Manual record of real managed 2UP positions and reload/free-bet value. Bookmaker/account-specific details are deliberately not stored.</p>
       <nav class="site-nav">
         <a href="./">Dashboard</a>
         <a href="tracker.html">Tracker</a>
@@ -21,8 +21,26 @@
 
     <section class="status">
       <span class="pill">Last updated: 2026-05-24</span>
-      <span class="pill">Live positions: 1</span>
-      <span class="pill">Status: Pending result</span>
+      <span class="pill">Live positions: 3</span>
+      <span class="pill">Default commission: 2%</span>
+      <span class="pill">Headline QL: £3.53</span>
+      <span class="pill">Free-bet value: £3.75</span>
+    </section>
+
+    <section class="card">
+      <div class="card-head">
+        <h2>Live Exposure Summary</h2>
+        <span>2% commission headline</span>
+      </div>
+      <div class="grid">
+        <div><span>Total back stake</span><strong>£70.00</strong></div>
+        <div><span>Estimated QL at 2%</span><strong>£3.53</strong></div>
+        <div><span>Free bet unlocked</span><strong>£5.00</strong></div>
+        <div><span>Estimated free-bet value</span><strong>£3.75</strong></div>
+        <div><span>Estimated net after 2% QL + free bet</span><strong>£0.22</strong></div>
+        <div><span>2UP upside</span><strong>Pending</strong></div>
+      </div>
+      <p class="subtitle">The £0.22 figure is the approximate reload/free-bet value after the current 2% qualifying losses. It does not include any 2UP upside if one of the teams goes two goals ahead and fails to win.</p>
     </section>
 
     <article class="card">
@@ -37,26 +55,68 @@
         <div><span>Back stake</span><strong>£20.00</strong></div>
         <div><span>Back odds</span><strong>4.50</strong></div>
         <div><span>Lay odds</span><strong>4.70</strong></div>
-        <div><span>Lay stake, 0% commission</span><strong>£19.15</strong></div>
-        <div><span>Lay liability, 0% commission</span><strong>£70.85</strong></div>
-        <div><span>QL, 0% commission</span><strong>£0.85</strong></div>
-        <div><span>QL, 2% commission</span><strong>£1.15</strong></div>
-        <div><span>QL, 5% commission</span><strong>£1.61</strong></div>
+        <div><span>Lay stake at 2%</span><strong>£19.23</strong></div>
+        <div><span>Lay liability at 2%</span><strong>£71.15</strong></div>
+        <div><span>Headline QL at 2%</span><strong>£1.15</strong></div>
         <div><span>Free bet unlocked</span><strong>£5.00</strong></div>
         <div><span>Assumed retention</span><strong>75%</strong></div>
         <div><span>Estimated free-bet value</span><strong>£3.75</strong></div>
-        <div><span>Net reload value after 0% QL</span><strong>£2.90</strong></div>
         <div><span>Net reload value after 2% QL</span><strong>£2.60</strong></div>
-        <div><span>Net reload value after 5% QL</span><strong>£2.14</strong></div>
       </div>
-
       <h3>Position notes</h3>
       <ul>
         <li>Leeds side is already managed at £20 back stake, 4.50 back odds and 4.70 lay odds.</li>
         <li>The £5 free bet unlock means this position has reload value before any 2UP upside.</li>
         <li>If Leeds go two goals ahead and fail to win, the 2UP edge is the upside scenario.</li>
         <li>If Leeds never go two goals ahead, expect the matched-bet qualifying loss, offset later by free-bet conversion value.</li>
-        <li>West Ham side remains optional only if its back/lay gap improves enough.</li>
+      </ul>
+    </article>
+
+    <article class="card">
+      <div class="card-head">
+        <h2>Chelsea — £20 at 2.00 / 2.12</h2>
+        <span>Volatile favourite</span>
+      </div>
+      <div class="grid">
+        <div><span>Fixture</span><strong>Sunderland vs Chelsea</strong></div>
+        <div><span>Kick-off</span><strong>Sunday 24 May 2026, 16:00 UK</strong></div>
+        <div><span>Pick</span><strong>Chelsea</strong></div>
+        <div><span>Back stake</span><strong>£20.00</strong></div>
+        <div><span>Back odds</span><strong>2.00</strong></div>
+        <div><span>Lay odds</span><strong>2.12</strong></div>
+        <div><span>Lay stake at 2%</span><strong>£19.05</strong></div>
+        <div><span>Lay liability at 2%</span><strong>£21.33</strong></div>
+        <div><span>Headline QL at 2%</span><strong>£1.33</strong></div>
+      </div>
+      <h3>Position notes</h3>
+      <ul>
+        <li>Confirmed 2UP and liquidity, now placed as a live £20 position.</li>
+        <li>More expensive QL than City, but a better comeback/chaos profile if Chelsea go two goals ahead.</li>
+        <li>Useful upside scenario: Chelsea go 2UP, then Sunderland recover to draw or win.</li>
+      </ul>
+    </article>
+
+    <article class="card">
+      <div class="card-head">
+        <h2>Manchester City — £30 at 1.30 / 1.34</h2>
+        <span>Low QL trigger shot</span>
+      </div>
+      <div class="grid">
+        <div><span>Fixture</span><strong>Manchester City vs Aston Villa</strong></div>
+        <div><span>Kick-off</span><strong>Sunday 24 May 2026, 16:00 UK</strong></div>
+        <div><span>Pick</span><strong>Manchester City</strong></div>
+        <div><span>Back stake</span><strong>£30.00</strong></div>
+        <div><span>Back odds</span><strong>1.30</strong></div>
+        <div><span>Lay odds</span><strong>1.34</strong></div>
+        <div><span>Lay stake at 2%</span><strong>£29.55</strong></div>
+        <div><span>Lay liability at 2%</span><strong>£10.05</strong></div>
+        <div><span>Headline QL at 2%</span><strong>£1.05</strong></div>
+      </div>
+      <h3>Position notes</h3>
+      <ul>
+        <li>Confirmed 2UP and liquidity, now placed as a live £30 position.</li>
+        <li>Very low QL and strong two-goal trigger chance.</li>
+        <li>Main weakness: routine-favourite risk. If City go 2UP and still win comfortably, there is no 2UP profit beyond normal matched-bet settlement.</li>
       </ul>
     </article>
 
