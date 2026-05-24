@@ -1,0 +1,33 @@
+{
+  "last_updated_london": "2026-05-24",
+  "scope": "Live managed 2UP positions supplied manually by Rory. No bookmaker/account names are stored.",
+  "positions": [
+    {
+      "id": "2026-05-24-leeds-west-ham-live",
+      "date": "2026-05-24",
+      "fixture": "West Ham United vs Leeds United",
+      "league": "Premier League",
+      "kickoff_uk": "Sunday 24 May 2026, 16:00 UK",
+      "pick": "Leeds United",
+      "position_type": "Single-side 2UP matched bet with reload/free-bet unlock",
+      "status": "Live / pending result",
+      "back_stake": 20.0,
+      "back_odds": 4.5,
+      "lay_odds": 4.7,
+      "lay_stake_0_commission": 19.15,
+      "lay_liability_0_commission": 70.85,
+      "estimated_ql_0_commission": 0.85,
+      "estimated_ql_2_percent_commission": 1.15,
+      "estimated_ql_5_percent_commission": 1.61,
+      "free_bet_unlocked": 5.0,
+      "assumed_free_bet_retention": 0.75,
+      "estimated_free_bet_value": 3.75,
+      "estimated_reload_value_after_ql_0_commission": 2.9,
+      "estimated_reload_value_after_ql_2_percent_commission": 2.6,
+      "estimated_reload_value_after_ql_5_percent_commission": 2.14,
+      "two_up_triggered": "Pending",
+      "final_score": "Pending",
+      "result_notes": "Leeds live position added from Rory's manual update: £20 back at 4.50, lay at 4.70, and £5 free bet unlocked from the qualifying stake. Free-bet value is estimated only and should be updated when redeemed. West Ham side remains optional only if odds improve enough."
+    }
+  ]
+}
