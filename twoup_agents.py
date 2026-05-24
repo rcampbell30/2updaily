@@ -308,7 +308,7 @@ class TwoUpScoringAgent:
     @staticmethod
     def _has_user_confirmed_trade_evidence(fixture: Fixture) -> bool:
         notes = fixture.source_notes.lower()
-        has_user_confirmation = "user confirmed" in notes or "user-confirmed" in notes
+        has_user_confirmation = "user confirmed" in notes or "user-confirmed" in notes or "rory-confirmed" in notes
         has_2up_evidence = "2up" in notes or "2 goals ahead" in notes
         has_back_lay_evidence = "back/lay" in notes or "back / lay" in notes
         has_ql_evidence = " ql" in notes or "qualifying loss" in notes
@@ -345,8 +345,29 @@ class TwoUpScoringAgent:
 
         return confidence
 
+    @staticmethod
+    def _trade_practicality_bonus(fixture: Fixture, data_notes: List[str], reasons: List[str]) -> float:
+        """Lift candidates where Rory supplied usable market evidence.
+
+        The normal model is deliberately football-data led, but 2UP matched betting
+        is a trade shape problem. A low-QL back/lay setup with user-confirmed market
+        evidence should not be buried below a pure watchlist pick with missing odds.
+        """
+        if not TwoUpScoringAgent._has_user_confirmed_trade_evidence(fixture):
+            return 0.0
+
+        reasons.insert(
+            0,
+            "User-confirmed back/lay/QL evidence improves the trade-practicality rank versus a pure football-shape watchlist."
+        )
+        data_notes.append(
+            "Trade-practicality boost applied from user-confirmed market evidence; still re-check 2UP visibility, liquidity, commission, stake limits and account restrictions before staking."
+        )
+        return 60.0
+
     def score_fixture(self, fixture: Fixture) -> TwoUpCandidate:
         score, reasons, risks, data_notes, missing_fields, data_quality = self.volatility_agent.run(fixture)
+        score += self._trade_practicality_bonus(fixture, data_notes, reasons)
         base_confidence = self._base_confidence(score)
         confidence = self._downgrade_confidence(
             base_confidence,
