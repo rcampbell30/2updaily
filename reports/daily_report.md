@@ -1,4 +1,4 @@
-Generated: 2026-05-24 10:27 BST
+Generated: 2026-05-24 10:28 BST
 Report date: 2026-05-24
 Fixtures loaded: 3
 
@@ -14,7 +14,7 @@ Confidence: Medium
 Data quality: 83%
 
 Source notes / human layer:
-- 2026-05-24 manual agent rerank: moved to Rank 1 for trade practicality; not pure football score. Rory-confirmed market notes already in bank: West Ham back/lay 1.75/1.83 and Leeds back/lay 4.10/4.40. Approx QL per £10: West Ham £0.44 before commission; £0.52 at 2%; £0.66 at 5%; Leeds £0.68 before commission; £0.83 at 2%; £1.05 at 5%; combined double-sided QL about £1.12 before commission; £1.35 at 2%; £1.71 at 5%. Public context checked on 2026-05-24: final-day relegation pressure keeps West Ham highly motivated; talkSPORT noted West Ham must beat Leeds and may still need Tottenham to lose; while Leeds have little table pressure but strong recent form was flagged in public previews. Strategy note: this is a double-sided 2UP angle; backing and laying both teams so either side can trigger a 2UP payout. Baseline used: data/team_baselines/premier_league_2025_26.csv. West Ham baseline: Low 2UP trigger profile; High comeback vulnerability; Lay-side comeback candidate; 1.33 goals for avg; 1.67 goals against avg; 0.57 first-half goals for avg; 0.59 over 2.5. Leeds baseline: Medium 2UP trigger profile; High comeback vulnerability; Back candidate; 1.32 goals for avg; 1.43 goals against avg; 0.65 first-half goals for avg; 0.59 BTTS; 0.54 over 2.5. Trade rationale: usable back/lay shape and modest combined QL beat the Man City watchlist until City prices/2UP are confirmed. Main weakness: neither side has elite two-goal trigger power. Human layer still needed before staking: re-check 2UP is showing for both teams on Rory's account; exchange liquidity near 1.83 and 4.40; commission; stake limits and account restrictions.
+- 2026-05-24 manual agent rerank: moved to Rank 1 for trade practicality; not pure football score. Rory-confirmed market notes already in bank: West Ham back/lay 1.75/1.83 and Leeds back/lay 4.10/4.40. Later actual managed Leeds position: £20 back at 4.50 and lay at 4.70, recorded separately in docs/live-bets.html and data/results_tracker.csv. Approx live Leeds QL at £20: £0.85 before commission, £1.15 at 2%, £1.61 at 5%; £5 free bet unlocked, estimated value £3.75 at 75% retention. West Ham side remains optional only if odds improve enough. Baseline used: data/team_baselines/premier_league_2025_26.csv. West Ham baseline: Low 2UP trigger profile; High comeback vulnerability; Lay-side comeback candidate; 1.33 goals for avg; 1.67 goals against avg; 0.57 first-half goals for avg; 0.59 over 2.5. Leeds baseline: Medium 2UP trigger profile; High comeback vulnerability; Back candidate; 1.32 goals for avg; 1.43 goals against avg; 0.65 first-half goals for avg; 0.59 BTTS; 0.54 over 2.5. Trade rationale: actual Leeds live position is better than the older watchlist price because it combines acceptable QL with free-bet reload value. Main weakness: neither side has elite two-goal trigger power. Human layer still needed: final settlement, exact commission, 2UP trigger status and whether West Ham odds ever become worth adding.
 
 Reasons:
 - User-confirmed back/lay/QL evidence improves the trade-practicality rank versus a pure football-shape watchlist.
@@ -35,13 +35,13 @@ Missing fields:
 League: Premier League
 Kick-off: Sunday 24 May 2026, 16:00 UK
 Favourite: Manchester City
-Approx odds: Unknown
-2up score: 50.0
+Approx odds: 1.3
+2up score: 35.0
 Confidence: Low
 Data quality: 83%
 
 Source notes / human layer:
-- 2026-05-24 manual agent rerank: kept as a strong football-shape watchlist but moved below West Ham/Leeds because no user-confirmed 2UP; back price; lay price; liquidity or QL is in the bank. Public context checked on 2026-05-24: all Premier League final-day matches kick off at 16:00 UK; Reuters previewed Guardiola's final league game with City against Aston Villa; and betting previews noted Villa's Europa League win/possible rotation risk. Baseline used: data/team_baselines/premier_league_2025_26.csv. Manchester City baseline: High 2UP trigger profile but Avoid: too safe; 2.05 goals for avg; 0.89 goals against avg; 1.08 first-half goals for avg; 0.62 over 2.5. Aston Villa baseline: Medium trigger profile; Medium comeback vulnerability; 1.46 goals for avg; 1.30 goals against avg; 0.57 BTTS; 0.51 over 2.5. 2UP rationale: City can realistically go two goals ahead; but the comeback/draw volatility is weaker because City may simply control the match after 2-0. Human layer needed: send City back odds; exchange lay odds; 2UP confirmation; liquidity and commission before this can outrank a confirmed low-QL trade.
+- Live odds supplied by Rory on 2026-05-24: Manchester City back/lay 1.30/1.34. At £20 back stake, approximate QL is £0.60 before commission, £0.70 at 2%, and £0.85 at 5%. City remains a strong 2UP trigger watchlist because the baseline gives them a High 2UP trigger profile: 2.05 goals for avg, 0.89 goals against avg, 1.08 first-half goals for avg, 0.62 over 2.5. Aston Villa baseline: Medium trigger profile; Medium comeback vulnerability; 1.46 goals for avg; 1.30 goals against avg; 0.57 BTTS; 0.51 over 2.5. Trade read: very cheap QL and obvious two-goal potential, but still routine-favourite risk because City may simply control the match after going 2-0. Not marked as a live bet because Rory has not confirmed 2UP visibility, exchange liquidity, stake limits or that the position was placed.
 
 Reasons:
 - Manchester City have strong scoring output.
@@ -49,11 +49,11 @@ Reasons:
 - The match profile suggests goal volatility.
 
 Risks:
-- No major statistical risk flagged from the available data.
+- Short favourite price; avoid over-ranking unless the 2UP trigger and comeback angle are both strong.
 
 Data notes:
 - Missing favourite conceded-after-leading data; comeback-volatility angle was skipped.
-- Missing favourite odds; odds-range filter was skipped for this fixture.
+- Low favourite odds; only useful if back/lay closeness keeps qualifying loss low.
 
 Missing fields:
 - favourite.conceded_after_leading_rate
@@ -63,13 +63,13 @@ Missing fields:
 League: Premier League
 Kick-off: Sunday 24 May 2026, 16:00 UK
 Favourite: Chelsea
-Approx odds: 1.95
+Approx odds: 2.0
 2up score: 15.0
 Confidence: Low
 Data quality: 83%
 
 Source notes / human layer:
-- New 2026-05-24 watchlist candidate. Public preview checked on 2026-05-24: Sunderland v Chelsea is a final-day Premier League match at 16:00 UK; Roker Report preview listed Chelsea around 19/20 with Sunderland and draw around 5/2; and described European-place motivation plus Chelsea's strong away scoring profile. Decimal favourite odds entered as 1.95 from 19/20 public preview price; this is not user-confirmed back/lay and not a 2UP-specific account check. Baseline used: data/team_baselines/premier_league_2025_26.csv. Chelsea baseline: Medium 2UP trigger profile; Medium comeback vulnerability; Back candidate; 1.54 goals for avg; 1.35 goals against avg; 0.70 first-half goals for avg; 0.62 BTTS; 0.65 over 2.5. Sunderland baseline: Low 2UP trigger profile; High comeback vulnerability; Lay-side comeback candidate; 1.08 goals for avg; 1.27 goals against avg; 0.32 first-half goals for avg; 0.46 BTTS; 0.43 over 2.5. 2UP rationale: Chelsea have a workable price range and enough attack/away profile to go two ahead; while Sunderland's motivation/home emotion creates some volatility. Human layer needed: confirm 2UP is showing; live bookie back price; exchange lay price; liquidity; commission and stake limits.
+- Live odds supplied by Rory on 2026-05-24: Chelsea back/lay 2.00/2.12. At £20 back stake, approximate QL is £1.13 before commission, £1.33 at 2%, and £1.64 at 5%. This is a wider spread than City but has a better volatile-favourite profile. Chelsea baseline: Medium 2UP trigger profile; Medium comeback vulnerability; Back candidate; 1.54 goals for avg; 1.35 goals against avg; 0.70 first-half goals for avg; 0.62 BTTS; 0.65 over 2.5. Sunderland baseline: Low 2UP trigger profile; High comeback vulnerability; Lay-side comeback candidate; 1.08 goals for avg; 1.27 goals against avg; 0.32 first-half goals for avg; 0.46 BTTS; 0.43 over 2.5. Trade read: more expensive QL than City but a better comeback/chaos angle if Chelsea go two ahead. Not marked as a live bet because Rory has not confirmed 2UP visibility, exchange liquidity, stake limits or that the position was placed.
 
 Reasons:
 - The match profile suggests goal volatility.
