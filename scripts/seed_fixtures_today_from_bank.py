@@ -16,7 +16,7 @@ ROOT = Path(__file__).resolve().parents[1]
 FIXTURE_BANK_PATH = ROOT / "data" / "fixture_bank_may_2026.csv"
 FIXTURES_TODAY_PATH = ROOT / "fixtures_today.csv"
 LONDON_TZ = ZoneInfo("Europe/London")
-MAX_FIXTURES = 3
+MAX_FIXTURES = 5
 
 OUTPUT_FIELDS = [
     "home_team",
