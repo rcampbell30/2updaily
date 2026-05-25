@@ -1,91 +1,40 @@
 {
-  "generated_at_utc": "2026-05-24T09:34:10+00:00",
-  "generated_at_london": "2026-05-24 10:34 BST",
-  "report_date_london": "2026-05-24",
-  "total_fixtures_loaded": 3,
-  "total_fixtures_after_filters": 3,
+  "generated_at_utc": "2026-05-25T10:10:17+00:00",
+  "generated_at_london": "2026-05-25 11:10 BST",
+  "report_date_london": "2026-05-25",
+  "total_fixtures_loaded": 1,
+  "total_fixtures_after_filters": 1,
   "candidates": [
     {
       "rank": 1,
-      "home_team": "West Ham United",
-      "away_team": "Leeds United",
-      "league": "Premier League",
-      "kickoff_uk": "Sunday 24 May 2026, 16:00 UK",
-      "favourite": "West Ham United",
-      "favourite_odds": 1.75,
-      "favourite_odds_display": "1.75",
-      "source_notes": "2026-05-24 manual agent rerank: moved to Rank 1 for trade practicality; not pure football score. Rory-confirmed market notes already in bank: West Ham back/lay 1.75/1.83 and Leeds back/lay 4.10/4.40. Later actual managed Leeds position: \u00a320 back at 4.50 and lay at 4.70, recorded separately in docs/live-bets.html and data/results_tracker.csv. Approx live Leeds QL at \u00a320: \u00a30.85 before commission, \u00a31.15 at 2%, \u00a31.61 at 5%; \u00a35 free bet unlocked, estimated value \u00a33.75 at 75% retention. West Ham side remains optional only if odds improve enough. Baseline used: data/team_baselines/premier_league_2025_26.csv. West Ham baseline: Low 2UP trigger profile; High comeback vulnerability; Lay-side comeback candidate; 1.33 goals for avg; 1.67 goals against avg; 0.57 first-half goals for avg; 0.59 over 2.5. Leeds baseline: Medium 2UP trigger profile; High comeback vulnerability; Back candidate; 1.32 goals for avg; 1.43 goals against avg; 0.65 first-half goals for avg; 0.59 BTTS; 0.54 over 2.5. Trade rationale: actual Leeds live position is better than the older watchlist price because it combines acceptable QL with free-bet reload value. Main weakness: neither side has elite two-goal trigger power. Human layer still needed: final settlement, exact commission, 2UP trigger status and whether West Ham odds ever become worth adding.",
-      "score": 60.0,
-      "confidence": "Medium",
-      "data_quality": 0.83,
-      "reasons": [
-        "User-confirmed back/lay/QL evidence improves the trade-practicality rank versus a pure football-shape watchlist.",
-        "The match profile suggests goal volatility."
-      ],
-      "risks": [
-        "West Ham United may not score enough for a strong 2up angle."
-      ],
-      "data_notes": [
-        "Missing favourite conceded-after-leading data; comeback-volatility angle was skipped.",
-        "Trade-practicality boost applied from user-confirmed market evidence; still re-check 2UP visibility, liquidity, commission, stake limits and account restrictions before staking."
-      ],
-      "missing_fields": [
-        "favourite.conceded_after_leading_rate",
-        "underdog.conceded_after_leading_rate"
-      ]
-    },
-    {
-      "rank": 2,
-      "home_team": "Manchester City",
-      "away_team": "Aston Villa",
-      "league": "Premier League",
-      "kickoff_uk": "Sunday 24 May 2026, 16:00 UK",
-      "favourite": "Manchester City",
-      "favourite_odds": 1.3,
-      "favourite_odds_display": "1.3",
-      "source_notes": "Live odds supplied by Rory on 2026-05-24: Manchester City back/lay 1.30/1.34. At \u00a320 back stake, approximate QL is \u00a30.60 before commission, \u00a30.70 at 2%, and \u00a30.85 at 5%. City remains a strong 2UP trigger watchlist because the baseline gives them a High 2UP trigger profile: 2.05 goals for avg, 0.89 goals against avg, 1.08 first-half goals for avg, 0.62 over 2.5. Aston Villa baseline: Medium trigger profile; Medium comeback vulnerability; 1.46 goals for avg; 1.30 goals against avg; 0.57 BTTS; 0.51 over 2.5. Trade read: very cheap QL and obvious two-goal potential, but still routine-favourite risk because City may simply control the match after going 2-0. Not marked as a live bet because Rory has not confirmed 2UP visibility, exchange liquidity, stake limits or that the position was placed.",
-      "score": 35.0,
+      "home_team": "Paris Saint-Germain",
+      "away_team": "Arsenal",
+      "league": "Champions League",
+      "kickoff_uk": "Saturday 30 May 2026, 17:00 UK",
+      "favourite": "Paris Saint-Germain",
+      "favourite_odds": null,
+      "favourite_odds_display": "Unknown",
+      "source_notes": "UEFA Champions League final; UK kick-off time; needs odds and 2UP confirmation.",
+      "score": -15.0,
       "confidence": "Low",
-      "data_quality": 0.83,
-      "reasons": [
-        "Manchester City have strong scoring output.",
-        "Manchester City start games well.",
-        "The match profile suggests goal volatility."
-      ],
+      "data_quality": 0.42,
+      "reasons": [],
       "risks": [
-        "Short favourite price; avoid over-ranking unless the 2UP trigger and comeback angle are both strong."
+        "Arsenal are not clearly weak defensively."
       ],
       "data_notes": [
+        "Missing favourite first-half scoring data; early-start angle was skipped.",
         "Missing favourite conceded-after-leading data; comeback-volatility angle was skipped.",
-        "Low favourite odds; only useful if back/lay closeness keeps qualifying loss low."
+        "Data quality is incomplete, so confidence has been reduced.",
+        "Missing favourite odds; odds-range filter was skipped for this fixture."
       ],
       "missing_fields": [
+        "favourite.goals_for_avg",
+        "favourite.goals_against_avg",
+        "favourite.first_half_goals_avg",
+        "favourite.clean_sheet_rate",
         "favourite.conceded_after_leading_rate",
-        "underdog.conceded_after_leading_rate"
-      ]
-    },
-    {
-      "rank": 3,
-      "home_team": "Sunderland",
-      "away_team": "Chelsea",
-      "league": "Premier League",
-      "kickoff_uk": "Sunday 24 May 2026, 16:00 UK",
-      "favourite": "Chelsea",
-      "favourite_odds": 2.0,
-      "favourite_odds_display": "2.0",
-      "source_notes": "Live odds supplied by Rory on 2026-05-24: Chelsea back/lay 2.00/2.12. At \u00a320 back stake, approximate QL is \u00a31.13 before commission, \u00a31.33 at 2%, and \u00a31.64 at 5%. This is a wider spread than City but has a better volatile-favourite profile. Chelsea baseline: Medium 2UP trigger profile; Medium comeback vulnerability; Back candidate; 1.54 goals for avg; 1.35 goals against avg; 0.70 first-half goals for avg; 0.62 BTTS; 0.65 over 2.5. Sunderland baseline: Low 2UP trigger profile; High comeback vulnerability; Lay-side comeback candidate; 1.08 goals for avg; 1.27 goals against avg; 0.32 first-half goals for avg; 0.46 BTTS; 0.43 over 2.5. Trade read: more expensive QL than City but a better comeback/chaos angle if Chelsea go two ahead. Not marked as a live bet because Rory has not confirmed 2UP visibility, exchange liquidity, stake limits or that the position was placed.",
-      "score": 15.0,
-      "confidence": "Low",
-      "data_quality": 0.83,
-      "reasons": [
-        "The match profile suggests goal volatility."
-      ],
-      "risks": [],
-      "data_notes": [
-        "Missing favourite conceded-after-leading data; comeback-volatility angle was skipped."
-      ],
-      "missing_fields": [
-        "favourite.conceded_after_leading_rate",
+        "favourite.over_25_rate",
         "underdog.conceded_after_leading_rate"
       ]
     }
