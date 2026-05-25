@@ -63,6 +63,9 @@ class LeagueFilterAgent:
         self.allowed_keywords = [
             "Premier League",
             "Championship",
+            "League One",
+            "England League 1",
+            "England League One",
             "La Liga",
             "Serie A",
             "Bundesliga",
@@ -98,13 +101,15 @@ class OddsFilterAgent:
 
     The lower bound is deliberately 1.20 rather than 1.40 because low-odds picks
     can still be useful when the bookmaker back price and exchange lay price are
-    very close, keeping the qualifying loss low.
+    very close, keeping the qualifying loss low. The upper bound is deliberately
+    3.10 so confirmed double-sided balanced matches such as Bolton/Stockport can
+    pass when Rory has supplied 2UP/back-lay/QL evidence.
     """
 
     def __init__(
         self,
         min_odds: Optional[float] = 1.20,
-        max_odds: Optional[float] = 2.40,
+        max_odds: Optional[float] = 3.10,
         allow_missing_odds: bool = True,
     ) -> None:
         self.min_odds = min_odds
