@@ -1,4 +1,4 @@
-Generated: 2026-05-25 18:07 BST
+Generated: 2026-05-25 19:01 BST
 Report date: 2026-05-25
 Fixtures loaded: 3
 
@@ -14,7 +14,7 @@ Confidence: Low
 Data quality: 0%
 
 Source notes / human layer:
-- MONDAY RUN 2026-05-25. Strong evening watchlist. Public sources preview Wolfsburg vs Paderborn as the second leg of the Bundesliga promotion/relegation play-off on Monday at 20:30 after a 0-0 first leg; talkSPORT also marks Wolfsburg to win as Bet of the Day and notes Wolfsburg dominated the first leg shot/possession profile while Paderborn have a key suspension. Strategy read: likely good exchange liquidity and likely 2UP coverage, but less attractive than Notts/Salford until back/lay is known because Wolfsburg could be a controlled favourite rather than a chaotic 2UP collapse candidate. Human layer required: confirm 2UP, Wolfsburg back/lay, optional Paderborn back/lay if double-sided, liquidity and stake limits. Use 2% commission headline QL.
+- MONDAY RUN 2026-05-25 EVENING UPDATE. Top remaining candidate now that Notts County vs Salford has already finished. Public sources preview Wolfsburg vs Paderborn as the second leg of the Bundesliga promotion/relegation play-off on Monday at 20:30 after a 0-0 first leg. Strategy read: likely best remaining liquidity and likely 2UP coverage, but needs back/lay before trade ranking because Wolfsburg may be a controlled favourite rather than a chaotic 2UP collapse candidate. Human layer required: confirm 2UP, Wolfsburg back/lay, optional Paderborn back/lay if double-sided, liquidity and stake limits. Use 2% commission headline QL.
 
 Reasons:
 - No strong positive scoring factors were triggered.
@@ -52,7 +52,7 @@ Confidence: Low
 Data quality: 33%
 
 Source notes / human layer:
-- MONDAY RUN 2026-05-25. Public sources preview St Mirren vs Partick Thistle as the decisive Scottish Premiership play-off final second leg tonight, with the tie level at 1-1. Strategy read: playoff pressure and a one-goal aggregate balance create game-state volatility, but this is lower priority than Notts/Salford and Wolfsburg unless 2UP and liquidity are clearly available. Human layer required: confirm 2UP, St Mirren back/lay, Partick back/lay if considering double-sided, liquidity and stake limits. Use 2% commission headline QL.
+- MONDAY RUN 2026-05-25 EVENING UPDATE. Public sources preview St Mirren vs Partick Thistle as the decisive Scottish Premiership play-off final second leg tonight, with the tie level at 1-1. Strategy read: playoff pressure and a one-goal aggregate balance create game-state volatility, but this is lower priority than Wolfsburg unless 2UP and liquidity are clearly available. Human layer required: confirm 2UP, St Mirren back/lay, Partick back/lay if considering double-sided, liquidity and stake limits. Use 2% commission headline QL.
 
 Reasons:
 - No strong positive scoring factors were triggered.
@@ -86,7 +86,7 @@ Confidence: Low
 Data quality: 42%
 
 Source notes / human layer:
-- UEFA Champions League final; UK kick-off time; needs odds and 2UP confirmation.
+- UEFA Champions League final; UK kick-off time; future watchlist only. Needs odds and 2UP confirmation closer to kick-off.
 
 Reasons:
 - No strong positive scoring factors were triggered.
