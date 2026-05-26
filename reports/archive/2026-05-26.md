@@ -1,4 +1,4 @@
-Generated: 2026-05-26 04:08 BST
+Generated: 2026-05-26 04:31 BST
 Report date: 2026-05-26
 Fixtures loaded: 1
 
@@ -39,21 +39,14 @@ Missing fields:
 
 ## 2UP Results Tracker
 
-Total rows: 7
-Completed: 7
-2UP triggers: 1
-Trigger rate: 14%
-Estimated QL total: £7.28
-Actual QL total: £7.28
-Net P/L: -£7.28
+Total rows: 0
+Completed: 0
+2UP triggers: 0
+Trigger rate: Pending
+Estimated QL total: £0.00
+Actual QL total: £0.00
+Net P/L: £0.00
 
 | Date | Fixture | Pick | Status | 2UP | Est. QL | Net P/L |
 |---|---|---|---|---|---:|---:|
-| 2026-05-23 | Bayern Munich vs VfB Stuttgart | Bayern Munich | Settled | No | £0.14 | -£0.14 |
-| 2026-05-23 | Auckland FC vs Sydney FC | Auckland FC | Settled | No | £0.87 | -£0.87 |
-| 2026-05-23 | Celtic vs Dunfermline Athletic | Celtic | Settled | No | £0.24 | -£0.24 |
-| 2026-05-24 | West Ham United vs Leeds United | Leeds United | Settled | No | £1.15 | -£1.15 |
-| 2026-05-24 | Sunderland vs Chelsea | Chelsea | Settled | No | £1.33 | -£1.33 |
-| 2026-05-24 | Manchester City vs Aston Villa | Manchester City | Settled | No | £1.05 | -£1.05 |
-| 2026-05-24 | Sporting Kansas City vs New York Red Bulls | double-sided: Kansas City + NY Red Bulls | Settled | Yes | £2.50 | -£2.50 |
 
