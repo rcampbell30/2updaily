@@ -1,82 +1,12 @@
 {
-  "generated_at_utc": "2026-05-25T18:01:42+00:00",
-  "generated_at_london": "2026-05-25 19:01 BST",
-  "report_date_london": "2026-05-25",
-  "total_fixtures_loaded": 3,
-  "total_fixtures_after_filters": 3,
+  "generated_at_utc": "2026-05-26T00:50:14+00:00",
+  "generated_at_london": "2026-05-26 01:50 BST",
+  "report_date_london": "2026-05-26",
+  "total_fixtures_loaded": 1,
+  "total_fixtures_after_filters": 1,
   "candidates": [
     {
       "rank": 1,
-      "home_team": "VfL Wolfsburg",
-      "away_team": "SC Paderborn 07",
-      "league": "Bundesliga Relegation Play-Off",
-      "kickoff_uk": "Monday 25 May 2026, 20:30 UK",
-      "favourite": "VfL Wolfsburg",
-      "favourite_odds": null,
-      "favourite_odds_display": "Unknown",
-      "source_notes": "MONDAY RUN 2026-05-25 EVENING UPDATE. Top remaining candidate now that Notts County vs Salford has already finished. Public sources preview Wolfsburg vs Paderborn as the second leg of the Bundesliga promotion/relegation play-off on Monday at 20:30 after a 0-0 first leg. Strategy read: likely best remaining liquidity and likely 2UP coverage, but needs back/lay before trade ranking because Wolfsburg may be a controlled favourite rather than a chaotic 2UP collapse candidate. Human layer required: confirm 2UP, Wolfsburg back/lay, optional Paderborn back/lay if double-sided, liquidity and stake limits. Use 2% commission headline QL.",
-      "score": 0.0,
-      "confidence": "Low",
-      "data_quality": 0.0,
-      "reasons": [],
-      "risks": [],
-      "data_notes": [
-        "Missing favourite first-half scoring data; early-start angle was skipped.",
-        "Missing favourite conceded-after-leading data; comeback-volatility angle was skipped.",
-        "Data quality is incomplete, so confidence has been reduced.",
-        "Missing favourite odds; odds-range filter was skipped for this fixture."
-      ],
-      "missing_fields": [
-        "favourite.goals_for_avg",
-        "favourite.goals_against_avg",
-        "favourite.first_half_goals_avg",
-        "favourite.clean_sheet_rate",
-        "favourite.conceded_after_leading_rate",
-        "favourite.over_25_rate",
-        "underdog.goals_for_avg",
-        "underdog.goals_against_avg",
-        "underdog.first_half_goals_avg",
-        "underdog.clean_sheet_rate",
-        "underdog.conceded_after_leading_rate",
-        "underdog.over_25_rate"
-      ]
-    },
-    {
-      "rank": 2,
-      "home_team": "St Mirren",
-      "away_team": "Partick Thistle",
-      "league": "Scottish Premiership Play-Off Final",
-      "kickoff_uk": "Monday 25 May 2026, 20:00 UK",
-      "favourite": "St Mirren",
-      "favourite_odds": null,
-      "favourite_odds_display": "Unknown",
-      "source_notes": "MONDAY RUN 2026-05-25 EVENING UPDATE. Public sources preview St Mirren vs Partick Thistle as the decisive Scottish Premiership play-off final second leg tonight, with the tie level at 1-1. Strategy read: playoff pressure and a one-goal aggregate balance create game-state volatility, but this is lower priority than Wolfsburg unless 2UP and liquidity are clearly available. Human layer required: confirm 2UP, St Mirren back/lay, Partick back/lay if considering double-sided, liquidity and stake limits. Use 2% commission headline QL.",
-      "score": -15.0,
-      "confidence": "Low",
-      "data_quality": 0.33,
-      "reasons": [],
-      "risks": [
-        "St. Mirren may not score enough for a strong 2up angle."
-      ],
-      "data_notes": [
-        "Missing favourite first-half scoring data; early-start angle was skipped.",
-        "Missing favourite conceded-after-leading data; comeback-volatility angle was skipped.",
-        "Data quality is incomplete, so confidence has been reduced.",
-        "Missing favourite odds; odds-range filter was skipped for this fixture."
-      ],
-      "missing_fields": [
-        "favourite.first_half_goals_avg",
-        "favourite.conceded_after_leading_rate",
-        "underdog.goals_for_avg",
-        "underdog.goals_against_avg",
-        "underdog.first_half_goals_avg",
-        "underdog.clean_sheet_rate",
-        "underdog.conceded_after_leading_rate",
-        "underdog.over_25_rate"
-      ]
-    },
-    {
-      "rank": 3,
       "home_team": "Paris Saint-Germain",
       "away_team": "Arsenal",
       "league": "Champions League",
@@ -112,13 +42,13 @@
   "tracker": {
     "summary": {
       "total_rows": 7,
-      "planned_or_pending": 3,
-      "completed": 4,
+      "planned_or_pending": 0,
+      "completed": 7,
       "trigger_count": 1,
-      "trigger_rate": 0.25,
+      "trigger_rate": 0.1429,
       "estimated_ql_total": 7.28,
-      "actual_ql_total": 3.75,
-      "net_pl_total": -3.75
+      "actual_ql_total": 7.28,
+      "net_pl_total": -7.28
     },
     "entries": [
       {
@@ -194,16 +124,16 @@
         "lay_odds": 4.7,
         "back_stake": 20.0,
         "estimated_ql": 1.15,
-        "actual_ql": null,
-        "two_up_triggered": "Pending",
+        "actual_ql": 1.15,
+        "two_up_triggered": "No",
         "trigger_minute": "",
-        "final_score": "Pending",
-        "final_result": "Pending",
-        "net_pl": null,
-        "status": "Live",
-        "lesson": "Live Leeds 2UP/reload position: \u00a320 back at 4.50 and lay at 4.70. The position also unlocked a \u00a35 free bet, so it has reload value before any 2UP upside.",
-        "notes": "Rory manually confirmed the Leeds position on 2026-05-24: \u00a320 back stake at 4.50, lay at 4.70, with 2% commission as default. Approx lay stake \u00a319.23 and lay liability \u00a371.15 at 2%. Headline estimated QL: \u00a31.15 at 2% commission. \u00a35 free bet unlocked; at 75% assumed retention this is about \u00a33.75 value, giving approximate net reload value after 2% QL of \u00a32.60. Recheck exact settlement, offer terms and 2UP trigger status before treating value as final.",
-        "last_updated": "2026-05-24"
+        "final_score": "Lost / no 2UP profit confirmed",
+        "final_result": "No 2UP trigger",
+        "net_pl": -1.15,
+        "status": "Settled",
+        "lesson": "Leeds position lost/no 2UP profit. The \u00a35 free bet unlock still has estimated future value, but the cash result for this qualifying bet is recorded as the 2% QL.",
+        "notes": "Updated from Rory's instruction on 2026-05-25: all pending Sunday positions lost. Actual QL set to headline 2% estimate until exact settlement is provided. Leeds: \u00a320 back at 4.50, lay at 4.70, 2% commission, headline/actual QL \u00a31.15. \u00a35 free bet unlocked remains recorded separately as estimated future value, not cash P/L.",
+        "last_updated": "2026-05-25"
       },
       {
         "date": "2026-05-24",
@@ -215,16 +145,16 @@
         "lay_odds": 2.12,
         "back_stake": 20.0,
         "estimated_ql": 1.33,
-        "actual_ql": null,
-        "two_up_triggered": "Pending",
+        "actual_ql": 1.33,
+        "two_up_triggered": "No",
         "trigger_minute": "",
-        "final_score": "Pending",
-        "final_result": "Pending",
-        "net_pl": null,
-        "status": "Live",
-        "lesson": "Live Chelsea 2UP position: \u00a320 back at 2.00 and lay at 2.12. Wider spread than City but better volatility/comeback profile.",
-        "notes": "Rory confirmed 2UP and liquidity and placed Chelsea on 2026-05-24: \u00a320 back at 2.00, lay at 2.12, with 2% commission as default. Approx lay stake \u00a319.05 and lay liability \u00a321.33 at 2%. Headline estimated QL: \u00a31.33 at 2% commission. Watch for Chelsea going two goals ahead and then failing to win.",
-        "last_updated": "2026-05-24"
+        "final_score": "Lost / no 2UP profit confirmed",
+        "final_result": "No 2UP trigger",
+        "net_pl": -1.33,
+        "status": "Settled",
+        "lesson": "Chelsea position lost/no 2UP profit. Wider spread than City and no early-payout recovery; record the 2% QL as actual loss unless exact settlement later differs.",
+        "notes": "Updated from Rory's instruction on 2026-05-25: all pending Sunday positions lost. Actual QL set to headline 2% estimate until exact settlement is provided. Chelsea: \u00a320 back at 2.00, lay at 2.12, 2% commission, headline/actual QL \u00a31.33.",
+        "last_updated": "2026-05-25"
       },
       {
         "date": "2026-05-24",
@@ -236,16 +166,16 @@
         "lay_odds": 1.34,
         "back_stake": 30.0,
         "estimated_ql": 1.05,
-        "actual_ql": null,
-        "two_up_triggered": "Pending",
+        "actual_ql": 1.05,
+        "two_up_triggered": "No",
         "trigger_minute": "",
-        "final_score": "Pending",
-        "final_result": "Pending",
-        "net_pl": null,
-        "status": "Live",
-        "lesson": "Live Manchester City 2UP position: \u00a330 back at 1.30 and lay at 1.34. Very low QL and strong trigger profile, but routine-favourite risk if City go 2UP and still win comfortably.",
-        "notes": "Rory confirmed 2UP and liquidity and placed Manchester City on 2026-05-24: \u00a330 back at 1.30, lay at 1.34, with 2% commission as default. Approx lay stake \u00a329.55 and lay liability \u00a310.05 at 2%. Headline estimated QL: \u00a31.05 at 2% commission. Watch for City going two goals ahead and then failing to win; routine win remains the main risk.",
-        "last_updated": "2026-05-24"
+        "final_score": "Lost / no 2UP profit confirmed",
+        "final_result": "No 2UP trigger",
+        "net_pl": -1.05,
+        "status": "Settled",
+        "lesson": "Manchester City position lost/no 2UP profit. Low QL protected the downside, but no useful 2UP payout was realised.",
+        "notes": "Updated from Rory's instruction on 2026-05-25: all pending Sunday positions lost. Actual QL set to headline 2% estimate until exact settlement is provided. Man City: \u00a330 back at 1.30, lay at 1.34, 2% commission, headline/actual QL \u00a31.05.",
+        "last_updated": "2026-05-25"
       },
       {
         "date": "2026-05-24",
