@@ -1,55 +1,77 @@
 {
-  "generated_at_utc": "2026-05-26T04:29:17+00:00",
-  "generated_at_london": "2026-05-26 05:29 BST",
-  "report_date_london": "2026-05-26",
-  "total_fixtures_loaded": 1,
-  "total_fixtures_after_filters": 1,
-  "candidates": [
+  "updated_london": "2026-05-26",
+  "mode": "one_pick_per_day",
+  "notes": "One focused 2UP research candidate per day where a strong trade shape exists. Use PASS when there is no worthwhile setup. Rory tracks actual hits separately, so this repo no longer stores settlement/tracking pages.",
+  "default_commission": 0.02,
+  "picks": [
     {
-      "rank": 1,
-      "home_team": "Paris Saint-Germain",
-      "away_team": "Arsenal",
-      "league": "Champions League",
-      "kickoff_uk": "Saturday 30 May 2026, 17:00 UK",
-      "favourite": "Paris Saint-Germain",
-      "favourite_odds": null,
-      "favourite_odds_display": "Unknown",
-      "source_notes": "UEFA Champions League final; UK kick-off time; future watchlist only. Needs odds and 2UP confirmation closer to kick-off.",
-      "score": -15.0,
-      "confidence": "Low",
-      "data_quality": 0.42,
-      "reasons": [],
-      "risks": [
-        "Arsenal are not clearly weak defensively."
-      ],
-      "data_notes": [
-        "Missing favourite first-half scoring data; early-start angle was skipped.",
-        "Missing favourite conceded-after-leading data; comeback-volatility angle was skipped.",
-        "Data quality is incomplete, so confidence has been reduced.",
-        "Missing favourite odds; odds-range filter was skipped for this fixture."
-      ],
-      "missing_fields": [
-        "favourite.goals_for_avg",
-        "favourite.goals_against_avg",
-        "favourite.first_half_goals_avg",
-        "favourite.clean_sheet_rate",
-        "favourite.conceded_after_leading_rate",
-        "favourite.over_25_rate",
-        "underdog.conceded_after_leading_rate"
+      "date": "2026-05-26",
+      "day": "Tuesday",
+      "status": "PASS",
+      "fixture": "No suitable 2UP pick",
+      "competition": "N/A",
+      "kickoff_uk": "N/A",
+      "candidate_type": "No bet / no shortlist",
+      "why": "No strong high-liquidity 2UP setup identified. Passing is preferred over forcing a weak trade.",
+      "checks_needed": []
+    },
+    {
+      "date": "2026-05-27",
+      "day": "Wednesday",
+      "status": "WATCHLIST",
+      "fixture": "Crystal Palace vs Rayo Vallecano",
+      "competition": "UEFA Conference League Final",
+      "kickoff_uk": "Evening UK time",
+      "candidate_type": "Top next candidate",
+      "why": "European final with likely strong liquidity and a more balanced/volatile shape than a routine short favourite. Potential double-sided 2UP candidate if both teams are covered and the spreads are tight.",
+      "checks_needed": [
+        "Crystal Palace back odds / exchange lay odds",
+        "Rayo Vallecano back odds / exchange lay odds if double-sided",
+        "2UP showing on Rory's account",
+        "Exchange liquidity at or near the lay prices",
+        "Exact QL at 2% commission"
+      ]
+    },
+    {
+      "date": "2026-05-28",
+      "day": "Thursday",
+      "status": "PASS",
+      "fixture": "No suitable 2UP pick",
+      "competition": "N/A",
+      "kickoff_uk": "N/A",
+      "candidate_type": "No bet / no shortlist",
+      "why": "No standout high-liquidity 2UP setup currently banked. Keep the slate disciplined.",
+      "checks_needed": []
+    },
+    {
+      "date": "2026-05-29",
+      "day": "Friday",
+      "status": "PASS",
+      "fixture": "No suitable 2UP pick",
+      "competition": "N/A",
+      "kickoff_uk": "N/A",
+      "candidate_type": "No bet / no shortlist",
+      "why": "No worthwhile shortlist candidate currently identified.",
+      "checks_needed": []
+    },
+    {
+      "date": "2026-05-30",
+      "day": "Saturday",
+      "status": "WATCHLIST",
+      "fixture": "Paris Saint-Germain vs Arsenal",
+      "competition": "UEFA Champions League Final",
+      "kickoff_uk": "17:00 UK",
+      "candidate_type": "Major final watchlist",
+      "why": "Elite liquidity event and a huge public market. Worth checking for a clean low-QL setup, but not a trade until 2UP availability and live back/lay prices are confirmed.",
+      "checks_needed": [
+        "PSG back odds / exchange lay odds",
+        "Arsenal back odds / exchange lay odds if double-sided",
+        "2UP showing on Rory's account",
+        "Exchange liquidity at or near the lay prices",
+        "Exact QL at 2% commission"
       ]
     }
   ],
-  "tracker": {
-    "summary": {
-      "total_rows": 0,
-      "planned_or_pending": 0,
-      "completed": 0,
-      "trigger_count": 0,
-      "trigger_rate": null,
-      "estimated_ql_total": 0,
-      "actual_ql_total": 0,
-      "net_pl_total": 0
-    },
-    "entries": []
-  }
+  "generated_at_london": "2026-05-26 22:42 BST",
+  "report_date_london": "2026-05-26"
 }

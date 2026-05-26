@@ -1,52 +1,57 @@
-Generated: 2026-05-26 05:29 BST
-Report date: 2026-05-26
-Fixtures loaded: 1
+Generated: 2026-05-26 22:42 BST
+Mode: one pick per day / pass if weak
 
-# Daily 2up Shortlist
+# 2upDaily Next Picks
 
-## 1. Paris Saint-Germain vs Arsenal
-League: Champions League
-Kick-off: Saturday 30 May 2026, 17:00 UK
-Favourite: Paris Saint-Germain
-Approx odds: Unknown
-2up score: -15.0
-Confidence: Low
-Data quality: 42%
+## Tuesday 2026-05-26 — No suitable 2UP pick
+Status: PASS
+Competition: N/A
+Kick-off UK: N/A
+Read: No strong high-liquidity 2UP setup identified. Passing is preferred over forcing a weak trade.
 
-Source notes / human layer:
-- UEFA Champions League final; UK kick-off time; future watchlist only. Needs odds and 2UP confirmation closer to kick-off.
+Checks needed:
+- No checks needed — pass day.
 
-Reasons:
-- No strong positive scoring factors were triggered.
+## Wednesday 2026-05-27 — Crystal Palace vs Rayo Vallecano
+Status: WATCHLIST
+Competition: UEFA Conference League Final
+Kick-off UK: Evening UK time
+Read: European final with likely strong liquidity and a more balanced/volatile shape than a routine short favourite. Potential double-sided 2UP candidate if both teams are covered and the spreads are tight.
 
-Risks:
-- Arsenal are not clearly weak defensively.
+Checks needed:
+- Crystal Palace back odds / exchange lay odds
+- Rayo Vallecano back odds / exchange lay odds if double-sided
+- 2UP showing on Rory's account
+- Exchange liquidity at or near the lay prices
+- Exact QL at 2% commission
 
-Data notes:
-- Missing favourite first-half scoring data; early-start angle was skipped.
-- Missing favourite conceded-after-leading data; comeback-volatility angle was skipped.
-- Data quality is incomplete, so confidence has been reduced.
-- Missing favourite odds; odds-range filter was skipped for this fixture.
+## Thursday 2026-05-28 — No suitable 2UP pick
+Status: PASS
+Competition: N/A
+Kick-off UK: N/A
+Read: No standout high-liquidity 2UP setup currently banked. Keep the slate disciplined.
 
-Missing fields:
-- favourite.goals_for_avg
-- favourite.goals_against_avg
-- favourite.first_half_goals_avg
-- favourite.clean_sheet_rate
-- favourite.conceded_after_leading_rate
-- favourite.over_25_rate
-- underdog.conceded_after_leading_rate
+Checks needed:
+- No checks needed — pass day.
 
-## 2UP Results Tracker
+## Friday 2026-05-29 — No suitable 2UP pick
+Status: PASS
+Competition: N/A
+Kick-off UK: N/A
+Read: No worthwhile shortlist candidate currently identified.
 
-Total rows: 0
-Completed: 0
-2UP triggers: 0
-Trigger rate: Pending
-Estimated QL total: £0.00
-Actual QL total: £0.00
-Net P/L: £0.00
+Checks needed:
+- No checks needed — pass day.
 
-| Date | Fixture | Pick | Status | 2UP | Est. QL | Net P/L |
-|---|---|---|---|---|---:|---:|
+## Saturday 2026-05-30 — Paris Saint-Germain vs Arsenal
+Status: WATCHLIST
+Competition: UEFA Champions League Final
+Kick-off UK: 17:00 UK
+Read: Elite liquidity event and a huge public market. Worth checking for a clean low-QL setup, but not a trade until 2UP availability and live back/lay prices are confirmed.
 
+Checks needed:
+- PSG back odds / exchange lay odds
+- Arsenal back odds / exchange lay odds if double-sided
+- 2UP showing on Rory's account
+- Exchange liquidity at or near the lay prices
+- Exact QL at 2% commission

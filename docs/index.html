@@ -3,84 +3,133 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>2upDaily Research Dashboard</title>
+  <title>2upDaily</title>
   <link rel="stylesheet" href="app.css">
 </head>
 <body>
   <main>
     <header>
-      <p class="confidence">2UP Research Dashboard</p>
+      <p class="confidence">One pick per day</p>
       <h1>2upDaily</h1>
-      <p class="subtitle">A focused 2UP early-payout research dashboard. It ranks shortlist candidates, shows the human checks still needed, and tracks results so the system learns from real outcomes.</p>
+      <p class="subtitle">Clean 2UP research shortlist only. One focused candidate per day where a strong trade shape exists. If there is no worthwhile setup, the slate says PASS instead of forcing action.</p>
       <nav class="site-nav">
-        <a href="tracker.html">Open tracker</a>
-        <a href="data/today.json">Today JSON</a>
-        <a href="data/results.json">Results JSON</a>
+        <a href="data/next_picks.json">Next picks JSON</a>
+        <a href="https://github.com/rcampbell30/2updaily">GitHub Repo</a>
       </nav>
     </header>
 
     <section class="status">
-      <span class="pill">Report date: 2026-05-26</span>
-      <span class="pill">Generated: 2026-05-26 05:29 BST</span>
-      <span class="pill">Fixtures loaded: 1</span>
-      <span class="pill">Candidates shown: 1</span>
+      <span class="pill">Updated: 2026-05-26 22:42 BST</span>
+      <span class="pill">Mode: pick-only</span>
+      <span class="pill">Watchlist days: 2</span>
+      <span class="pill">Pass days: 3</span>
+    </section>
+
+    <section class="card notice">
+      <strong>Workflow:</strong> shortlist first, then check live availability, back/lay prices, liquidity and stake sizing separately. No public tracking or result-ledger pages are generated.
     </section>
 
     
     <article class="card">
       <div class="card-head">
-        <h2>1. Paris Saint-Germain vs Arsenal</h2>
-        <span>Low confidence</span>
+        <h2>Tuesday 2026-05-26 — No suitable 2UP pick</h2>
+        <span>PASS</span>
       </div>
       <div class="grid">
-        <div><span>League</span><strong>Champions League</strong></div>
-        <div><span>Kick-off</span><strong>Saturday 30 May 2026, 17:00 UK</strong></div>
-        <div><span>Favourite</span><strong>Paris Saint-Germain</strong></div>
-        <div><span>Odds</span><strong>Unknown</strong></div>
-        <div><span>Score</span><strong>-15.0</strong></div>
-        <div><span>Data quality</span><strong>42%</strong></div>
+        <div><span>Competition</span><strong>N/A</strong></div>
+        <div><span>Kick-off UK</span><strong>N/A</strong></div>
+        <div><span>Type</span><strong>No bet / no shortlist</strong></div>
+        <div><span>Commission assumption</span><strong>2%</strong></div>
       </div>
-      <h3>Why it fits</h3>
-      <ul><li>No strong positive scoring factors were triggered.</li></ul>
-      <h3>Risks</h3>
-      <ul><li>Arsenal are not clearly weak defensively.</li></ul>
-      <h3>Human layer / notes</h3>
-      <p>UEFA Champions League final; UK kick-off time; future watchlist only. Needs odds and 2UP confirmation closer to kick-off.</p>
-      <h3>Data notes</h3>
-      <ul><li>Missing favourite first-half scoring data; early-start angle was skipped.</li>
-<li>Missing favourite conceded-after-leading data; comeback-volatility angle was skipped.</li>
-<li>Data quality is incomplete, so confidence has been reduced.</li>
-<li>Missing favourite odds; odds-range filter was skipped for this fixture.</li></ul>
+      <h3>Read</h3>
+      <p>No strong high-liquidity 2UP setup identified. Passing is preferred over forcing a weak trade.</p>
+      <h3>Checks needed</h3>
+      <ul><li>No checks needed — pass day.</li></ul>
     </article>
     
 
-    
-    <section class="card">
+    <article class="card">
       <div class="card-head">
-        <h2>2UP Results Tracker</h2>
-        <span>Feedback loop</span>
+        <h2>Wednesday 2026-05-27 — Crystal Palace vs Rayo Vallecano</h2>
+        <span>WATCHLIST</span>
       </div>
-      <p class="muted">Records planned and settled tests so the system can learn from real outcomes. Keep account-sensitive bookmaker details out of the repo.</p>
       <div class="grid">
-        <div><span>Total Rows</span><strong>0</strong></div>
-        <div><span>Completed</span><strong>0</strong></div>
-        <div><span>2UP Triggers</span><strong>0</strong></div>
-        <div><span>Trigger Rate</span><strong>Pending</strong></div>
-        <div><span>Est. QL</span><strong>£0.00</strong></div>
-        <div><span>Actual QL</span><strong>£0.00</strong></div>
-        <div><span>Net P/L</span><strong>£0.00</strong></div>
+        <div><span>Competition</span><strong>UEFA Conference League Final</strong></div>
+        <div><span>Kick-off UK</span><strong>Evening UK time</strong></div>
+        <div><span>Type</span><strong>Top next candidate</strong></div>
+        <div><span>Commission assumption</span><strong>2%</strong></div>
       </div>
-      <div class="table-wrap">
-        <table>
-          <thead><tr><th>Date</th><th>Fixture</th><th>Pick</th><th>Status</th><th>2UP</th><th>Est. QL</th><th>Net P/L</th></tr></thead>
-          <tbody><tr><td colspan='7'>No tracker rows yet.</td></tr></tbody>
-        </table>
+      <h3>Read</h3>
+      <p>European final with likely strong liquidity and a more balanced/volatile shape than a routine short favourite. Potential double-sided 2UP candidate if both teams are covered and the spreads are tight.</p>
+      <h3>Checks needed</h3>
+      <ul><li>Crystal Palace back odds / exchange lay odds</li>
+<li>Rayo Vallecano back odds / exchange lay odds if double-sided</li>
+<li>2UP showing on Rory&#x27;s account</li>
+<li>Exchange liquidity at or near the lay prices</li>
+<li>Exact QL at 2% commission</li></ul>
+    </article>
+    
+
+    <article class="card">
+      <div class="card-head">
+        <h2>Thursday 2026-05-28 — No suitable 2UP pick</h2>
+        <span>PASS</span>
       </div>
-    </section>
+      <div class="grid">
+        <div><span>Competition</span><strong>N/A</strong></div>
+        <div><span>Kick-off UK</span><strong>N/A</strong></div>
+        <div><span>Type</span><strong>No bet / no shortlist</strong></div>
+        <div><span>Commission assumption</span><strong>2%</strong></div>
+      </div>
+      <h3>Read</h3>
+      <p>No standout high-liquidity 2UP setup currently banked. Keep the slate disciplined.</p>
+      <h3>Checks needed</h3>
+      <ul><li>No checks needed — pass day.</li></ul>
+    </article>
+    
+
+    <article class="card">
+      <div class="card-head">
+        <h2>Friday 2026-05-29 — No suitable 2UP pick</h2>
+        <span>PASS</span>
+      </div>
+      <div class="grid">
+        <div><span>Competition</span><strong>N/A</strong></div>
+        <div><span>Kick-off UK</span><strong>N/A</strong></div>
+        <div><span>Type</span><strong>No bet / no shortlist</strong></div>
+        <div><span>Commission assumption</span><strong>2%</strong></div>
+      </div>
+      <h3>Read</h3>
+      <p>No worthwhile shortlist candidate currently identified.</p>
+      <h3>Checks needed</h3>
+      <ul><li>No checks needed — pass day.</li></ul>
+    </article>
+    
+
+    <article class="card">
+      <div class="card-head">
+        <h2>Saturday 2026-05-30 — Paris Saint-Germain vs Arsenal</h2>
+        <span>WATCHLIST</span>
+      </div>
+      <div class="grid">
+        <div><span>Competition</span><strong>UEFA Champions League Final</strong></div>
+        <div><span>Kick-off UK</span><strong>17:00 UK</strong></div>
+        <div><span>Type</span><strong>Major final watchlist</strong></div>
+        <div><span>Commission assumption</span><strong>2%</strong></div>
+      </div>
+      <h3>Read</h3>
+      <p>Elite liquidity event and a huge public market. Worth checking for a clean low-QL setup, but not a trade until 2UP availability and live back/lay prices are confirmed.</p>
+      <h3>Checks needed</h3>
+      <ul><li>PSG back odds / exchange lay odds</li>
+<li>Arsenal back odds / exchange lay odds if double-sided</li>
+<li>2UP showing on Rory&#x27;s account</li>
+<li>Exchange liquidity at or near the lay prices</li>
+<li>Exact QL at 2% commission</li></ul>
+    </article>
     
 
     <section class="card notice">
-      <strong>Reminder:</strong> this is a research shortlist only. Confirm the bookmaker offer, odds, liquidity, and staking plan before doing anything with real money.
+      <strong>Rule:</strong> no forced action. If prices, liquidity or terms are poor on the day, the correct move is PASS.
     </section>
 
 <!-- daily-pick-calendar:start -->
