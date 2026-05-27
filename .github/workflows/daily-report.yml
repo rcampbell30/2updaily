@@ -1,4 +1,4 @@
-name: Generate 2up report
+name: Generate 2up next-picks homepage
 
 on:
   push:
@@ -10,7 +10,7 @@ permissions:
   contents: write
 
 jobs:
-  generate-report:
+  generate-homepage:
     runs-on: ubuntu-latest
 
     steps:
@@ -22,21 +22,13 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Seed fixtures from ChatGPT-maintained fixture bank
-        run: python scripts/seed_fixtures_today_from_bank.py
-
-      - name: Generate report and static site files
-        env:
-          PYTHONPATH: ${{ github.workspace }}
+      - name: Generate pick-only homepage
         run: python scripts/generate_daily_report.py
 
-      - name: Add daily pick calendar to index page
-        run: python scripts/inject_daily_pick_calendar.py
-
-      - name: Commit generated fixture and report files
+      - name: Commit generated homepage files
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add fixtures_today.csv team_stats.csv reports/daily_report.md reports/archive docs/index.html docs/data/today.json data/fixture_bank_may_2026.csv
-          git diff --cached --quiet && echo "No report changes to commit" || git commit -m "Update ChatGPT fixture-bank 2up report"
+          git add reports/daily_report.md reports/archive docs/index.html docs/data/today.json docs/data/next_picks.json
+          git diff --cached --quiet && echo "No homepage changes to commit" || git commit -m "Update 2up next-picks homepage"
           git push
