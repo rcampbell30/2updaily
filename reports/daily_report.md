@@ -1,4 +1,4 @@
-Generated: 2026-05-29 06:19 BST
+Generated: 2026-05-29 06:25 BST
 Mode: one pick per day / pass if weak
 
 # 2upDaily Next Picks
