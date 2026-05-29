@@ -38,6 +38,10 @@ def checks_html(checks: list[str]) -> str:
     return "\n".join(f"<li>{escape(check)}</li>" for check in checks)
 
 
+def commission_label(pick: dict) -> str:
+    return str(pick.get("commission_assumption") or "2%")
+
+
 def pick_card(pick: dict) -> str:
     status = status_label(str(pick.get("status", "")))
     title = f"{pick.get('day', '')} {pick.get('date', '')} — {pick.get('fixture', 'No fixture')}"
@@ -46,6 +50,7 @@ def pick_card(pick: dict) -> str:
     candidate_type = pick.get("candidate_type", "")
     why = pick.get("why", "")
     checks = pick.get("checks_needed", [])
+    commission = commission_label(pick)
 
     return f"""
     <article class="card">
@@ -57,7 +62,7 @@ def pick_card(pick: dict) -> str:
         <div><span>Competition</span><strong>{escape(competition)}</strong></div>
         <div><span>Kick-off UK</span><strong>{escape(kickoff)}</strong></div>
         <div><span>Type</span><strong>{escape(candidate_type)}</strong></div>
-        <div><span>Commission assumption</span><strong>2%</strong></div>
+        <div><span>Commission assumption</span><strong>{escape(commission)}</strong></div>
       </div>
       <h3>Read</h3>
       <p>{escape(why)}</p>
@@ -132,6 +137,7 @@ def render_markdown(payload: dict, generated_london: str) -> str:
             f"Status: {status_label(str(pick.get('status', '')))}",
             f"Competition: {pick.get('competition', 'N/A')}",
             f"Kick-off UK: {pick.get('kickoff_uk', 'N/A')}",
+            f"Commission assumption: {commission_label(pick)}",
             f"Read: {pick.get('why', '')}",
             "",
             "Checks needed:",
