@@ -1,4 +1,4 @@
-Generated: 2026-05-29 06:25 BST
+Generated: 2026-05-29 07:52 BST
 Mode: one pick per day / pass if weak
 
 # 2upDaily Next Picks
@@ -7,6 +7,7 @@ Mode: one pick per day / pass if weak
 Status: PASS
 Competition: N/A
 Kick-off UK: N/A
+Commission assumption: 2%
 Read: No strong high-liquidity 2UP setup identified. Passing is preferred over forcing a weak trade.
 
 Checks needed:
@@ -16,6 +17,7 @@ Checks needed:
 Status: WATCHLIST
 Competition: UEFA Conference League Final
 Kick-off UK: Evening UK time
+Commission assumption: 2%
 Read: European final with likely strong liquidity and a more balanced/volatile shape than a routine short favourite. Potential double-sided 2UP candidate if both teams are covered and the spreads are tight.
 
 Checks needed:
@@ -29,6 +31,7 @@ Checks needed:
 Status: PASS
 Competition: N/A
 Kick-off UK: N/A
+Commission assumption: 2%
 Read: No standout high-liquidity 2UP setup currently banked. Keep the slate disciplined.
 
 Checks needed:
@@ -38,6 +41,7 @@ Checks needed:
 Status: PASS
 Competition: N/A
 Kick-off UK: N/A
+Commission assumption: 2%
 Read: No worthwhile shortlist candidate currently identified.
 
 Checks needed:
@@ -47,6 +51,7 @@ Checks needed:
 Status: WATCHLIST
 Competition: UEFA Champions League Final
 Kick-off UK: 17:00 UK
+Commission assumption: 2%
 Read: Elite liquidity event and a huge public market. Worth checking for a clean low-QL setup, but not a trade until 2UP availability and live back/lay prices are confirmed.
 
 Checks needed:
