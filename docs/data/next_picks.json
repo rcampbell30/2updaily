@@ -1,5 +1,5 @@
 {
-  "updated_london": "2026-05-26",
+  "updated_london": "2026-05-29",
   "mode": "one_pick_per_day",
   "notes": "One focused 2UP research candidate per day where a strong trade shape exists. Use PASS when there is no worthwhile setup. Rory tracks actual hits separately, so this repo no longer stores settlement/tracking pages.",
   "default_commission": 0.02,
@@ -12,6 +12,7 @@
       "competition": "N/A",
       "kickoff_uk": "N/A",
       "candidate_type": "No bet / no shortlist",
+      "commission_assumption": "2%",
       "why": "No strong high-liquidity 2UP setup identified. Passing is preferred over forcing a weak trade.",
       "checks_needed": []
     },
@@ -22,14 +23,11 @@
       "fixture": "Crystal Palace vs Rayo Vallecano",
       "competition": "UEFA Conference League Final",
       "kickoff_uk": "Evening UK time",
-      "candidate_type": "Top next candidate",
-      "why": "European final with likely strong liquidity and a more balanced/volatile shape than a routine short favourite. Potential double-sided 2UP candidate if both teams are covered and the spreads are tight.",
+      "candidate_type": "Archived watchlist",
+      "commission_assumption": "2%",
+      "why": "Archived European final watchlist. Keep only for review/history; not a current pick.",
       "checks_needed": [
-        "Crystal Palace back odds / exchange lay odds",
-        "Rayo Vallecano back odds / exchange lay odds if double-sided",
-        "2UP showing on Rory's account",
-        "Exchange liquidity at or near the lay prices",
-        "Exact QL at 2% commission"
+        "Archived pick \u2014 no current checks needed unless reviewing the past slate"
       ]
     },
     {
@@ -40,6 +38,7 @@
       "competition": "N/A",
       "kickoff_uk": "N/A",
       "candidate_type": "No bet / no shortlist",
+      "commission_assumption": "2%",
       "why": "No standout high-liquidity 2UP setup currently banked. Keep the slate disciplined.",
       "checks_needed": []
     },
@@ -51,6 +50,7 @@
       "competition": "N/A",
       "kickoff_uk": "N/A",
       "candidate_type": "No bet / no shortlist",
+      "commission_assumption": "2%",
       "why": "No worthwhile shortlist candidate currently identified.",
       "checks_needed": []
     },
@@ -61,17 +61,32 @@
       "fixture": "Paris Saint-Germain vs Arsenal",
       "competition": "UEFA Champions League Final",
       "kickoff_uk": "17:00 UK",
-      "candidate_type": "Major final watchlist",
-      "why": "Elite liquidity event and a huge public market. Worth checking for a clean low-QL setup, but not a trade until 2UP availability and live back/lay prices are confirmed.",
+      "candidate_type": "Strong double-sided 2UP trade-shape candidate",
+      "commission_assumption": "0% Matchbook for this game",
+      "why": "Rory confirmed 2UP is showing and supplied live market shape: PSG back 2.30 / Matchbook lay 2.43; Arsenal back 3.20 / Matchbook lay 3.32. At 0% commission, single-sided QL per \u00a310 is approx \u00a30.53 on PSG and \u00a30.36 on Arsenal. A double-sided \u00a310+\u00a310 setup has approx \u00a30.90 normal hedge cost if neither early-payout edge lands, with approx \u00a322.10 upside if either side triggers 2 goals ahead and then fails to win. Strong watchlist/trade-shape candidate, not guaranteed profit.",
       "checks_needed": [
-        "PSG back odds / exchange lay odds",
-        "Arsenal back odds / exchange lay odds if double-sided",
-        "2UP showing on Rory's account",
-        "Exchange liquidity at or near the lay prices",
-        "Exact QL at 2% commission"
-      ]
+        "Exchange liquidity at/near PSG lay 2.43 and Arsenal lay 3.32",
+        "Recheck final bookmaker back prices before staking",
+        "Recheck final Matchbook lay prices before staking",
+        "Confirm 0% Matchbook commission is still active at placement",
+        "Check stake limits/account restrictions and keep bankroll exposure controlled"
+      ],
+      "market": {
+        "psg_back": 2.3,
+        "psg_lay": 2.43,
+        "arsenal_back": 3.2,
+        "arsenal_lay": 3.32,
+        "commission": 0.0,
+        "single_sided_ql_per_10": {
+          "psg": 0.53,
+          "arsenal": 0.36
+        },
+        "double_sided_normal_hedge_cost_per_10_each": 0.9,
+        "early_payout_upside_if_trigger_then_fail_to_win_per_10_each": 22.1,
+        "two_up_confirmed_by_rory": true
+      }
     }
   ],
-  "generated_at_london": "2026-05-29 07:52 BST",
+  "generated_at_london": "2026-05-29 07:57 BST",
   "report_date_london": "2026-05-29"
 }

@@ -1,4 +1,4 @@
-Generated: 2026-05-29 07:52 BST
+Generated: 2026-05-29 07:57 BST
 Mode: one pick per day / pass if weak
 
 # 2upDaily Next Picks
@@ -18,14 +18,10 @@ Status: WATCHLIST
 Competition: UEFA Conference League Final
 Kick-off UK: Evening UK time
 Commission assumption: 2%
-Read: European final with likely strong liquidity and a more balanced/volatile shape than a routine short favourite. Potential double-sided 2UP candidate if both teams are covered and the spreads are tight.
+Read: Archived European final watchlist. Keep only for review/history; not a current pick.
 
 Checks needed:
-- Crystal Palace back odds / exchange lay odds
-- Rayo Vallecano back odds / exchange lay odds if double-sided
-- 2UP showing on Rory's account
-- Exchange liquidity at or near the lay prices
-- Exact QL at 2% commission
+- Archived pick — no current checks needed unless reviewing the past slate
 
 ## Thursday 2026-05-28 — No suitable 2UP pick
 Status: PASS
@@ -51,12 +47,12 @@ Checks needed:
 Status: WATCHLIST
 Competition: UEFA Champions League Final
 Kick-off UK: 17:00 UK
-Commission assumption: 2%
-Read: Elite liquidity event and a huge public market. Worth checking for a clean low-QL setup, but not a trade until 2UP availability and live back/lay prices are confirmed.
+Commission assumption: 0% Matchbook for this game
+Read: Rory confirmed 2UP is showing and supplied live market shape: PSG back 2.30 / Matchbook lay 2.43; Arsenal back 3.20 / Matchbook lay 3.32. At 0% commission, single-sided QL per £10 is approx £0.53 on PSG and £0.36 on Arsenal. A double-sided £10+£10 setup has approx £0.90 normal hedge cost if neither early-payout edge lands, with approx £22.10 upside if either side triggers 2 goals ahead and then fails to win. Strong watchlist/trade-shape candidate, not guaranteed profit.
 
 Checks needed:
-- PSG back odds / exchange lay odds
-- Arsenal back odds / exchange lay odds if double-sided
-- 2UP showing on Rory's account
-- Exchange liquidity at or near the lay prices
-- Exact QL at 2% commission
+- Exchange liquidity at/near PSG lay 2.43 and Arsenal lay 3.32
+- Recheck final bookmaker back prices before staking
+- Recheck final Matchbook lay prices before staking
+- Confirm 0% Matchbook commission is still active at placement
+- Check stake limits/account restrictions and keep bankroll exposure controlled
