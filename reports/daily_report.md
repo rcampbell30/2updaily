@@ -1,4 +1,4 @@
-Generated: 2026-06-06 04:40 BST
+Generated: 2026-06-06 04:57 BST
 Mode: one pick per day / pass if weak
 
 # 2upDaily Next Picks
@@ -16,9 +16,3 @@ Checks needed:
 - Send exchange lay odds and rough liquidity at/near the lay price
 - Use 2% commission as default unless the exchange offer says otherwise
 - Check stake limits/account restrictions before treating it as a real trade
-
-Secondary watchlist:
-- Brazil vs Egypt — Brazil can go two ahead, but Neymar absence and Egypt threat make it watchlist only until prices are checked
-- Morocco vs Norway — goals/double-sided shape, but favourite and odds need confirmation
-- Belgium vs Tunisia — Belgium attack profile, but Lukaku minutes/rotation reduce confidence
-- England vs New Zealand — likely ultra-short; only useful if QL is tiny
